@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dj51d6wtitoa3"]
 
 [ext_resource type="Texture2D" uid="uid://cugdrycfka53o" path="res://icon.svg" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://bvg1dffvk5urd" path="res://main_menu.gd" id="1_7vrkn"]
 
 [node name="MainMenu" type="Control" unique_id=245417280]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7vrkn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1429143658]
 layout_mode = 1
@@ -25,15 +27,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ButtonPlay" type="Button" parent="VBoxContainer" unique_id=1483014127]
+custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
 text = "Play
 "
 
 [node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=2017061626]
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 text = "Quit
 "
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=312646424]
-position = Vector2(579, 156)
+position = Vector2(579, 121)
 texture = ExtResource("1_06t4h")
+
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
