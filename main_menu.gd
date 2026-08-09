@@ -1,7 +1,7 @@
 extends Control
 
 # Play redirects to the scene
-const GAME_SCENE_PATH = "res://node_2d.tscn"
+const GAME_SCENE_PATH = "res://Main.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
