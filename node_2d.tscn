@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d17ba8oo881d"]
+[gd_scene format=3 uid="uid://d17ba8oo881d"]
 
+[ext_resource type="Script" uid="uid://c3wn0tutiixgt" path="res://global_input.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://c65rox2xyg06j" path="res://player.gd" id="1_wtcfe"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc2id"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Node2D" type="Node2D" unique_id=1804523426]
+script = ExtResource("1_0e48y")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=78426675]
 script = ExtResource("1_wtcfe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1116671321]
+shape = SubResource("CapsuleShape2D_lc2id")
