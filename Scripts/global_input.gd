@@ -1,7 +1,7 @@
 extends Node
 
 # Escape key returns to main menu
-const MAIN_MENU_PATH = "res://main_menu.tscn"
+const MAIN_MENU_PATH = "res://Scenes/main_menu.tscn"
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:

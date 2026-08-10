@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://d17ba8oo881d"]
+
+[ext_resource type="Script" uid="uid://4daly0nu07qj" path="res://Scripts/PlayerController.gd" id="1_idj7w"]
+[ext_resource type="Texture2D" uid="uid://l41dolgadd2v" path="res://Sprites/shovel.png" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://dnxvj47tvavg6" path="res://Background/test_1.png" id="3_kln2b"]
+[ext_resource type="Texture2D" uid="uid://3i1exl7vdtsu" path="res://Sprites/big_ASS_platform.png" id="4_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://dspn0sj33365v" path="res://Sprites/smal_ASS_platform.png" id="5_v1gob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(129, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
+size = Vector2(1116.5, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3v5h"]
+size = Vector2(95, 85.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdw2d"]
+size = Vector2(576, 82)
+
+[node name="Main" type="Node2D" unique_id=1051485603]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=67501147]
+script = ExtResource("1_idj7w")
+
+[node name="Player_Hitbox" type="CollisionShape2D" parent="Player" unique_id=1906461247]
+z_index = 1
+position = Vector2(636.49994, 324.125)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Player_Sprite" type="Sprite2D" parent="Player" unique_id=198444780]
+z_index = 2
+texture_filter = 1
+position = Vector2(637, 323.125)
+scale = Vector2(0.15714285, 0.14697324)
+texture = ExtResource("2_idj7w")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1520576979]
+position = Vector2(600, 300)
+zoom = Vector2(0.8, 0.8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
+position = Vector2(-6, -3)
+
+[node name="Background" type="TextureRect" parent="StaticBody2D" unique_id=1843034894]
+z_index = -5
+offset_left = 6.0
+offset_top = -430.0
+offset_right = 7006.0
+offset_bottom = 650.0
+texture = ExtResource("3_kln2b")
+
+[node name="smalass_platform" type="Sprite2D" parent="StaticBody2D" unique_id=1455793312]
+z_index = 1
+position = Vector2(1279, 386)
+texture = ExtResource("5_v1gob")
+
+[node name="bigass_platform2" type="Sprite2D" parent="StaticBody2D" unique_id=161037468]
+z_index = 1
+position = Vector2(1965, 283)
+texture = ExtResource("4_pbw6q")
+
+[node name="smalass_platform2" type="Sprite2D" parent="StaticBody2D" unique_id=348281321]
+z_index = 1
+position = Vector2(1487, 385)
+texture = ExtResource("5_v1gob")
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=2063010501]
+position = Vector2(565.75, 543)
+shape = SubResource("RectangleShape2D_xhkb1")
+
+[node name="smallass_platform" type="CollisionShape2D" parent="StaticBody2D" unique_id=1617272413]
+position = Vector2(1278, 385)
+shape = SubResource("RectangleShape2D_t3v5h")
+
+[node name="smallass_platform_2" type="CollisionShape2D" parent="StaticBody2D" unique_id=880859535]
+position = Vector2(1487, 387)
+shape = SubResource("RectangleShape2D_t3v5h")
+
+[node name="bigass_platform" type="CollisionShape2D" parent="StaticBody2D" unique_id=1618765038]
+position = Vector2(1963, 285)
+shape = SubResource("RectangleShape2D_rdw2d")

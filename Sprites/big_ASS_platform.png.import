@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lvpvecsjuhqb"
-path="res://.godot/imported/test123.png-2b25dc419b7c17cd1fb182a7fe1e8878.ctex"
+uid="uid://3i1exl7vdtsu"
+path="res://.godot/imported/big_ASS_platform.png-145c8882ff84bcea5a814831ad922316.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test123.png"
-dest_files=["res://.godot/imported/test123.png-2b25dc419b7c17cd1fb182a7fe1e8878.ctex"]
+source_file="res://Sprites/big_ASS_platform.png"
+dest_files=["res://.godot/imported/big_ASS_platform.png-145c8882ff84bcea5a814831ad922316.ctex"]
 
 [params]
 

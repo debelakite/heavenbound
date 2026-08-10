@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 
-@export var walk_speed = 200.0
+@export var walk_speed = 500.0
 @export_range(0, 1) var acceleration = 0.1
 @export_range(0, 1) var deceleration = 0.1
 
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -700.0
 
 
 func _physics_process(delta: float) -> void:
