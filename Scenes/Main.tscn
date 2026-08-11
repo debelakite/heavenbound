@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="2_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://dnxvj47tvavg6" path="res://Background/test_1.png" id="3_c01mt"]
 [ext_resource type="Script" uid="uid://c87l6ekrbcwi3" path="res://Player/States/run.gd" id="3_pbw6q"]
+[ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="4_jw32o"]
 [ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="4_nxtc6"]
+[ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="5_50glp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(292, 88)
@@ -19,10 +21,28 @@ size = Vector2(2265.5, 77)
 [node name="States" type="Node" parent="Player" unique_id=148396810]
 
 [node name="Idle" type="Node" parent="Player/States" unique_id=1826562738]
+unique_name_in_owner = true
 script = ExtResource("2_rgh2o")
 
 [node name="Run" type="Node" parent="Player/States" unique_id=1626297801]
+unique_name_in_owner = true
 script = ExtResource("3_pbw6q")
+
+[node name="Jump" type="Node" parent="Player/States" unique_id=384780589]
+unique_name_in_owner = true
+script = ExtResource("4_jw32o")
+
+[node name="Fall" type="Node" parent="Player/States" unique_id=79592431]
+unique_name_in_owner = true
+script = ExtResource("5_50glp")
+
+[node name="Label" type="Label" parent="Player" unique_id=888158707]
+offset_left = 589.0
+offset_top = 230.0
+offset_right = 689.0
+offset_bottom = 253.0
+text = "label"
+horizontal_alignment = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
 position = Vector2(-6, -3)

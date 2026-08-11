@@ -1,5 +1,9 @@
 class_name Player extends CharacterBody2D
 
+#region /// export variables
+@export var move_speed : float = 350
+#endregion
+
 #region /// State Machine Variables
 var states : Array[ PlayerState ]
 var current_state : PlayerState :
@@ -18,9 +22,6 @@ func _ready() -> void:
 	initialize_states()
 	pass
 
-@export var walk_speed = 500.0
-@export_range(0, 1) var acceleration = 0.1
-@export_range(0, 1) var deceleration = 0.1
 
 const JUMP_VELOCITY = -700.0
 
@@ -36,9 +37,10 @@ func _process( _delta: float) -> void:
 
 
 func _physics_process( _delta: float) -> void:
+	print("Class: ", current_state.get_script().resource_path)
 	velocity.y += gravity * _delta
+	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
-	change_state( current_state.process( _delta ) )
 	
 	pass
 
@@ -60,6 +62,7 @@ func initialize_states() -> void:
 
 	change_state( current_state )	
 	current_state.enter()
+	$Label.text = current_state.name
 	pass
 	
 	
@@ -75,12 +78,14 @@ func change_state( new_state : PlayerState ) -> void:
 	states.push_front( new_state )
 	current_state.enter()
 	states.resize( 3 )
+	$Label.text = current_state.name
 	pass
 	
 	
 func update_direction() -> void:
 	#var prev_direction : Vector2 = direction
-	
-	direction = Input.get_vector( "left", "right", "up", "down" ) 
+	var x_axis = Input.get_axis("move_left", "move_right")
+	var y_axis = Input.get_axis("jump", "move_down")
+	direction = Vector2(x_axis, y_axis) 
 	pass
 	
