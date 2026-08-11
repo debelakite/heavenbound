@@ -1,5 +1,22 @@
 class_name Player extends CharacterBody2D
 
+#region /// State Machine Variables
+var states : Array[ PlayerState ]
+var current_state : PlayerState :
+	get : return states.front()
+var previous_state : PlayerState :
+	get : return states[ 1 ]
+#endregion
+
+#region /// Standard Variables
+var direction : Vector2 = Vector2.ZERO
+var gravity : float = 980
+var base_move_speed: int = 100
+#endregion
+
+func _ready() -> void:
+	initialize_states()
+	pass
 
 @export var walk_speed = 500.0
 @export_range(0, 1) var acceleration = 0.1
@@ -7,22 +24,63 @@ class_name Player extends CharacterBody2D
 
 const JUMP_VELOCITY = -700.0
 
+func _unhandled_input(event: InputEvent) -> void:
+	change_state( current_state.handle_input( event ) )
+	pass
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func _process( _delta: float) -> void:
+	update_direction()
+	change_state( current_state.process( _delta ) )
+	pass
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = move_toward(velocity.x, direction * walk_speed, walk_speed * acceleration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
 
+func _physics_process( _delta: float) -> void:
+	velocity.y += gravity * _delta
 	move_and_slide()
+	change_state( current_state.process( _delta ) )
+	
+	pass
+
+func initialize_states() -> void:
+	states = []
+	#gather all the states
+	for c in $States.get_children():
+		if c is PlayerState:
+			states.append( c )
+			c.player = self
+		pass
+	
+	if states.size() == 0:
+		return
+	
+	#initialize all the states
+	for state in states:
+		state.init()
+
+	change_state( current_state )	
+	current_state.enter()
+	pass
+	
+	
+func change_state( new_state : PlayerState ) -> void:
+	if new_state == null:
+		return
+	elif new_state == current_state:
+		return
+	
+	if current_state:
+		current_state.exit()
+	
+	states.push_front( new_state )
+	current_state.enter()
+	states.resize( 3 )
+	pass
+	
+	
+func update_direction() -> void:
+	#var prev_direction : Vector2 = direction
+	
+	direction = Input.get_vector( "left", "right", "up", "down" ) 
+	pass
+	

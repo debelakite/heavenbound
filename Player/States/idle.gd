@@ -1,14 +1,7 @@
-class_name PlayerState extends Node
+class_name PlayerStateIdle extends PlayerState
 
-var player: Player
-var next_state: PlayerState
 
-#region /// state references
-	
-	
-#endregion
-	
-	#What happens when this state is initialized?
+
 func init() -> void:
 	pass
 		

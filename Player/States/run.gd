@@ -1,14 +1,7 @@
-class_name PlayerState extends Node
+class_name PlayerStateRun extends PlayerState
 
-var player: Player
-var next_state: PlayerState
 
-#region /// state references
-	
-	
-#endregion
-	
-	#What happens when this state is initialized?
+
 func init() -> void:
 	pass
 		
@@ -34,4 +27,5 @@ func process( _delta: float ) -> PlayerState:
 	
 	#What happens each physics_process tick in this state?
 func physics_process( _delta: float ) -> PlayerState:
+	
 		return next_state
