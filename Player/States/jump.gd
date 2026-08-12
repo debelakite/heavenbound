@@ -20,7 +20,7 @@ func exit() -> void:
 	#What happens when an input is pressed?
 func handle_input( event : InputEvent) -> PlayerState:
 	if event.is_action_released( "jump" ):
-		player.velocity.y *= 0.5
+		player.velocity.y *= 0.9
 		return fall
 	return next_state
 
