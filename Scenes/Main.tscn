@@ -118,5 +118,15 @@ script = ExtResource("8_50glp")
 health_textures = Array[Texture2D]([ExtResource("9_frkhe"), ExtResource("10_1p5hy"), ExtResource("11_h1m7h"), ExtResource("12_erwvk"), ExtResource("13_2w5on")])
 
 [node name="DeathScreen" type="TextureRect" parent="HUD" unique_id=301599137]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 623.0
+offset_top = -2020.0
+offset_right = 3176.871
+offset_bottom = -2020.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_frkhe")
+expand_mode = 3
