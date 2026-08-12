@@ -45,24 +45,26 @@ func reset_health() -> void:
 	health_changed.emit(health_stage)
 
 
+	#Intialise the player states upon game start
 func _ready() -> void:
 	initialize_states()
 	pass
 
 
-const JUMP_VELOCITY = -700.0
-
+	#On input call the handle input function of the current state
 func _unhandled_input(event: InputEvent) -> void:
 	change_state( current_state.handle_input( event ) )
 	pass
 
-
+	#Update function, runs every tick
+	#_delta: time from last frame
 func _process( _delta: float) -> void:
 	update_direction()
 	change_state( current_state.process( _delta ) )
 	pass
 
-
+	#Update function for physics, runs every tick
+	#_delta: time from last frame
 func _physics_process( _delta: float) -> void:
 	print("Class: ", current_state.get_script().resource_path)
 	velocity.y += gravity * _delta
@@ -71,6 +73,7 @@ func _physics_process( _delta: float) -> void:
 	
 	pass
 
+#Gathers all player states in an array and initializes them
 func initialize_states() -> void:
 	states = []
 	#gather all the states
@@ -92,14 +95,15 @@ func initialize_states() -> void:
 	$Label.text = current_state.name
 	pass
 	
-	
+	#Handles the changing of states
+	#new_state: the state the player character is to enter
 func change_state( new_state : PlayerState ) -> void:
-	if new_state == null:
+	if new_state == null: #If the new state does not exist do nothing
 		return
-	elif new_state == current_state:
+	elif new_state == current_state: #If the new state is the same as the old one, do nothing
 		return
 	
-	if current_state:
+	if current_state: #If we are in a state, exit it
 		current_state.exit()
 	
 	states.push_front( new_state )
@@ -108,7 +112,7 @@ func change_state( new_state : PlayerState ) -> void:
 	$Label.text = current_state.name
 	pass
 	
-	
+	#Switches looking direction
 func update_direction() -> void:
 	#var prev_direction : Vector2 = direction
 	var x_axis = Input.get_axis("move_left", "move_right")
