@@ -11,7 +11,7 @@ func init() -> void:
 func enter() -> void:
 	#play animation
 	player.velocity.y = -jump.jump_velocity
-	pass
+
 		
 	#What happens when we exit this state?
 func exit() -> void:
@@ -21,7 +21,7 @@ func exit() -> void:
 func handle_input( event : InputEvent) -> PlayerState:
 	if event.is_action_released( "jump" ):
 		player.velocity.y *= 0.9
-		return fall
+		#return fall
 	return next_state
 
 
@@ -33,9 +33,7 @@ func process( _delta: float ) -> PlayerState:
 	
 	#What happens each physics_process tick in this state?
 func physics_process( _delta: float ) -> PlayerState:
-	if player.is_on_floor():
-		return idle
-	elif player.velocity.y >= 0:
-		return fall
 	player.velocity.x = player.direction.x * player.move_speed
+	if player.velocity.y >= 0:
+		return fall
 	return next_state

@@ -18,14 +18,14 @@ func exit() -> void:
 	#What happens when an input is pressed?
 func handle_input( _event : InputEvent) -> PlayerState:
 	#handle input
-	if _event.is_action_pressed("jump"):
+	if _event.is_action_pressed("jump",true):
 		return jump
 	return next_state
 
 
 	#What happens each process tick in this state?
 func process( _delta: float ) -> PlayerState:
-	if player.direction.x != 0:
+	if player.direction.x != 0 && player.is_on_floor():
 		return run
 	return next_state
 	
