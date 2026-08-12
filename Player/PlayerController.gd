@@ -18,6 +18,33 @@ var gravity : float = 980
 var base_move_speed: int = 100
 #endregion
 
+#region /// Health Variables
+@export var max_health_stage: int = 4  # 0 = dead, 4 = full health (5 total stages)
+var health_stage: int = 4
+signal health_changed(new_stage: int)
+signal player_died
+#endregion
+
+
+# 	HEALTHBAR
+
+func take_damage(amount: int = 1) -> void:
+	health_stage = clamp(health_stage - amount, 0, max_health_stage)
+	health_changed.emit(health_stage)
+	if health_stage == 0:
+		player_died.emit()
+
+# HEALING (yet to be implemented)
+func heal(amount: int = 1) -> void:
+	health_stage = clamp(health_stage + amount, 0, max_health_stage)
+	health_changed.emit(health_stage)
+
+# RESET HEALTH ON DEATH
+func reset_health() -> void:
+	health_stage = max_health_stage
+	health_changed.emit(health_stage)
+
+
 	#Intialise the player states upon game start
 func _ready() -> void:
 	initialize_states()
