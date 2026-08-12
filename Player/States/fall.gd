@@ -2,32 +2,35 @@
 class_name PlayerStateFall extends PlayerState
 
 
-
+	#Initialisation of the state
 func init() -> void:
 	pass
 		
-	#What happens when we enter this state?
+	#Run code upon state entrance
 func enter() -> void:
-	#play animation
+	#TODO play animation
 	pass
 		
-	#What happens when we exit this state?
+	#Run code upon state exit
 func exit() -> void:
 	pass
 	
-	#What happens when an input is pressed?
+	#Function called upon keyboard input, 
+	#_event: keyboard button pressed
 func handle_input( _event : InputEvent) -> PlayerState:
-	#handle input
+	
 	return next_state
 
 
-	#What happens each process tick in this state?
+	#Update function, runs every tick
+	#_delta: time from last frame
 func process( _delta: float ) -> PlayerState:
 	
 	return next_state
 	
 	
-	#What happens each physics_process tick in this state?
+	#Update function for physics, runs every tick
+	#_delta: time from last frame
 func physics_process( _delta: float ) -> PlayerState:
 	if player.is_on_floor():
 		return idle
