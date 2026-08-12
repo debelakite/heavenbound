@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0w50hvws8355"]
 
-[ext_resource type="Script" uid="uid://4daly0nu07qj" path="res://Player/PlayerController.gd" id="1_4ntmi"]
+[ext_resource type="Script" uid="uid://4daly0nu07qj" path="res://Player/Scripts/PlayerController.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://b4pg6kr7cl75b" path="res://Sprites/Screenshot_2.png" id="2_btcbx"]
 [ext_resource type="Texture2D" uid="uid://ey20vxdj3wue" path="res://Sprites/idle_animation.png" id="2_gwnis"]
 
