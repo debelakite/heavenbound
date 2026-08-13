@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="1_kln2b"]
 [ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="2_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://dnxvj47tvavg6" path="res://Background/test_1.png" id="3_c01mt"]
-[ext_resource type="Script" uid="uid://b0dvq87mtfxf2" path="res://Player/States/hurt.gd" id="3_erwvk"]
 [ext_resource type="Script" uid="uid://c87l6ekrbcwi3" path="res://Player/States/run.gd" id="3_pbw6q"]
 [ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="4_jw32o"]
 [ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="4_nxtc6"]
@@ -29,7 +28,6 @@ script = ExtResource("1_1p5hy")
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_kln2b")]
 
 [node name="States" type="Node" parent="Player" unique_id=148396810]
-script = ExtResource("3_erwvk")
 
 [node name="Idle" type="Node" parent="Player/States" unique_id=1826562738]
 unique_name_in_owner = true
@@ -47,10 +45,6 @@ jump_velocity = 800.0
 [node name="Fall" type="Node" parent="Player/States" unique_id=79592431]
 unique_name_in_owner = true
 script = ExtResource("5_50glp")
-
-[node name="Hurt" type="Node" parent="Player/States" unique_id=1002482801]
-unique_name_in_owner = true
-script = ExtResource("3_erwvk")
 
 [node name="Label" type="Label" parent="Player" unique_id=888158707]
 offset_left = 589.0

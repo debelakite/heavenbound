@@ -37,3 +37,6 @@ func physics_process( _delta: float ) -> PlayerState:
 	if player.is_on_floor() == false: #If player not on floor but running, enter fall state
 		return fall
 	return next_state
+
+func took_damage() -> PlayerState:
+	return hurt
