@@ -26,7 +26,15 @@ signal health_changed(new_stage: int)
 signal player_died
 #endregion
 
+
 @onready var hit_box: HitBox = %HitBox
+
+#region /// Animation Variables
+@onready var _animation_player = $AnimatedSprite2D
+#endregion
+
+
+
 # 	HEALTHBAR
 
 func take_damage(amount: int = 1) -> void:
@@ -61,6 +69,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	#Update function, runs every tick
 	#_delta: time from last frame
 func _process( _delta: float) -> void:
+	_animation_player.play("Idle")
 	update_direction()
 	change_state( current_state.process( _delta ) )
 
