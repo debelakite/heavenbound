@@ -1,7 +1,6 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateRun extends PlayerState
 
-
 	#Initialisation of the state
 func init() -> void:
 	pass
@@ -17,8 +16,7 @@ func exit() -> void:
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
 func handle_input( _event : InputEvent) -> PlayerState:
-	if _event.is_action_pressed("mouse left"):
-		hit_box.set_active(true)
+	if _event.is_action_pressed("attack"):
 		return attack
 	elif _event.is_action_pressed("jump",true): #On jump input - enter jump state
 		return jump

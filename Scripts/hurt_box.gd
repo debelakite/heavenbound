@@ -6,6 +6,7 @@ signal died()
 
 @export var healthPoints = 3
 
+#Handle the damage to the hurtbox
 func get_damage(value: int) :
 	healthPoints -= value
 	hurted.emit()

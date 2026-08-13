@@ -69,7 +69,6 @@ animations = [{
 size = Vector2(116, 148)
 
 [node name="Player" type="CharacterBody2D" unique_id=28099015 groups=["player"]]
-physics_interpolation_mode = 1
 collision_mask = 5
 script = ExtResource("1_4ntmi")
 
@@ -103,6 +102,6 @@ animation = &"Idle"
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=518216513]
-position = Vector2(734, 320)
+position = Vector2(732, 319)
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.63, 0, 0.01049984, 0.41960785)

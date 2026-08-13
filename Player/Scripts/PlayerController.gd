@@ -26,7 +26,7 @@ signal health_changed(new_stage: int)
 signal player_died
 #endregion
 
-
+@onready var hit_box: HitBox = %HitBox
 # 	HEALTHBAR
 
 func take_damage(amount: int = 1) -> void:
@@ -50,7 +50,7 @@ func reset_health() -> void:
 	#Intialise the player states upon game start
 func _ready() -> void:
 	initialize_states()
-	pass
+
 
 
 	#On input call the handle input function of the current state
@@ -63,7 +63,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process( _delta: float) -> void:
 	update_direction()
 	change_state( current_state.process( _delta ) )
-	pass
+
 
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
@@ -72,8 +72,7 @@ func _physics_process( _delta: float) -> void:
 	velocity.y += gravity * _delta
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
-	
-	pass
+
 
 #Gathers all player states in an array and initializes them
 func initialize_states() -> void:
@@ -91,6 +90,7 @@ func initialize_states() -> void:
 	#initialize all the states
 	for state in states:
 		state.init()
+		state.setup(self)
 
 	change_state( current_state )	
 	current_state.enter()

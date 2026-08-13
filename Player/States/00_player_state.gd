@@ -2,8 +2,8 @@ class_name PlayerState extends Node
 
 var player: Player
 var next_state: PlayerState
-@onready var hit_box: HitBox = %HitBox
 
+var hit_box: HitBox
 #region /// state references
 @onready var idle: PlayerStateIdle = %Idle
 @onready var run: PlayerStateRun = %Run
@@ -15,7 +15,10 @@ var next_state: PlayerState
 
 	
 #endregion
-	
+func setup(p: Player) -> void:
+	player = p
+	hit_box = p.hit_box
+	print(hit_box)
 	#What happens when this state is initialized?
 func init() -> void:
 	pass

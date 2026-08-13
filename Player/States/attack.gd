@@ -1,5 +1,6 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateAttack extends PlayerState
+@export var HIT_DURATION = 0.4
 
 var hit_timer = 0
 #Initialisation of the state
@@ -9,12 +10,8 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
-	if player.velocity.x != 0: #Propel player oposite direction, or if player is not moving, just go left
-		player.velocity.x = -(player.velocity.x/abs(player.velocity.x))*200
-	else:
-		player.velocity.x = -200
-	player.velocity.y = -450 #Propel player up upon taking damage
-	
+	hit_box.set_active(true)
+	hit_timer = 0
 
 	#Run code upon state exit
 func exit() -> void:
@@ -23,22 +20,35 @@ func exit() -> void:
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
 func handle_input( _event : InputEvent) -> PlayerState:
+	if _event.is_action_pressed("jump",true): #On jump input - enter jump state
+		return jump
 	return next_state
 
 
 	#Update function, runs every tick
 	#_delta: time from last frame
 func process( _delta: float ) -> PlayerState:
+	
 	hit_timer += _delta
-	if hit_timer >= 10*_delta:
-		return idle 
+	if hit_timer >= HIT_DURATION: #Do not allow infinite attack spam
+		hit_timer = 0
+		hit_box.set_active(false)
+		if player.velocity.x != 0: #Go to the correct state upon completion
+			return run
+		else:
+			return idle 
 	return next_state
 	
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
 func physics_process( _delta: float ) -> PlayerState:
-
+	player.velocity.x = player.direction.x * player.move_speed #Decelarate player
+	if hit_box.hit: 
+		if player.velocity.x != 0: #Propel player oposite direction, or if player is not moving, just go left
+			player.velocity.x = -(player.velocity.x/abs(player.velocity.x))*20
+		else:
+			player.velocity.x = -20
 	return next_state
 	
-func took_damage() -> PlayerState: #If player has taken damage, remain in hurt state
-	return next_state
+func took_damage() -> PlayerState: #If player has taken damage, go to hurt state
+	return hurt
