@@ -2,6 +2,7 @@ class_name PlayerState extends Node
 
 var player: Player
 var next_state: PlayerState
+@onready var hit_box: HitBox = %HitBox
 
 #region /// state references
 @onready var idle: PlayerStateIdle = %Idle
@@ -9,7 +10,7 @@ var next_state: PlayerState
 @onready var jump: PlayerStateJump = %Jump
 @onready var fall: PlayerStateFall = %Fall
 @onready var hurt: PlayerStateHurt = %Hurt
-
+@onready var attack: PlayerStateAttack = %Attack
 
 
 	
