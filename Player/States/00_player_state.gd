@@ -8,6 +8,7 @@ var next_state: PlayerState
 @onready var run: PlayerStateRun = %Run
 @onready var jump: PlayerStateJump = %Jump
 @onready var fall: PlayerStateFall = %Fall
+@onready var hurt: PlayerStateHurt = %Hurt
 
 
 
@@ -40,4 +41,4 @@ func process( _delta: float ) -> PlayerState:
 	
 	#What happens each physics_process tick in this state?
 func physics_process( _delta: float ) -> PlayerState:
-		return next_state
+	return next_state

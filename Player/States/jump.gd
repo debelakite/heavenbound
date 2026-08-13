@@ -11,8 +11,7 @@ func init() -> void:
 func enter() -> void:
 	#TODO play animation
 	player.velocity.y = -jump.jump_velocity #Cordinate graph has negative y values upwards, to accelarate up flip speed to negative 
-
-		
+	
 	#Run code upon state exit
 func exit() -> void:
 	pass
@@ -39,3 +38,6 @@ func physics_process( _delta: float ) -> PlayerState:
 	if player.velocity.y >= 0: #If player upwards velocity is over 0 (i.e. falling) go to fall state
 		return fall
 	return next_state
+
+func took_damage() -> PlayerState: #If player has taken damage go to hurt state
+	return hurt

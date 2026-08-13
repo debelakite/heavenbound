@@ -36,3 +36,6 @@ func physics_process( _delta: float ) -> PlayerState:
 		return idle
 	player.velocity.x = player.direction.x * player.move_speed
 	return next_state
+
+func took_damage() -> PlayerState: #If player has taken damage go to hurt state
+	return hurt

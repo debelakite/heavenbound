@@ -10,6 +10,7 @@ var current_state : PlayerState :
 	get : return states.front()
 var previous_state : PlayerState :
 	get : return states[ 1 ]
+var hurt_state : PlayerState
 #endregion
 
 #region /// Standard Variables
@@ -31,6 +32,7 @@ signal player_died
 func take_damage(amount: int = 1) -> void:
 	health_stage = clamp(health_stage - amount, 0, max_health_stage)
 	health_changed.emit(health_stage)
+	change_state(current_state.took_damage())
 	if health_stage == 0:
 		player_died.emit()
 

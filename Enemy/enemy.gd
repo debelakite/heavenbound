@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 		if damage_timer >= damage_interval:
 			damage_timer = 0.0
 			player_inside.take_damage(damage_amount)
+			
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
