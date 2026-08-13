@@ -3,6 +3,8 @@ class_name PlayerState extends Node
 var player: Player
 var next_state: PlayerState
 
+
+
 #region /// state references
 @onready var idle: PlayerStateIdle = %Idle
 @onready var run: PlayerStateRun = %Run
@@ -35,10 +37,11 @@ func handle_input( _event : InputEvent) -> PlayerState:
 
 	#What happens each process tick in this state?
 func process( _delta: float ) -> PlayerState:
-	
+
 	return next_state
 	
 	
 	#What happens each physics_process tick in this state?
 func physics_process( _delta: float ) -> PlayerState:
+	
 	return next_state
