@@ -30,6 +30,8 @@ signal player_died
 @export var look_down_offset: float = 150.0
 @export var look_speed: float = 5.0
 @onready var camera: Camera2D = $Camera2D
+#region /// Animation Variables
+@onready var _animation_player = $AnimatedSprite2D
 #endregion
 
 
@@ -74,6 +76,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	#Update function, runs every tick
 	#_delta: time from last frame
 func _process( _delta: float) -> void:
+	_animation_player.play("Idle")
 	update_direction()
 	update_camera_look()
 	change_state( current_state.process( _delta ) )
