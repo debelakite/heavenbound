@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+@onready var hit_box: HitBox = %HitBox
+
 #region /// export variables
 @export var move_speed : float = 350
 #endregion
@@ -64,7 +66,7 @@ func _ready() -> void:
 	# Look down option when pressing S key
 func update_camera_look() -> void:
 	var target_offset_y = 0.0
-	if Input.is_key_pressed(KEY_S):
+	if Input.is_action_pressed("move_down"):
 		target_offset_y = look_down_offset
 
 	camera.offset.y = lerp(camera.offset.y, target_offset_y, look_speed * get_process_delta_time())
