@@ -19,8 +19,9 @@ func exit() -> void:
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
 func handle_input( _event : InputEvent) -> PlayerState:
-	
-	if _event.is_action_pressed("jump",true): #On jump input - enter jump state
+	if _event.is_action_pressed("attack",true):
+		return attack
+	elif _event.is_action_pressed("jump",true): #On jump input - enter jump state
 		return jump
 	return next_state
 

@@ -1,6 +1,5 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateJump extends PlayerState
-
 @export var jump_velocity : float = 450.0 #Constant for start jump velocity
 
 	#Initialisation of the state
@@ -19,7 +18,10 @@ func exit() -> void:
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
 func handle_input( event : InputEvent) -> PlayerState:
-	if event.is_action_released( "jump" ): #On release of jump input - slow down upwards movement
+	if event.is_action_pressed("attack"):
+		return attack
+		
+	elif event.is_action_released( "jump" ): #On release of jump input - slow down upwards movement
 		player.velocity.y *= 0.9
 	return next_state
 

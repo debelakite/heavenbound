@@ -35,6 +35,7 @@ signal player_died
 #endregion
 
 
+
 # 	HEALTHBAR
 
 func take_damage(amount: int = 1) -> void:
@@ -80,7 +81,7 @@ func _process( _delta: float) -> void:
 	update_direction()
 	update_camera_look()
 	change_state( current_state.process( _delta ) )
-	pass
+
 
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
@@ -89,8 +90,7 @@ func _physics_process( _delta: float) -> void:
 	velocity.y += gravity * _delta
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
-	
-	pass
+
 
 #Gathers all player states in an array and initializes them
 func initialize_states() -> void:
@@ -108,6 +108,7 @@ func initialize_states() -> void:
 	#initialize all the states
 	for state in states:
 		state.init()
+		state.setup(self)
 
 	change_state( current_state )	
 	current_state.enter()

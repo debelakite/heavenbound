@@ -4,6 +4,10 @@ var player: Player
 var next_state: PlayerState
 
 
+var hit_box: HitBox
+
+
+
 
 #region /// state references
 @onready var idle: PlayerStateIdle = %Idle
@@ -11,11 +15,15 @@ var next_state: PlayerState
 @onready var jump: PlayerStateJump = %Jump
 @onready var fall: PlayerStateFall = %Fall
 @onready var hurt: PlayerStateHurt = %Hurt
-
+@onready var attack: PlayerStateAttack = %Attack
 
 
 	
 #endregion
+func setup(p: Player) -> void:
+	player = p
+	hit_box = p.hit_box
+	print(hit_box)
 	
 	#What happens when this state is initialized?
 func init() -> void:

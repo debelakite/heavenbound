@@ -2,6 +2,8 @@
 class_name PlayerStateHurt extends PlayerState
 
 var hurt_timer = 0
+@export var vertical_pushback = 450
+@export var horizontal_pushback = 200
 #Initialisation of the state
 func init() -> void:
 	pass
@@ -10,10 +12,10 @@ func init() -> void:
 func enter() -> void:
 	#TODO play animation
 	if player.velocity.x != 0: #Propel player oposite direction, or if player is not moving, just go left
-		player.velocity.x = -(player.velocity.x/abs(player.velocity.x))*200
+		player.velocity.x = -(player.velocity.x/abs(player.velocity.x))*horizontal_pushback
 	else:
-		player.velocity.x = -200
-	player.velocity.y = -450 #Propel player up upon taking damage
+		player.velocity.x = -horizontal_pushback
+	player.velocity.y = -vertical_pushback #Propel player up upon taking damage
 	
 		
 	#Run code upon state exit

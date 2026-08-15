@@ -1,7 +1,6 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateFall extends PlayerState
 
-
 	#Initialisation of the state
 func init() -> void:
 	pass
@@ -18,7 +17,8 @@ func exit() -> void:
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
 func handle_input( _event : InputEvent) -> PlayerState:
-	
+	if _event.is_action_pressed("attack"):
+		return attack
 	return next_state
 
 
