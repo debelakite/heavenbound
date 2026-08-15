@@ -26,9 +26,10 @@ signal health_changed(new_stage: int)
 signal player_died
 #endregion
 
-
-@onready var hit_box: HitBox = %HitBox
-
+#region /// Camera Look-Down Variables
+@export var look_down_offset: float = 150.0
+@export var look_speed: float = 5.0
+@onready var camera: Camera2D = $Camera2D
 #region /// Animation Variables
 @onready var _animation_player = $AnimatedSprite2D
 #endregion
@@ -58,8 +59,15 @@ func reset_health() -> void:
 	#Intialise the player states upon game start
 func _ready() -> void:
 	initialize_states()
+	pass
+	
+	# Look down option when pressing S key
+func update_camera_look() -> void:
+	var target_offset_y = 0.0
+	if Input.is_key_pressed(KEY_S):
+		target_offset_y = look_down_offset
 
-
+	camera.offset.y = lerp(camera.offset.y, target_offset_y, look_speed * get_process_delta_time())
 
 	#On input call the handle input function of the current state
 func _unhandled_input(event: InputEvent) -> void:
@@ -71,6 +79,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process( _delta: float) -> void:
 	_animation_player.play("Idle")
 	update_direction()
+	update_camera_look()
 	change_state( current_state.process( _delta ) )
 
 
