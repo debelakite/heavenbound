@@ -1,7 +1,6 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateIdle extends PlayerState
 
-@onready var _animated_sprite = $AnimatedSprite2D
 
 	#Initialisation of the state
 func init() -> void:

@@ -79,7 +79,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	#Update function, runs every tick
 	#_delta: time from last frame
 func _process( _delta: float) -> void:
-	_animation_player.play("Idle")
+	if velocity.length() > 0:
+		_animation_player.play("Run")
+	else:
+		_animation_player.play("Idle")
 	update_direction()
 	update_camera_look()
 	change_state( current_state.process( _delta ) )
@@ -140,5 +143,11 @@ func update_direction() -> void:
 	var x_axis = Input.get_axis("move_left", "move_right")
 	var y_axis = Input.get_axis("jump", "move_down")
 	direction = Vector2(x_axis, y_axis) 
+	
+	#Flips player sprite in direction faced
+	if direction.x < 0:
+		_animation_player.flip_h = false
+	elif direction.x > 0:
+		_animation_player.flip_h = true
 	pass
 	
