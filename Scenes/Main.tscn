@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://2oqlnwdigdvt" path="res://Sprites/HealthBar/health_bar_3.png" id="12_erwvk"]
 [ext_resource type="Texture2D" uid="uid://cej1vq88dcg44" path="res://Sprites/HealthBar/health_bar_4.png" id="13_2w5on"]
 [ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Enemy/Enemy.tscn" id="15_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://breeqkc6oe18n" path="res://Sprites/HealthBar/health_bar_4 .png" id="17_0sclb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(321.42285, 88)
@@ -163,7 +164,7 @@ offset_top = 848.0
 offset_right = 506.0
 offset_bottom = 925.0
 script = ExtResource("8_50glp")
-health_textures = Array[Texture2D]([ExtResource("12_2w5on"), ExtResource("11_h1m7h"), ExtResource("10_1p5hy"), ExtResource("12_erwvk"), ExtResource("13_2w5on")])
+health_textures = Array[Texture2D]([ExtResource("13_346fj"), ExtResource("11_h1m7h"), ExtResource("10_1p5hy"), ExtResource("12_erwvk"), ExtResource("17_0sclb")])
 
 [node name="DeathScreen" type="TextureRect" parent="HUD" unique_id=1010263807]
 visible = false

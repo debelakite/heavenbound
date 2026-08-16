@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buu66vypk2qns"
-path="res://.godot/imported/health_bar_0.png-e67d760365cf516fa69d9c1016753c0c.ctex"
+uid="uid://breeqkc6oe18n"
+path="res://.godot/imported/health_bar_4 .png-0db9e7711181d34867d3eb7ca672bab2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HealthBar/health_bar_0.png"
-dest_files=["res://.godot/imported/health_bar_0.png-e67d760365cf516fa69d9c1016753c0c.ctex"]
+source_file="res://Sprites/HealthBar/health_bar_4 .png"
+dest_files=["res://.godot/imported/health_bar_4 .png-0db9e7711181d34867d3eb7ca672bab2.ctex"]
 
 [params]
 
