@@ -142,6 +142,7 @@ texture = ExtResource("2_btcbx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 position = Vector2(600, 300)
+zoom = Vector2(1.5, 1.5)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
