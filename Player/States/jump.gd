@@ -1,5 +1,6 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateJump extends PlayerState
+
 @export var jump_velocity : float = 450.0 #Constant for start jump velocity
 
 	#Initialisation of the state

@@ -1,12 +1,15 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateRun extends PlayerState
 
+@onready var _animation_player = $AnimatedSprite2D
+
 	#Initialisation of the state
 func init() -> void:
 	pass
 		
 	#Run code upon state entrance
 func enter() -> void:
+	
 	pass
 		
 	#Run code upon state exit
@@ -33,6 +36,7 @@ func process( _delta: float ) -> PlayerState:
 	
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
+	
 func physics_process( _delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed
 	if player.is_on_floor() == false: #If player not on floor but running, enter fall state

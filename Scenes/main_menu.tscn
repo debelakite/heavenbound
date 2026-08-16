@@ -2,6 +2,99 @@
 
 [ext_resource type="Script" uid="uid://bvg1dffvk5urd" path="res://Scripts/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://b4pg6kr7cl75b" path="res://Sprites/Screenshot_2.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://bwgj1s5vqsxmv" path="res://Sprites/main_menu_template.png" id="3_1ehe0"]
+[ext_resource type="FontFile" uid="uid://cjsb0wvmihom7" path="res://Fonts/Cinzel-VariableFont_wght.ttf" id="3_ce3w2"]
+[ext_resource type="Script" uid="uid://bfjlo454jakes" path="res://Scripts/button_play.gd" id="4_opfnp"]
+[ext_resource type="Script" uid="uid://d1d6327ec8aq5" path="res://Scripts/button_quit.gd" id="5_opfnp"]
+[ext_resource type="FontFile" uid="uid://bqjnnb7coyflv" path="res://Fonts/CinzelDecorative-Bold.ttf" id="7_cp0ys"]
+[ext_resource type="FontFile" uid="uid://bybwgar4bvkcc" path="res://Fonts/CinzelDecorative-Regular.ttf" id="7_yhxw7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+
+[sub_resource type="Gradient" id="Gradient_yhxw7"]
+offsets = PackedFloat32Array(0.26785713, 0.4732143, 0.70535713)
+colors = PackedColorArray(0.9843137, 0.3137255, 0, 0, 0.99724525, 0.9642225, 0.75525784, 1, 0.89411765, 0.32941177, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_trj04"]
+gradient = SubResource("Gradient_yhxw7")
+fill = 1
+fill_from = Vector2(0.49519232, 0.50961536)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
+texture = SubResource("GradientTexture2D_trj04")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dnnj"]
+
+[sub_resource type="Gradient" id="Gradient_opfnp"]
+offsets = PackedFloat32Array(0.2857143, 0.48214287, 0.6785714)
+colors = PackedColorArray(0.83137256, 0.7921569, 0.64705884, 0.14509805, 0.9959864, 0.94828886, 0.65001875, 1, 0.88235295, 1, 0.85490197, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_16hvj"]
+gradient = SubResource("Gradient_opfnp")
+fill = 1
+fill_from = Vector2(0.5, 0.59134614)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
+texture = SubResource("GradientTexture2D_16hvj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr1f0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1dhk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trj04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhxw7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trj04"]
+texture = SubResource("GradientTexture2D_16hvj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtepg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5egv6"]
+
+[sub_resource type="Animation" id="Animation_yhxw7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_trj04"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_16hvj"]
+_data = {
+&"RESET": SubResource("Animation_yhxw7"),
+&"fade_in": SubResource("Animation_trj04")
+}
 
 [node name="MainMenu" type="Control" unique_id=245417280]
 layout_mode = 3
@@ -13,33 +106,97 @@ grow_vertical = 2
 script = ExtResource("1_7vrkn")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=312646424]
+visible = false
 position = Vector2(1023, 538)
 texture = ExtResource("2_48xlc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1429143658]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -579.0
-offset_top = -163.0
-offset_right = -179.0
-offset_bottom = 66.0
-grow_horizontal = 2
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 108.0
+offset_top = -3.0
+offset_right = 508.0
+offset_bottom = -3.0
 grow_vertical = 2
+alignment = 1
 
-[node name="ButtonPlay" type="Button" parent="VBoxContainer" unique_id=1483014127]
-custom_minimum_size = Vector2(400, 150)
+[node name="ButtonPlay" type="Button" parent="VBoxContainer" unique_id=214723513]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-text = "Play
-"
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_opfnp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhxw7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_8dnnj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vr1f0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1dhk")
+text = "Play"
+script = ExtResource("4_opfnp")
 
 [node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=2017061626]
-custom_minimum_size = Vector2(0, 75)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_opfnp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_trj04")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yhxw7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_trj04")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vtepg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5egv6")
 text = "Quit
 "
+script = ExtResource("5_opfnp")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2094563473]
+
+[node name="MainMenuTemplate" type="Sprite2D" parent="." unique_id=903668413]
+show_behind_parent = true
+position = Vector2(960, 540)
+texture = ExtResource("3_1ehe0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=926969157]
+layout_mode = 1
+offset_left = 61.0
+offset_top = 185.0
+offset_right = 1191.0
+offset_bottom = 369.0
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("7_yhxw7")
+theme_override_fonts/bold_font = ExtResource("7_cp0ys")
+theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/bold_font_size = 120
+text = "HEAVENBOUND"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1765485998]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=813643933]
+libraries/ = SubResource("AnimationLibrary_16hvj")
+autoplay = &"fade_in"
+
+[node name="Label" type="Label" parent="." unique_id=798884859]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pre-Alpha 0.1.0"
 
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
