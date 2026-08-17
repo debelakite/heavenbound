@@ -40,7 +40,7 @@ func process( _delta: float ) -> PlayerState:
 func physics_process( _delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed
 	
-	if Input.is_action_just_released("ui_accept") and player.velocity.y < 0:
+	if Input.is_action_just_released("jump") and player.velocity.y < 0:
 		if player.velocity.y < min_jump_velocity: 
 			player.velocity.y = min_jump_velocity
 	

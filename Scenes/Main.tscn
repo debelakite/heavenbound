@@ -2,13 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1qe8hj0p2hg1" path="res://Scripts/main.gd" id="1_1p5hy"]
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="1_kln2b"]
-[ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="2_rgh2o"]
-[ext_resource type="Script" uid="uid://b0dvq87mtfxf2" path="res://Player/States/hurt.gd" id="3_erwvk"]
-[ext_resource type="Script" uid="uid://c87l6ekrbcwi3" path="res://Player/States/run.gd" id="3_pbw6q"]
-[ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="4_jw32o"]
 [ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="4_nxtc6"]
-[ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="5_50glp"]
-[ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="8_2w5on"]
 [ext_resource type="Script" uid="uid://dav8w2nw1q6tr" path="res://Scripts/health_bar.gd" id="8_50glp"]
 [ext_resource type="Texture2D" uid="uid://dvsuuaqc16nwj" path="res://Sprites/death_screen.png" id="9_frkhe"]
 [ext_resource type="Texture2D" uid="uid://mkscy748gtf4" path="res://Sprites/HealthBar/health_bar_2.png" id="10_1p5hy"]
@@ -65,43 +59,6 @@ _data = {
 script = ExtResource("1_1p5hy")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_kln2b")]
-
-[node name="States" type="Node" parent="Player" unique_id=148396810]
-script = ExtResource("3_erwvk")
-
-[node name="Idle" type="Node" parent="Player/States" unique_id=1826562738]
-unique_name_in_owner = true
-script = ExtResource("2_rgh2o")
-
-[node name="Run" type="Node" parent="Player/States" unique_id=1626297801]
-unique_name_in_owner = true
-script = ExtResource("3_pbw6q")
-
-[node name="Jump" type="Node" parent="Player/States" unique_id=384780589]
-unique_name_in_owner = true
-script = ExtResource("4_jw32o")
-jump_velocity = 650.0
-min_jump_velocity = -200.0
-
-[node name="Fall" type="Node" parent="Player/States" unique_id=79592431]
-unique_name_in_owner = true
-script = ExtResource("5_50glp")
-
-[node name="Hurt" type="Node" parent="Player/States" unique_id=1002482801]
-unique_name_in_owner = true
-script = ExtResource("3_erwvk")
-
-[node name="Attack" type="Node" parent="Player/States" unique_id=1473252039]
-unique_name_in_owner = true
-script = ExtResource("8_2w5on")
-
-[node name="Label" type="Label" parent="Player" unique_id=888158707]
-offset_left = 589.0
-offset_top = 230.0
-offset_right = 689.0
-offset_bottom = 253.0
-text = "label"
-horizontal_alignment = 1
 
 [node name="Enemy" parent="." unique_id=631428863 instance=ExtResource("15_h1m7h")]
 position = Vector2(2502, 90)
