@@ -79,10 +79,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	#Update function, runs every tick
 	#_delta: time from last frame
 func _process( _delta: float) -> void:
-	if velocity.length() > 0:
-		_animation_player.play("Run")
-	else:
-		_animation_player.play("Idle")
 	update_direction()
 	update_camera_look()
 	change_state( current_state.process( _delta ) )

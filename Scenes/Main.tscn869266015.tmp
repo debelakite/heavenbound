@@ -81,7 +81,7 @@ script = ExtResource("3_pbw6q")
 unique_name_in_owner = true
 script = ExtResource("4_jw32o")
 jump_velocity = 650.0
-min_jump_velocity = -200.0
+min_jump_velocity = null
 
 [node name="Fall" type="Node" parent="Player/States" unique_id=79592431]
 unique_name_in_owner = true
@@ -159,11 +159,10 @@ shape = SubResource("RectangleShape2D_xhkb1")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=783163906]
 
 [node name="HealthBar" type="TextureRect" parent="HUD" unique_id=3505854]
-offset_left = 90.0
-offset_top = 90.0
-offset_right = 328.0
-offset_bottom = 158.0
-expand_mode = 5
+offset_left = 252.0
+offset_top = 848.0
+offset_right = 506.0
+offset_bottom = 925.0
 script = ExtResource("8_50glp")
 health_textures = Array[Texture2D]([ExtResource("12_2w5on"), ExtResource("11_h1m7h"), ExtResource("10_1p5hy"), ExtResource("12_erwvk"), ExtResource("13_2w5on")])
 

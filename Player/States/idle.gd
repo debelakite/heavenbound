@@ -1,6 +1,7 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateIdle extends PlayerState
 
+@onready var _animation_player = $AnimatedSprite2D
 
 	#Initialisation of the state
 func init() -> void:
@@ -9,6 +10,7 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
+	player._animation_player.play("Idle")
 	pass
 		
 	#Run code upon state exit
