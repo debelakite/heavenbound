@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bimg2tx2ulcwe" path="res://Sprites/HealthBar/health_bar_0.png" id="12_2w5on"]
 [ext_resource type="Texture2D" uid="uid://bvyv64bx3ffh0" path="res://Sprites/HealthBar/health_bar_3.png" id="12_erwvk"]
 [ext_resource type="Texture2D" uid="uid://breeqkc6oe18n" path="res://Sprites/HealthBar/health_bar_4.png" id="13_2w5on"]
-[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Enemy/Enemy.tscn" id="15_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="15_h1m7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(321.42285, 88)
