@@ -1,6 +1,11 @@
 class_name Player extends CharacterBody2D
 
-@onready var hit_box: HitBox = %HitBox
+#region ///hit_boxes
+@onready var hit_boxL: HitBox = %HitBoxL
+@onready var hit_boxR: HitBox = %HitBoxR
+@onready var hit_boxU: HitBox = %HitBoxU
+@onready var hit_boxB: HitBox = %HitBoxB
+#endregion
 
 #region /// export variables
 @export var move_speed : float = 350
@@ -19,6 +24,8 @@ var hurt_state : PlayerState
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = 980
 var base_move_speed: int = 100
+var looking_up = false
+var looking_down = false
 #endregion
 
 #region /// Health Variables
@@ -141,9 +148,12 @@ func change_state( new_state : PlayerState ) -> void:
 func update_direction() -> void:
 	#var prev_direction : Vector2 = direction
 	var x_axis = Input.get_axis("move_left", "move_right")
-	var y_axis = Input.get_axis("jump", "move_down")
+	var y_axis = Input.get_axis("look_up", "move_down")
 	direction = Vector2(x_axis, y_axis) 
 	
+	#Look up or down
+	looking_down = direction.y > 0
+	looking_up = direction.y < 0
 	#Flips player sprite in direction faced
 	if direction.x < 0:
 		_animation_player.flip_h = false

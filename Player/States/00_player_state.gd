@@ -3,8 +3,10 @@ class_name PlayerState extends Node
 var player: Player
 var next_state: PlayerState
 
-
-var hit_box: HitBox
+var hit_boxU: HitBox
+var hit_boxB: HitBox
+var hit_boxL: HitBox
+var hit_boxR: HitBox
 
 
 
@@ -22,8 +24,10 @@ var hit_box: HitBox
 #endregion
 func setup(p: Player) -> void:
 	player = p
-	hit_box = p.hit_box
-	print(hit_box)
+	hit_boxL = player.hit_boxL
+	hit_boxR = player.hit_boxR
+	hit_boxU = player.hit_boxU
+	hit_boxB = player.hit_boxB
 	
 	#What happens when this state is initialized?
 func init() -> void:

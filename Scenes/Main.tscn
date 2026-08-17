@@ -110,10 +110,10 @@ position = Vector2(-6, -3)
 
 [node name="Background" type="TextureRect" parent="StaticBody2D" unique_id=1843034894]
 z_index = -5
-offset_left = -445.0
-offset_top = -423.0
-offset_right = 6555.0
-offset_bottom = 657.0
+offset_left = -465.0
+offset_top = -437.0
+offset_right = 6535.0
+offset_bottom = 643.0
 texture = ExtResource("10_346fj")
 
 [node name="SmallPlatform" type="Sprite2D" parent="StaticBody2D" unique_id=1455793312]
@@ -194,3 +194,6 @@ color = Color(0, 0, 0, 1)
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_0sclb")
 autoplay = &"fade_in"
+
+[node name="Enemy2" parent="." unique_id=1301850931 instance=ExtResource("15_h1m7h")]
+position = Vector2(2081, 474)

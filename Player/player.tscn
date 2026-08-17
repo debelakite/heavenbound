@@ -114,7 +114,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(53, 135.75)
+size = Vector2(56.5, 135.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(134, 91.25)
 
 [node name="Player" type="CharacterBody2D" unique_id=28099015 groups=["player"]]
 collision_mask = 5
@@ -148,10 +151,34 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="HitBox" parent="." unique_id=870380002 instance=ExtResource("4_gwnis")]
+[node name="HitBoxL" parent="." unique_id=870380002 instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=848643817]
-position = Vector2(704, 324)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxL" unique_id=848643817]
+position = Vector2(568, 324)
 shape = SubResource("RectangleShape2D_13qdw")
 debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
+
+[node name="HitBoxR" parent="." unique_id=1624600209 instance=ExtResource("4_gwnis")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxR" unique_id=503553542]
+position = Vector2(704.75, 324)
+shape = SubResource("RectangleShape2D_13qdw")
+debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
+
+[node name="HitBoxU" parent="." unique_id=1766091342 instance=ExtResource("4_gwnis")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxU" unique_id=825069202]
+position = Vector2(635, 208)
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.9830722, 0, 0.31164944, 0.41960785)
+
+[node name="HitBoxB" parent="." unique_id=324207549 instance=ExtResource("4_gwnis")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxB" unique_id=1465217560]
+position = Vector2(634, 438.375)
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.9830722, 0, 0.31164944, 0.41960785)

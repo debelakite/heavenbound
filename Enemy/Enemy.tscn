@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://c27tpkswc2e"]
 
-[ext_resource type="Texture2D" uid="uid://cb1c2okgijs48" path="res://Sprites/enemy.jpg" id="1_3o4wt"]
 [ext_resource type="Script" uid="uid://bvqd8j44dumcp" path="res://Enemy/enemy.gd" id="1_epr5s"]
 [ext_resource type="Script" uid="uid://dp564hifota76" path="res://Scripts/hurt_box.gd" id="3_vso2s"]
 [ext_resource type="Script" uid="uid://cq8oxtn5mgnpj" path="res://Enemy/label.gd" id="4_vso2s"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vonkd"]
+load_path = "res://.godot/imported/enemy.jpg-6ce45bd52b3d4573c6634677a32c3424.ctex"
 
 [sub_resource type="GDScript" id="GDScript_vonkd"]
 
@@ -16,7 +18,7 @@ script = ExtResource("1_epr5s")
 [node name="Enemy1" type="Sprite2D" parent="." unique_id=22581934]
 position = Vector2(0, 1.5258789e-05)
 scale = Vector2(0.118845515, 0.09035448)
-texture = ExtResource("1_3o4wt")
+texture = SubResource("CompressedTexture2D_vonkd")
 script = SubResource("GDScript_vonkd")
 
 [node name="HitboxArea" type="Area2D" parent="." unique_id=1706663398]
