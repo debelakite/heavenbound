@@ -14,7 +14,7 @@ size = Vector2(264, 128)
 size = Vector2(184, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2k2y"]
-size = Vector2(1283, 240)
+size = Vector2(1756, 464)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37tqn"]
 animations = [{
@@ -27,12 +27,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1hta"]
-size = Vector2(2216, 429)
-
 [node name="Enemy" type="CharacterBody2D" unique_id=725079683]
 collision_layer = 4
 script = ExtResource("1_epr5s")
+speed = null
+damage_amount = null
+damage_interval = null
 
 [node name="Enemy1" type="Sprite2D" parent="." unique_id=22581934]
 visible = false
@@ -66,6 +66,7 @@ shape = SubResource("RectangleShape2D_vso2s")
 [node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=1249790578]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=736566101]
+position = Vector2(-8, -32)
 shape = SubResource("RectangleShape2D_d2k2y")
 debug_color = Color(0.9719295, 0, 0.1586656, 0.41960785)
 
@@ -73,14 +74,3 @@ debug_color = Color(0.9719295, 0, 0.1586656, 0.41960785)
 position = Vector2(-2.499999, -2.499998)
 scale = Vector2(0.08321222, 0.07994186)
 sprite_frames = SubResource("SpriteFrames_37tqn")
-
-[node name="PlayerLoseArea" type="Area2D" parent="." unique_id=2046588739]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerLoseArea" unique_id=1492251966]
-position = Vector2(20, -73.5)
-shape = SubResource("RectangleShape2D_w1hta")
-debug_color = Color(0.41960785, 0.98039216, 0, 0.41960785)
-
-[node name="States" type="Node" parent="." unique_id=633050722]
-
-[node name="Node" type="Node" parent="States" unique_id=2067537891]

@@ -17,7 +17,11 @@
 size = Vector2(321.42285, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
-size = Vector2(2265.5, 77)
+size = Vector2(2715, 77)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2vmwg"]
+normal = Vector2(0.999928, -0.011999136)
+distance = -289.78644
 
 [sub_resource type="Animation" id="Animation_0sclb"]
 length = 0.001
@@ -61,7 +65,7 @@ script = ExtResource("1_1p5hy")
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_kln2b")]
 
 [node name="Enemy" parent="." unique_id=631428863 instance=ExtResource("15_h1m7h")]
-position = Vector2(2502, 90)
+position = Vector2(2040, 400)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
 position = Vector2(-6, -3)
@@ -110,8 +114,12 @@ position = Vector2(12.362395, -33)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=2063010501]
-position = Vector2(1140.25, 543)
+position = Vector2(915.5, 543)
 shape = SubResource("RectangleShape2D_xhkb1")
+
+[node name="WorldBoundary" type="CollisionShape2D" parent="StaticBody2D" unique_id=1520081796]
+position = Vector2(-146, 411)
+shape = SubResource("WorldBoundaryShape2D_2vmwg")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=783163906]
 

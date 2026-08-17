@@ -104,6 +104,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7vrkn")
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenuTemplate" type="TextureRect" parent="." unique_id=2042006606]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1ehe0")
+metadata/_edit_use_anchors_ = true
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=312646424]
 visible = false
@@ -154,11 +166,6 @@ script = ExtResource("5_opfnp")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2094563473]
 
-[node name="MainMenuTemplate" type="Sprite2D" parent="." unique_id=903668413]
-show_behind_parent = true
-position = Vector2(960, 540)
-texture = ExtResource("3_1ehe0")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=926969157]
 layout_mode = 1
 offset_left = 61.0
@@ -181,6 +188,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=813643933]
 libraries/ = SubResource("AnimationLibrary_16hvj")
