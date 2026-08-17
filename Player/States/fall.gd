@@ -9,7 +9,7 @@ func init() -> void:
 		
 	#Run code upon state entrance
 func enter() -> void:
-	#TODO play animation
+	#play fall animation
 	player._animation_player.play("Fall")
 	pass
 		
