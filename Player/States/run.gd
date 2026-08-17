@@ -9,7 +9,7 @@ func init() -> void:
 		
 	#Run code upon state entrance
 func enter() -> void:
-	
+	player._animation_player.play("Run")
 	pass
 		
 	#Run code upon state exit

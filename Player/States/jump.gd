@@ -2,6 +2,7 @@
 class_name PlayerStateJump extends PlayerState
 
 @export var jump_velocity : float = 450.0 #Constant for start jump velocity
+@export var min_jump_velocity = -150.0 # Velocity when button is tapped shortly
 
 	#Initialisation of the state
 func init() -> void:
@@ -38,6 +39,11 @@ func process( _delta: float ) -> PlayerState:
 	#_delta: time from last frame
 func physics_process( _delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed
+	
+	if Input.is_action_just_released("ui_accept") and player.velocity.y < 0:
+		if player.velocity.y < min_jump_velocity: 
+			player.velocity.y = min_jump_velocity
+	
 	if player.velocity.y >= 0: #If player upwards velocity is over 0 (i.e. falling) go to fall state
 		return fall
 	return next_state
