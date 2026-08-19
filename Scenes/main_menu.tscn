@@ -132,6 +132,7 @@ offset_right = 508.0
 offset_bottom = -3.0
 grow_vertical = 2
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonPlay" type="Button" parent="VBoxContainer" unique_id=214723513]
 custom_minimum_size = Vector2(64, 64)
@@ -178,6 +179,7 @@ theme_override_fonts/bold_font = ExtResource("7_cp0ys")
 theme_override_font_sizes/normal_font_size = 120
 theme_override_font_sizes/bold_font_size = 120
 text = "HEAVENBOUND"
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1765485998]
 layout_mode = 1
