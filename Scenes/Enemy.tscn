@@ -11,7 +11,7 @@
 size = Vector2(264, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vso2s"]
-size = Vector2(184, 112)
+size = Vector2(192, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2k2y"]
 size = Vector2(1283, 240)
@@ -36,7 +36,7 @@ script = ExtResource("1_mo1ky")
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=905698373]
 position = Vector2(-56, 0)
-target_position = Vector2(0, 140)
+target_position = Vector2(0, 104)
 
 [node name="WallCheck" type="RayCast2D" parent="." unique_id=44262350]
 position = Vector2(0, -24)
@@ -63,7 +63,7 @@ offset_bottom = -31.0
 script = ExtResource("3_mo1ky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1413354603]
-position = Vector2(20, 24)
+position = Vector2(8, 16)
 shape = SubResource("RectangleShape2D_vso2s")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1249790578]

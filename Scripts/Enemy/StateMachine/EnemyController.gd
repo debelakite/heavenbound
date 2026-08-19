@@ -3,6 +3,11 @@ class_name Enemy extends CharacterBody2D
 @export var speed: float = 150.0
 @export var damage_amount: int = 1
 @export var damage_interval: float = 1.0  # seconds between damage ticks
+@export var flip_deadzone: float = 32.0
+@export var flip_cooldown: float = 0.25
+@export var stop_distance: float = 24.0
+var facing_right: bool = true
+var flip_cooldown_timer: float = 0.0
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var hitbox_area: Area2D = %HitBox
@@ -49,21 +54,30 @@ func _process( _delta: float) -> void:
 	change_state( current_state.process( _delta ) )
 
 func _physics_process(_delta: float) -> void:
+	if flip_cooldown_timer > 0.0:
+		flip_cooldown_timer -= _delta
 	if not is_on_floor():
 		velocity.y += gravity * _delta
 	change_state(current_state.physics_process(_delta))
 	move_and_slide()
 
 
-	if chase and is_instance_valid(player):
-		var x_diff: float = player.global_position.x - global_position.x
-		var direction_x: float = sign(x_diff)  # -1.0, 0.0, or 1.0 — pure left/right, no vertical dilution
-		animated_sprite.flip_h = direction_x > 0
-		velocity.x = direction_x * speed
-	else:
-		velocity.x = 0
+func evaluate_facing(x_diff: float) -> void:
+	if flip_cooldown_timer > 0.0:
+		return
+	if facing_right and x_diff < -flip_deadzone:
+		set_facing(false)
+	elif not facing_right and x_diff > flip_deadzone:
+		set_facing(true)
 
-	move_and_slide()
+
+func set_facing(new_facing_right: bool) -> void:
+	if new_facing_right == facing_right:
+		return
+	facing_right = new_facing_right
+	flip_cooldown_timer = flip_cooldown
+	animated_sprite.flip_h = not facing_right
+	update_direction(facing_right)
 
 #Gathers all enemy states in an array and initializes them
 func initialize_states() -> void:
@@ -98,6 +112,7 @@ func is_wall_ahead() -> bool:
 	#Handles the changing of states
 	#new_state: the state the player character is to enter
 func change_state( new_state : EnemyState ) -> void:
+	print("change_state called with: ", new_state, " current: ", current_state)
 	if new_state == null: #If the new state does not exist do nothing
 		return
 	elif new_state == current_state: #If the new state is the same as the old one, do nothing

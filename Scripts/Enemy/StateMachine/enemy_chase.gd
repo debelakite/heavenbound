@@ -20,24 +20,21 @@ func process( _delta: float ) -> EnemyState:
 	return next_state
 
 func physics_process( _delta: float ) -> EnemyState:
-	print("IDLE running, chase=", enemy.chase)
-	# Lost the player -> go back to idle
 	if not enemy.chase:
 		return idle
 
-	# Apply gravity
-	if not enemy.is_on_floor():
-		enemy.velocity.y += enemy.gravity * _delta
+	var x_diff: float = enemy.player.global_position.x - enemy.global_position.x
+	enemy.evaluate_facing(x_diff)
 
-	var dir_x = sign(enemy.player.global_position.x - enemy.global_position.x)
-	print("dir_x=", dir_x, " ground=", enemy.is_ground_ahead(), " wall=", enemy.is_wall_ahead(), " state=", get_class())
-	enemy.update_direction(dir_x > 0)
+	print("x_diff=", x_diff, " facing_right=", enemy.facing_right,
+		" ground_ahead=", enemy.is_ground_ahead(), " wall_ahead=", enemy.is_wall_ahead(),
+		" wall_check.pos=", enemy.wall_check.position, " ledge_check.pos=", enemy.ledge_check.position)
 
-	if not enemy.is_ground_ahead() or enemy.is_wall_ahead():
+	if abs(x_diff) <= enemy.stop_distance:
 		enemy.velocity.x = 0
-		enemy.move_and_slide()
-		return next_state  #stay in chase
-	
-	enemy.velocity.x = dir_x * enemy.speed
-	enemy.move_and_slide()
+	elif not enemy.is_ground_ahead() or enemy.is_wall_ahead():
+		enemy.velocity.x = 0
+	else:
+		enemy.velocity.x = (1.0 if enemy.facing_right else -1.0) * enemy.speed
+
 	return next_state

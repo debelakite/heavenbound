@@ -16,6 +16,7 @@ var hit_box: HitBox
 
 func setup(e: Enemy) -> void:
 	enemy = e
+	print(get_class(), " setup — idle=", idle, " chase=", chase)
 
 #What happens when this state is initialized?
 func init() -> void:
