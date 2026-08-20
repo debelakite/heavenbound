@@ -9,7 +9,8 @@ var hit_box: HitBox
 #region /// state references
 @onready var idle: EnemyStateIdle = %Idle
 @onready var chase: EnemyStateChase = %Chase
-
+@onready var hurt: EnemyStateHurt = %Hurt
+@onready var death: EnemyStateDeath = %Death
 
 #endregion
 

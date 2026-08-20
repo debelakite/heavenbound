@@ -1,7 +1,7 @@
-extends Area2D
-class_name HurtBox
+class_name HurtBox extends Area2D
 
-signal hurted()
+
+signal hurt()
 signal died()
 
 @export var healthPoints = 3
@@ -9,8 +9,8 @@ signal died()
 #Handle the damage to the hurtbox
 func get_damage(value: int) :
 	healthPoints -= value
-	hurted.emit()
+	hurt.emit()
 	
 	if healthPoints <= 0:
-		print("It died.")
+		print("Hellhound has died.")
 		died.emit()

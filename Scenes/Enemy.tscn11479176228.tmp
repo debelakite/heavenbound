@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cvnvffjbt85k3" path="res://Sprites/Enemy/hellhound.png" id="4_idouy"]
 [ext_resource type="Script" uid="uid://bhxutnsfcfros" path="res://Scripts/Enemy/StateMachine/enemy_idle.gd" id="5_0o0ue"]
 [ext_resource type="Script" uid="uid://dma5ruot35bu7" path="res://Scripts/Enemy/StateMachine/enemy_chase.gd" id="6_6s1gy"]
-[ext_resource type="Script" uid="uid://cwvl43opuufw1" path="res://Scripts/Enemy/StateMachine/enemy_hurt.gd" id="7_uoxpr"]
-[ext_resource type="Script" uid="uid://dne3cq1r4inw4" path="res://Scripts/Enemy/StateMachine/enemy_death.gd" id="8_idouy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkela"]
 size = Vector2(264, 128)
@@ -16,7 +14,7 @@ size = Vector2(264, 128)
 size = Vector2(192, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2k2y"]
-size = Vector2(2216, 240)
+size = Vector2(1283, 240)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37tqn"]
 animations = [{
@@ -30,7 +28,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1hta"]
-size = Vector2(2496, 808)
+size = Vector2(2496, 424)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=725079683]
 collision_layer = 4
@@ -57,11 +55,11 @@ debug_color = Color(0.8392157, 0.6313726, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=1764738892]
 unique_name_in_owner = true
-offset_left = 88.0
-offset_top = -80.0
-offset_right = 128.0
-offset_bottom = -57.0
-theme_override_font_sizes/font_size = 45
+visible = false
+offset_left = -21.0
+offset_top = -54.0
+offset_right = 19.0
+offset_bottom = -31.0
 script = ExtResource("3_mo1ky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1413354603]
@@ -87,6 +85,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoseArea" unique_id=1492251966]
+position = Vector2(-8, 28)
 shape = SubResource("RectangleShape2D_w1hta")
 debug_color = Color(0.41960785, 0.98039216, 0, 0.41960785)
 
@@ -99,14 +98,6 @@ script = ExtResource("5_0o0ue")
 [node name="Chase" type="Node" parent="States" unique_id=32238270]
 unique_name_in_owner = true
 script = ExtResource("6_6s1gy")
-
-[node name="Hurt" type="Node" parent="States" unique_id=364811751]
-unique_name_in_owner = true
-script = ExtResource("7_uoxpr")
-
-[node name="Death" type="Node" parent="States" unique_id=1062339228]
-unique_name_in_owner = true
-script = ExtResource("8_idouy")
 
 [node name="StateLabel" type="Label" parent="." unique_id=2136533598]
 offset_left = -16.0

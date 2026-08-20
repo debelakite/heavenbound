@@ -65,7 +65,7 @@ script = ExtResource("1_1p5hy")
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_kln2b")]
 
 [node name="Enemy" parent="." unique_id=631428863 instance=ExtResource("15_h1m7h")]
-position = Vector2(2040, 400)
+position = Vector2(2104, 8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
 position = Vector2(-6, -3)

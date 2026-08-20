@@ -35,11 +35,6 @@ func process( _delta: float ) -> EnemyState:
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
 func physics_process( _delta: float ) -> EnemyState:
-	print("Idle physics_process running, chase = ", enemy.chase)
-	if not enemy.is_on_floor():
-		enemy.velocity.y += enemy.gravity * _delta
-	enemy.move_and_slide()
-	
 	if enemy.chase:
 		return chase
 	return next_state
