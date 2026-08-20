@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnxvj47tvavg6"
-path="res://.godot/imported/test_1.png-2e50bede3a4feaeb512b4d6208d90e80.ctex"
+uid="uid://e62c581x1i41"
+path="res://.godot/imported/peshtera_test_1.png-4ea1a25af56bec45d325788b3ffefad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/test_1.png"
-dest_files=["res://.godot/imported/test_1.png-2e50bede3a4feaeb512b4d6208d90e80.ctex"]
+source_file="res://Sprites/Backgrounds/peshtera_test_1.png"
+dest_files=["res://.godot/imported/peshtera_test_1.png-4ea1a25af56bec45d325788b3ffefad7.ctex"]
 
 [params]
 
