@@ -10,13 +10,13 @@
 [ext_resource type="Script" uid="uid://dne3cq1r4inw4" path="res://Scripts/Enemy/StateMachine/enemy_death.gd" id="8_idouy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkela"]
-size = Vector2(264, 128)
+size = Vector2(144, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vso2s"]
-size = Vector2(192, 128)
+size = Vector2(128, 91.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2k2y"]
-size = Vector2(2216, 240)
+size = Vector2(879.125, 178)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37tqn"]
 animations = [{
@@ -30,11 +30,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1hta"]
-size = Vector2(2496, 808)
+size = Vector2(1558, 434)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=725079683]
 collision_layer = 4
 script = ExtResource("1_mo1ky")
+speed = 200.0
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=905698373]
 position = Vector2(-56, 0)
@@ -51,7 +52,7 @@ collision_mask = 2
 script = ExtResource("2_6bs3c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=711654947]
-position = Vector2(12, 16)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_fkela")
 debug_color = Color(0.8392157, 0.6313726, 0, 1)
 
@@ -65,7 +66,7 @@ theme_override_font_sizes/font_size = 45
 script = ExtResource("3_mo1ky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1413354603]
-position = Vector2(8, 16)
+position = Vector2(8, 13.75)
 shape = SubResource("RectangleShape2D_vso2s")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1249790578]
@@ -73,12 +74,13 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=736566101]
+position = Vector2(-200.4375, 0)
 shape = SubResource("RectangleShape2D_d2k2y")
 debug_color = Color(0.9719295, 0, 0.1586656, 0.41960785)
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=417248053]
-position = Vector2(-2.499999, -2.499998)
-scale = Vector2(0.08321222, 0.07994186)
+scale = Vector2(0.056322675, 0.05717055)
 sprite_frames = SubResource("SpriteFrames_37tqn")
 animation = &"Idle"
 
@@ -87,6 +89,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoseArea" unique_id=1492251966]
+position = Vector2(-181, 0)
 shape = SubResource("RectangleShape2D_w1hta")
 debug_color = Color(0.41960785, 0.98039216, 0, 0.41960785)
 
@@ -99,6 +102,7 @@ script = ExtResource("5_0o0ue")
 [node name="Chase" type="Node" parent="States" unique_id=32238270]
 unique_name_in_owner = true
 script = ExtResource("6_6s1gy")
+chase_speed = 250.0
 
 [node name="Hurt" type="Node" parent="States" unique_id=364811751]
 unique_name_in_owner = true

@@ -199,11 +199,9 @@ script = ExtResource("1_4ntmi")
 
 [node name="Player_Hurtbox" type="CollisionShape2D" parent="." unique_id=811816401]
 z_index = 1
-position = Vector2(636, 324)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239629246]
-position = Vector2(636, 324)
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
 animation = &"Jump"
@@ -217,7 +215,6 @@ scale = Vector2(0.197, 0.185)
 texture = ExtResource("2_btcbx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
-position = Vector2(600, 300)
 zoom = Vector2(1.5, 1.5)
 process_callback = 0
 position_smoothing_enabled = true
@@ -228,7 +225,7 @@ drag_vertical_enabled = true
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=848643817]
-position = Vector2(704, 324)
+position = Vector2(74, -1)
 shape = SubResource("RectangleShape2D_13qdw")
 debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
 
@@ -262,9 +259,9 @@ unique_name_in_owner = true
 script = ExtResource("12_pisgm")
 
 [node name="Label" type="Label" parent="." unique_id=886741710]
-offset_left = 589.0
-offset_top = 230.0
-offset_right = 689.0
-offset_bottom = 253.0
+offset_left = -46.0
+offset_top = -102.0
+offset_right = 54.0
+offset_bottom = -79.0
 text = "label"
 horizontal_alignment = 1

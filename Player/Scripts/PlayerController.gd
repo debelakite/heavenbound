@@ -87,7 +87,7 @@ func _process( _delta: float) -> void:
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
 func _physics_process( _delta: float) -> void:
-	print("Class: ", current_state.get_script().resource_path)
+	#print("Class: ", current_state.get_script().resource_path)
 	velocity.y += gravity * _delta
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
