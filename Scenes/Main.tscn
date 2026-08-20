@@ -17,7 +17,7 @@
 size = Vector2(321.42285, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
-size = Vector2(2715, 77)
+size = Vector2(5952, 77)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2vmwg"]
 normal = Vector2(0.999928, -0.011999136)
@@ -65,7 +65,7 @@ script = ExtResource("1_1p5hy")
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_kln2b")]
 
 [node name="Enemy" parent="." unique_id=631428863 instance=ExtResource("15_h1m7h")]
-position = Vector2(2104, 8)
+position = Vector2(3664, 296)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
 position = Vector2(-6, -3)
@@ -103,7 +103,7 @@ shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="LongPlatform" type="Sprite2D" parent="StaticBody2D" unique_id=1914393495]
 z_index = 1
-position = Vector2(2370.5, 197)
+position = Vector2(5374, 203)
 scale = Vector2(1.9009217, 1)
 texture = ExtResource("4_nxtc6")
 
@@ -114,7 +114,7 @@ position = Vector2(12.362395, -33)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=2063010501]
-position = Vector2(915.5, 543)
+position = Vector2(2534, 543)
 shape = SubResource("RectangleShape2D_xhkb1")
 
 [node name="WorldBoundary" type="CollisionShape2D" parent="StaticBody2D" unique_id=1520081796]

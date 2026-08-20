@@ -4,7 +4,7 @@ class_name Enemy extends CharacterBody2D
 @export var damage_interval: float = 1.0
 @export var flip_deadzone: float = 2.0
 @export var flip_cooldown: float = 0.0
-@export var stop_distance: float = 12.0
+@export var stop_distance: float = 32.0
 @export var max_health: int = 3
 @export var invincibility_time: float = 0.3
 var facing_right: bool = true
@@ -26,6 +26,7 @@ var player_inside: CharacterBody2D = null
 var damage_timer: float = 0.0
 var current_state: EnemyState = null
 var previous_state: EnemyState = null
+@onready var x_diff
 
 signal health_changed(current: int, max: int)
 signal died
@@ -48,8 +49,11 @@ func acquire_player() -> void:
 		if found_player is CharacterBody2D:
 			player = found_player
 func _physics_process(_delta: float) -> void:
+	#print("Class: ", current_state.get_script().resource_path)
 	acquire_player()
-	
+	if Player != null:
+		x_diff = player.global_position.x - global_position.x
+		print("Enemy Pos: ", global_position, " | Target Pos: ", player.global_position, " | x_diff: ", x_diff)
 	if flip_cooldown_timer > 0.0:
 		flip_cooldown_timer -= _delta
 	if invincibility_timer > 0.0:
@@ -100,7 +104,7 @@ func set_facing(new_facing_right: bool) -> void:
 		return
 	facing_right = new_facing_right
 	flip_cooldown_timer = flip_cooldown
-	animated_sprite.flip_h = not facing_right
+	animated_sprite.flip_h =  facing_right
 	update_direction(facing_right)
 func initialize_states() -> void:
 	var children = $States.get_children()
@@ -138,9 +142,11 @@ func update_direction(facing_right_: bool) -> void:
 	ledge_check.position.x = abs(ledge_check.position.x) * dir
 	wall_check.position.x = abs(wall_check.position.x) * dir
 func _on_player_detection_body_entered(body: Node2D) -> void:
+	print("player has entered DetectionArea")
 	if body.is_in_group("player"):
 		chase = true
 func _on_player_lose_body_exited(body: Node2D) -> void:
+	print("player has exited LoseArea")
 	if body.is_in_group("player"):
 		chase = false
 func _on_hitbox_body_entered(body: Node2D) -> void:

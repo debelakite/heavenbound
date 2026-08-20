@@ -20,13 +20,14 @@ func process(_delta: float) -> EnemyState:
 
 func physics_process(_delta: float) -> EnemyState:
 	if player:
-		var x_diff = player.global_position.x - enemy.global_position.x
-		enemy.evaluate_facing(x_diff)
+		enemy.evaluate_facing(enemy.x_diff)
 		
-		if absf(x_diff) > enemy.stop_distance:
-			enemy.velocity.x = signf(x_diff) * chase_speed
+		if absf(enemy.x_diff) > enemy.stop_distance:
+			enemy.velocity.x = signf(enemy.x_diff) * chase_speed
+			print("Enemy velocity: ", enemy.velocity.x)
 		else:
 			enemy.velocity.x = 0.0
+			print("Enemy has stopped chasing due to reaching stop distance")
 	else:
 		enemy.velocity.x = 0.0
 	
