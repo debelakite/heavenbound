@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dav8w2nw1q6tr" path="res://Scripts/health_bar.gd" id="8_50glp"]
 [ext_resource type="Texture2D" uid="uid://dvsuuaqc16nwj" path="res://Sprites/death_screen.png" id="9_frkhe"]
 [ext_resource type="Texture2D" uid="uid://mkscy748gtf4" path="res://Sprites/HealthBar/health_bar_2.png" id="10_1p5hy"]
-[ext_resource type="Texture2D" uid="uid://lkjbh5ur2m8f" path="res://Background/background_lineart.png" id="10_346fj"]
+[ext_resource type="Texture2D" uid="uid://lkjbh5ur2m8f" path="res://Sprites/Backgrounds/background_lineart.png" id="10_346fj"]
 [ext_resource type="Texture2D" uid="uid://xqvja0d8yi17" path="res://Sprites/HealthBar/health_bar_1.png" id="11_h1m7h"]
 [ext_resource type="Texture2D" uid="uid://bimg2tx2ulcwe" path="res://Sprites/HealthBar/health_bar_0.png" id="12_2w5on"]
 [ext_resource type="Texture2D" uid="uid://bvyv64bx3ffh0" path="res://Sprites/HealthBar/health_bar_3.png" id="12_erwvk"]
@@ -63,6 +63,7 @@ _data = {
 script = ExtResource("1_1p5hy")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_kln2b")]
+move_speed = 500.0
 
 [node name="Enemy" parent="." unique_id=631428863 instance=ExtResource("15_h1m7h")]
 position = Vector2(3664, 296)
@@ -87,6 +88,18 @@ texture = ExtResource("4_nxtc6")
 [node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/SmallPlatform" unique_id=2077311974]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/SmallPlatform/StaticBody2D" unique_id=743252096]
+position = Vector2(15, -34)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="SmallPlatform2" type="Sprite2D" parent="StaticBody2D" unique_id=557965455]
+z_index = 1
+position = Vector2(5774, 547)
+scale = Vector2(0.47235024, 0.52671754)
+texture = ExtResource("4_nxtc6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/SmallPlatform2" unique_id=1131345010]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/SmallPlatform2/StaticBody2D" unique_id=1236034571]
 position = Vector2(15, -34)
 shape = SubResource("RectangleShape2D_xrivr")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lkjbh5ur2m8f"
-path="res://.godot/imported/background_lineart.png-9133bd20b4095de57903bf75f57a4e12.ctex"
+uid="uid://k3tt3t4cgb0g"
+path="res://.godot/imported/canyoni_test_1.png-ca3aff2631d14b98acb57acef40029dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/background_lineart.png"
-dest_files=["res://.godot/imported/background_lineart.png-9133bd20b4095de57903bf75f57a4e12.ctex"]
+source_file="res://Sprites/Backgrounds/canyoni_test_1.png"
+dest_files=["res://.godot/imported/canyoni_test_1.png-ca3aff2631d14b98acb57acef40029dc.ctex"]
 
 [params]
 
