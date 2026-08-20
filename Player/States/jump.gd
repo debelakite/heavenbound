@@ -1,6 +1,7 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateJump extends PlayerState
 
+@onready var _animation_player = $AnimatedSprite2D
 @export var jump_velocity : float = 450.0 #Constant for start jump velocity
 @export var min_jump_velocity = -150.0 # Velocity when button is tapped shortly
 
@@ -11,6 +12,7 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
+	player._animation_player.play("Jump")
 	player.velocity.y = -jump.jump_velocity #Cordinate graph has negative y values upwards, to accelarate up flip speed to negative 
 	
 	#Run code upon state exit
