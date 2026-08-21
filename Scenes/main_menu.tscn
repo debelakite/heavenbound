@@ -60,42 +60,6 @@ texture = SubResource("GradientTexture2D_16hvj")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5egv6"]
 
-[sub_resource type="Animation" id="Animation_yhxw7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_trj04"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_16hvj"]
-_data = {
-&"RESET": SubResource("Animation_yhxw7"),
-&"fade_in": SubResource("Animation_trj04")
-}
-
 [node name="MainMenu" type="Control" unique_id=245417280]
 layout_mode = 3
 anchors_preset = 15
@@ -181,21 +145,6 @@ theme_override_font_sizes/bold_font_size = 120
 text = "HEAVENBOUND"
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1765485998]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=813643933]
-libraries/ = SubResource("AnimationLibrary_16hvj")
-autoplay = &"fade_in"
-
 [node name="Label" type="Label" parent="." unique_id=798884859]
 layout_mode = 1
 anchors_preset = 3
@@ -207,6 +156,6 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Pre-Alpha 0.1.6"
+text = "Pre-Alpha 0.1.7"
 
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

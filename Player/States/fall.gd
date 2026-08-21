@@ -22,6 +22,8 @@ func exit() -> void:
 func handle_input( _event : InputEvent) -> PlayerState:
 	if _event.is_action_pressed("attack"):
 		return attack
+	if _event.is_action_pressed("dash", true):
+		return dash
 	return next_state
 
 
