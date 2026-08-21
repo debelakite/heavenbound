@@ -34,6 +34,7 @@ signal player_died
 @onready var camera: Camera2D = $Camera2D
 #region /// Animation Variables
 @onready var _animation_player = $AnimatedSprite2D
+@onready var swing_particles: GPUParticles2D = %SwingParticles
 #endregion
 
 

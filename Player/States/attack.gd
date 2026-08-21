@@ -10,6 +10,12 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
+	
+	#Plays particle effect
+	if player.swing_particles:
+		player.swing_particles.restart()
+		player.swing_particles.emitting = true
+
 	hit_box.set_active(true)
 	hit_timer = 0
 

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btww85v7i3h72" path="res://Scripts/hit_box.tscn" id="4_gwnis"]
 [ext_resource type="Texture2D" uid="uid://b2iq4st1qsvd6" path="res://Player/Sprites/jump_animation_spritesheet.png" id="4_p5o4e"]
 [ext_resource type="Script" uid="uid://b0dvq87mtfxf2" path="res://Player/States/hurt.gd" id="7_5htga"]
+[ext_resource type="Texture2D" uid="uid://bqupcucmkgdl7" path="res://Sprites/Particles/Particles(transparent)/slash_03.png" id="8_gu6f8"]
 [ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="8_p5o4e"]
 [ext_resource type="Script" uid="uid://c87l6ekrbcwi3" path="res://Player/States/run.gd" id="9_gu6f8"]
 [ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="10_dkpta"]
@@ -193,6 +194,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(84.5, 135.75)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p5o4e"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+use_scale_3d = true
+scale_3d_min = Vector3(0.2, 0.2, 0.2)
+scale_3d_max = Vector3(0.5, 0.5, 0.5)
+color = Color(1, 0.96862745, 0.40392157, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=28099015 groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_4ntmi")
@@ -231,6 +240,16 @@ collision_mask = 32
 position = Vector2(66, -1)
 shape = SubResource("RectangleShape2D_13qdw")
 debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
+
+[node name="SwingParticles" type="GPUParticles2D" parent="HitBox" unique_id=1835337590]
+unique_name_in_owner = true
+position = Vector2(63, -1)
+scale = Vector2(0.5, 0.5)
+emitting = false
+texture = ExtResource("8_gu6f8")
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_p5o4e")
 
 [node name="States" type="Node" parent="." unique_id=1398035596]
 script = ExtResource("7_5htga")
