@@ -99,6 +99,7 @@ position = Vector2(-146, 411)
 shape = SubResource("WorldBoundaryShape2D_2vmwg")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=783163906]
+visible = false
 
 [node name="HealthBar" type="TextureRect" parent="HUD" unique_id=3505854]
 offset_left = 90.0
