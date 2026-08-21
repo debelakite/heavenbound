@@ -1,12 +1,16 @@
 extends Label
-class_name enemyHealth
 
-@onready var hurtbox:  HurtBox = %HitBox
-# Called when the node enters the scene tree for the first time.
+@export var enemy: Enemy
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if enemy == null:
+		enemy = get_parent() as Enemy
+	if enemy:
+		enemy.health_changed.connect(_on_health_changed)
+		call_deferred("_set_initial_text")
 
+func _set_initial_text() -> void:
+	text = str(enemy.current_health) + " / " + str(enemy.max_health)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	self.text = str(hurtbox.healthPoints)
+func _on_health_changed(current: int, max: int) -> void:
+	text = str(current) + " / " + str(max)

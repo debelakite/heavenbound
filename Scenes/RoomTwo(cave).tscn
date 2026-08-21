@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bkxaj3jtsgydf" path="res://Sprites/Backgrounds/frame0004.png" id="6_nfbag"]
 [ext_resource type="Texture2D" uid="uid://cuyylrs1b3bxr" path="res://Sprites/Backgrounds/frame0006.png" id="7_vsn5f"]
 [ext_resource type="Texture2D" uid="uid://byu4i4522lwxe" path="res://Sprites/Backgrounds/frame0008.png" id="8_mo8dj"]
+[ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="9_cyqlv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1hta"]
 normal = Vector2(1, 0)
@@ -19,6 +20,9 @@ distance = 8.0
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_7rvta"]
 a = Vector2(5360, 48)
 b = Vector2(-40, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyqlv"]
+size = Vector2(196, 368)
 
 [node name="RoomTwo(cave)" type="Node2D" unique_id=422851834]
 
@@ -53,7 +57,7 @@ offset_bottom = 1192.0
 texture = ExtResource("1_7rvta")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_yxgf3")]
-position = Vector2(240, 832)
+position = Vector2(768, 848)
 
 [node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("3_tnt27")]
 position = Vector2(1504, 824)
@@ -108,3 +112,16 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" unique_id=2096698074]
 position = Vector2(896, 424)
 texture = ExtResource("8_mo8dj")
+
+[node name="CaveEntrance" type="Area2D" parent="." unique_id=1317683032]
+position = Vector2(256, 824)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("9_cyqlv")
+target_scene = "uid://duefnejqbtqab"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveEntrance" unique_id=101604538]
+position = Vector2(14, -48)
+shape = SubResource("RectangleShape2D_cyqlv")
+
+[connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]

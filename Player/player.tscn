@@ -191,7 +191,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(53, 135.75)
+size = Vector2(84.5, 135.75)
 
 [node name="Player" type="CharacterBody2D" unique_id=28099015 groups=["player"]]
 collision_layer = 2
@@ -222,11 +222,13 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="HitBox" parent="." unique_id=870380002 instance=ExtResource("4_gwnis")]
+[node name="HitBox" parent="." unique_id=870380002 groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=848643817]
-position = Vector2(74, -1)
+position = Vector2(66, -1)
 shape = SubResource("RectangleShape2D_13qdw")
 debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
 
