@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="1_3mjr0"]
 [ext_resource type="Texture2D" uid="uid://k3tt3t4cgb0g" path="res://Sprites/Backgrounds/canyoni_test_1.png" id="1_l2aln"]
 [ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="3_l2aln"]
+[ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="4_drtje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwl57"]
 size = Vector2(1369.2113, 138.75354)
@@ -29,6 +30,9 @@ distance = -72.0
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_37tqn"]
 a = Vector2(108.348145, -28.871704)
 b = Vector2(-171.65186, 43.128296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1hta"]
+size = Vector2(238, 428)
 
 [node name="RoomOne" type="Node2D" unique_id=420696838]
 
@@ -112,3 +116,15 @@ shape = SubResource("WorldBoundaryShape2D_l2aln")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1247895906]
 position = Vector2(4003.6519, 1612.8717)
 shape = SubResource("SegmentShape2D_37tqn")
+
+[node name="MineshaftDoor" type="Area2D" parent="." unique_id=890354923]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_drtje")
+target_scene = "uid://dayebwhab6i3h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=41378918]
+position = Vector2(3976, 1402)
+shape = SubResource("RectangleShape2D_w1hta")
+
+[connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]

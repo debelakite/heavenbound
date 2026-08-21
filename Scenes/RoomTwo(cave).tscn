@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dayebwhab6i3h"]
+
+[ext_resource type="Texture2D" uid="uid://e62c581x1i41" path="res://Sprites/Backgrounds/peshtera_test_1.png" id="1_7rvta"]
+[ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="2_yxgf3"]
+[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="3_tnt27"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1hta"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yxgf3"]
+normal = Vector2(-1, 0)
+distance = 8.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7rvta"]
+a = Vector2(5360, 48)
+b = Vector2(-40, 16)
+
+[node name="RoomTwo(cave)" type="Node2D" unique_id=422851834]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1403664912]
+
+[node name="WorldBoundaryLeft" type="CollisionShape2D" parent="StaticBody2D" unique_id=289084051]
+position = Vector2(192, 816)
+shape = SubResource("WorldBoundaryShape2D_w1hta")
+
+[node name="WorldBoundaryRight" type="CollisionShape2D" parent="StaticBody2D" unique_id=900493787]
+position = Vector2(5552, 568)
+shape = SubResource("WorldBoundaryShape2D_yxgf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1847376480]
+position = Vector2(232, 912)
+shape = SubResource("SegmentShape2D_7rvta")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1704831953]
+offset_right = 5550.0
+offset_bottom = 1080.0
+texture = ExtResource("1_7rvta")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2076975666]
+show_behind_parent = true
+visibility_layer = 3
+offset_left = -96.0
+offset_top = 112.0
+offset_right = 5454.0
+offset_bottom = 1192.0
+texture = ExtResource("1_7rvta")
+
+[node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_yxgf3")]
+position = Vector2(240, 832)
+
+[node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("3_tnt27")]
+position = Vector2(1504, 824)

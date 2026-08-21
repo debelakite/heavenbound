@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(78.000015, 138)
+size = Vector2(27, 133.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pisgm"]
 atlas = ExtResource("2_fhl08")
@@ -199,12 +199,13 @@ script = ExtResource("1_4ntmi")
 
 [node name="Player_Hurtbox" type="CollisionShape2D" parent="." unique_id=811816401]
 z_index = 1
+position = Vector2(-0.5, 0.25)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239629246]
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
-animation = &"Jump"
+animation = &"Idle"
 
 [node name="Player_Sprite" type="Sprite2D" parent="." unique_id=1858579802]
 visible = false
