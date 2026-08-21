@@ -206,6 +206,7 @@ color = Color(1, 0.96862745, 0.40392157, 1)
 [node name="Player" type="CharacterBody2D" unique_id=28099015 groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_4ntmi")
+dash_cooldown = 2.0
 
 [node name="Player_Hurtbox" type="CollisionShape2D" parent="." unique_id=811816401]
 z_index = 1
