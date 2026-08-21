@@ -18,7 +18,11 @@ var hurt_state : PlayerState
 #region /// Standard Variables
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = 980
+var ignore_gravity: bool = false
 var base_move_speed: int = 100
+@export var dash_cooldown: float = 0.8
+var dash_cooldown_timer: float = 0.0
+
 #endregion
 
 #region /// Health Variables
@@ -88,8 +92,11 @@ func _process( _delta: float) -> void:
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
 func _physics_process( _delta: float) -> void:
-	#print("Class: ", current_state.get_script().resource_path)
-	velocity.y += gravity * _delta
+	if not is_on_floor() and not ignore_gravity:
+		velocity.y += gravity * _delta
+	if dash_cooldown_timer > 0.0:
+		dash_cooldown_timer -= _delta
+
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
 

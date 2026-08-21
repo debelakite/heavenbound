@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="8_p5o4e"]
 [ext_resource type="Script" uid="uid://c87l6ekrbcwi3" path="res://Player/States/run.gd" id="9_gu6f8"]
 [ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="10_dkpta"]
+[ext_resource type="Script" uid="uid://cw4tjw0mqey0l" path="res://Player/States/dash.gd" id="11_dkpta"]
 [ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="11_lfmf2"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
 
@@ -258,6 +259,11 @@ script = ExtResource("7_5htga")
 [node name="Idle" type="Node" parent="States" unique_id=591978101]
 unique_name_in_owner = true
 script = ExtResource("8_p5o4e")
+
+[node name="Dash" type="Node" parent="States" unique_id=635508812]
+unique_name_in_owner = true
+script = ExtResource("11_dkpta")
+dash_speed = 900.0
 
 [node name="Run" type="Node" parent="States" unique_id=2120771969]
 unique_name_in_owner = true
