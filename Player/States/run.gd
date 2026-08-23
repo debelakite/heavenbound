@@ -9,7 +9,7 @@ func init() -> void:
 		
 	#Run code upon state entrance
 func enter() -> void:
-	
+	player._animation_player.play("Run")
 	pass
 		
 	#Run code upon state exit
@@ -21,6 +21,8 @@ func exit() -> void:
 func handle_input( _event : InputEvent) -> PlayerState:
 	if _event.is_action_pressed("attack"):
 		return attack
+	if _event.is_action_pressed("dash", true):
+		return dash
 	elif _event.is_action_pressed("jump",true): #On jump input - enter jump state
 		return jump
 	return next_state

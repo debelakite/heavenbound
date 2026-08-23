@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dvhhwqbi2hvkd"]
+
+[node name="HitEffect" type="GPUParticles2D" unique_id=1460903033]

@@ -6,7 +6,6 @@ class_name PlayerStateAttack extends PlayerState
 @export var vertical_pushback = 0
 
 var hit_timer = 0
-var attacking = false
 #Initialisation of the state
 func init() -> void:
 	pass
@@ -16,14 +15,23 @@ func enter() -> void:
 	#TODO play animation
 	#Decide on which way the player is attacking, depending on direction they are looking in
 	if player.looking_down:
-		hit_boxB.set_active(true)
+		hit_boxD.set_active(true)
 	elif player.looking_up:
 		hit_boxU.set_active(true)
 		
 	elif !player._animation_player.flip_h:
 		hit_boxL.set_active(true)
-	else: 
+	else:
 		hit_boxR.set_active(true)
+		#Plays particle effect
+		if player.swing_particles_right:
+			player.swing_particles_right.restart()
+			player.swing_particles_right.emitting = true
+
+	
+
+
+
 	hit_timer = 0
 
 	#Run code upon state exit
@@ -32,7 +40,7 @@ func exit() -> void:
 	hit_boxL.set_active(false)
 	hit_boxR.set_active(false)
 	hit_boxU.set_active(false)
-	hit_boxB.set_active(false)
+	hit_boxD.set_active(false)
 	
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
@@ -70,8 +78,8 @@ func physics_process( _delta: float ) -> PlayerState:
 	if hit_boxU.hit: 
 		hit_boxU.hit = false
 		player.velocity.y = vertical_pushback
-	if hit_boxB.hit: 
-		hit_boxB.hit = false
+	if hit_boxD.hit: 
+		hit_boxD.hit = false
 		player.velocity.y = -vertical_pushback
 	
 	return next_state

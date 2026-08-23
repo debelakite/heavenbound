@@ -1,7 +1,7 @@
 extends Control
 
 # Play redirects to the scene
-const GAME_SCENE_PATH = "res://Scenes/Main.tscn"
+const GAME_SCENE_PATH = "res://Scenes/RoomOne.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,3 +18,7 @@ func _on_button_play_pressed() -> void:
 func _on_button_quit_pressed() -> void:
 	get_tree().quit()
 	pass # Replace with function body.
+	
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()

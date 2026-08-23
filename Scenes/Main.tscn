@@ -2,28 +2,26 @@
 
 [ext_resource type="Script" uid="uid://c1qe8hj0p2hg1" path="res://Scripts/main.gd" id="1_1p5hy"]
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="1_kln2b"]
-[ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="2_rgh2o"]
-[ext_resource type="Script" uid="uid://b0dvq87mtfxf2" path="res://Player/States/hurt.gd" id="3_erwvk"]
-[ext_resource type="Script" uid="uid://c87l6ekrbcwi3" path="res://Player/States/run.gd" id="3_pbw6q"]
-[ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="4_jw32o"]
 [ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="4_nxtc6"]
-[ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="5_50glp"]
-[ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="8_2w5on"]
 [ext_resource type="Script" uid="uid://dav8w2nw1q6tr" path="res://Scripts/health_bar.gd" id="8_50glp"]
 [ext_resource type="Texture2D" uid="uid://dvsuuaqc16nwj" path="res://Sprites/death_screen.png" id="9_frkhe"]
-[ext_resource type="Texture2D" uid="uid://bgwp4dwl6t4eh" path="res://Sprites/HealthBar/health_bar_2.png" id="10_1p5hy"]
-[ext_resource type="Texture2D" uid="uid://lkjbh5ur2m8f" path="res://Background/background_lineart.png" id="10_346fj"]
-[ext_resource type="Texture2D" uid="uid://bd77bdhwf6xlq" path="res://Sprites/HealthBar/health_bar_1.png" id="11_h1m7h"]
-[ext_resource type="Texture2D" uid="uid://buu66vypk2qns" path="res://Sprites/HealthBar/health_bar_0.png" id="12_2w5on"]
-[ext_resource type="Texture2D" uid="uid://2oqlnwdigdvt" path="res://Sprites/HealthBar/health_bar_3.png" id="12_erwvk"]
-[ext_resource type="Texture2D" uid="uid://cej1vq88dcg44" path="res://Sprites/HealthBar/health_bar_4.png" id="13_2w5on"]
-[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Enemy/Enemy.tscn" id="15_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://mkscy748gtf4" path="res://Sprites/HealthBar/health_bar_2.png" id="10_1p5hy"]
+[ext_resource type="Texture2D" uid="uid://lkjbh5ur2m8f" path="res://Sprites/Backgrounds/background_lineart.png" id="10_346fj"]
+[ext_resource type="Texture2D" uid="uid://xqvja0d8yi17" path="res://Sprites/HealthBar/health_bar_1.png" id="11_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://bimg2tx2ulcwe" path="res://Sprites/HealthBar/health_bar_0.png" id="12_2w5on"]
+[ext_resource type="Texture2D" uid="uid://bvyv64bx3ffh0" path="res://Sprites/HealthBar/health_bar_3.png" id="12_erwvk"]
+[ext_resource type="Texture2D" uid="uid://breeqkc6oe18n" path="res://Sprites/HealthBar/health_bar_4.png" id="13_2w5on"]
+[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="15_h1m7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(321.42285, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
-size = Vector2(2265.5, 77)
+size = Vector2(5952, 77)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2vmwg"]
+normal = Vector2(0.999928, -0.011999136)
+distance = -289.78644
 
 [sub_resource type="Animation" id="Animation_0sclb"]
 length = 0.001
@@ -65,45 +63,10 @@ _data = {
 script = ExtResource("1_1p5hy")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_kln2b")]
-
-[node name="States" type="Node" parent="Player" unique_id=148396810]
-script = ExtResource("3_erwvk")
-
-[node name="Idle" type="Node" parent="Player/States" unique_id=1826562738]
-unique_name_in_owner = true
-script = ExtResource("2_rgh2o")
-
-[node name="Run" type="Node" parent="Player/States" unique_id=1626297801]
-unique_name_in_owner = true
-script = ExtResource("3_pbw6q")
-
-[node name="Jump" type="Node" parent="Player/States" unique_id=384780589]
-unique_name_in_owner = true
-script = ExtResource("4_jw32o")
-jump_velocity = 800.0
-
-[node name="Fall" type="Node" parent="Player/States" unique_id=79592431]
-unique_name_in_owner = true
-script = ExtResource("5_50glp")
-
-[node name="Hurt" type="Node" parent="Player/States" unique_id=1002482801]
-unique_name_in_owner = true
-script = ExtResource("3_erwvk")
-
-[node name="Attack" type="Node" parent="Player/States" unique_id=1473252039]
-unique_name_in_owner = true
-script = ExtResource("8_2w5on")
-
-[node name="Label" type="Label" parent="Player" unique_id=888158707]
-offset_left = 589.0
-offset_top = 230.0
-offset_right = 689.0
-offset_bottom = 253.0
-text = "label"
-horizontal_alignment = 1
+move_speed = 500.0
 
 [node name="Enemy" parent="." unique_id=631428863 instance=ExtResource("15_h1m7h")]
-position = Vector2(2502, 90)
+position = Vector2(3664, 296)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
 position = Vector2(-6, -3)
@@ -128,6 +91,18 @@ texture = ExtResource("4_nxtc6")
 position = Vector2(15, -34)
 shape = SubResource("RectangleShape2D_xrivr")
 
+[node name="SmallPlatform2" type="Sprite2D" parent="StaticBody2D" unique_id=557965455]
+z_index = 1
+position = Vector2(5774, 547)
+scale = Vector2(0.47235024, 0.52671754)
+texture = ExtResource("4_nxtc6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/SmallPlatform2" unique_id=1131345010]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/SmallPlatform2/StaticBody2D" unique_id=1236034571]
+position = Vector2(15, -34)
+shape = SubResource("RectangleShape2D_xrivr")
+
 [node name="MediumPlatform" type="Sprite2D" parent="StaticBody2D" unique_id=1379148030]
 z_index = 1
 position = Vector2(1727, 311)
@@ -141,7 +116,7 @@ shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="LongPlatform" type="Sprite2D" parent="StaticBody2D" unique_id=1914393495]
 z_index = 1
-position = Vector2(2370.5, 197)
+position = Vector2(5374, 203)
 scale = Vector2(1.9009217, 1)
 texture = ExtResource("4_nxtc6")
 
@@ -152,16 +127,21 @@ position = Vector2(12.362395, -33)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=2063010501]
-position = Vector2(1140.25, 543)
+position = Vector2(2534, 543)
 shape = SubResource("RectangleShape2D_xhkb1")
+
+[node name="WorldBoundary" type="CollisionShape2D" parent="StaticBody2D" unique_id=1520081796]
+position = Vector2(-146, 411)
+shape = SubResource("WorldBoundaryShape2D_2vmwg")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=783163906]
 
 [node name="HealthBar" type="TextureRect" parent="HUD" unique_id=3505854]
-offset_left = 252.0
-offset_top = 848.0
-offset_right = 506.0
-offset_bottom = 925.0
+offset_left = 90.0
+offset_top = 90.0
+offset_right = 328.0
+offset_bottom = 158.0
+expand_mode = 5
 script = ExtResource("8_50glp")
 health_textures = Array[Texture2D]([ExtResource("12_2w5on"), ExtResource("11_h1m7h"), ExtResource("10_1p5hy"), ExtResource("12_erwvk"), ExtResource("13_2w5on")])
 

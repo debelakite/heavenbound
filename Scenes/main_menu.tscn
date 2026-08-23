@@ -60,42 +60,6 @@ texture = SubResource("GradientTexture2D_16hvj")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5egv6"]
 
-[sub_resource type="Animation" id="Animation_yhxw7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_trj04"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_16hvj"]
-_data = {
-&"RESET": SubResource("Animation_yhxw7"),
-&"fade_in": SubResource("Animation_trj04")
-}
-
 [node name="MainMenu" type="Control" unique_id=245417280]
 layout_mode = 3
 anchors_preset = 15
@@ -104,6 +68,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7vrkn")
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenuTemplate" type="TextureRect" parent="." unique_id=2042006606]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1ehe0")
+metadata/_edit_use_anchors_ = true
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=312646424]
 visible = false
@@ -120,6 +96,7 @@ offset_right = 508.0
 offset_bottom = -3.0
 grow_vertical = 2
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonPlay" type="Button" parent="VBoxContainer" unique_id=214723513]
 custom_minimum_size = Vector2(64, 64)
@@ -154,11 +131,6 @@ script = ExtResource("5_opfnp")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2094563473]
 
-[node name="MainMenuTemplate" type="Sprite2D" parent="." unique_id=903668413]
-show_behind_parent = true
-position = Vector2(960, 540)
-texture = ExtResource("3_1ehe0")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=926969157]
 layout_mode = 1
 offset_left = 61.0
@@ -171,20 +143,7 @@ theme_override_fonts/bold_font = ExtResource("7_cp0ys")
 theme_override_font_sizes/normal_font_size = 120
 theme_override_font_sizes/bold_font_size = 120
 text = "HEAVENBOUND"
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1765485998]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=813643933]
-libraries/ = SubResource("AnimationLibrary_16hvj")
-autoplay = &"fade_in"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=798884859]
 layout_mode = 1
@@ -197,6 +156,6 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Pre-Alpha 0.1.0"
+text = "Pre-Alpha 0.1.7"
 
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

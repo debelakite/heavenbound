@@ -1,13 +1,16 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateFall extends PlayerState
 
+@onready var _animation_player = $AnimatedSprite2D
+
 	#Initialisation of the state
 func init() -> void:
 	pass
 		
 	#Run code upon state entrance
 func enter() -> void:
-	#TODO play animation
+	#play fall animation
+	player._animation_player.play("Fall")
 	pass
 		
 	#Run code upon state exit
@@ -19,6 +22,8 @@ func exit() -> void:
 func handle_input( _event : InputEvent) -> PlayerState:
 	if _event.is_action_pressed("attack"):
 		return attack
+	if _event.is_action_pressed("dash", true):
+		return dash
 	return next_state
 
 
