@@ -3,7 +3,7 @@ class_name PlayerStateAttack extends PlayerState
 
 @export var HIT_DURATION = 0.6
 @export var horizontal_pushback = 500
-@export var vertical_pushback = 500
+@export var vertical_pushback = 0
 
 var hit_timer = 0
 var attacking = false
@@ -14,6 +14,7 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
+	#Decide on which way the player is attacking, depending on direction they are looking in
 	if player.looking_down:
 		hit_boxB.set_active(true)
 	elif player.looking_up:
@@ -27,6 +28,7 @@ func enter() -> void:
 
 	#Run code upon state exit
 func exit() -> void:
+	#Make sure they are not attacking anything anymore
 	hit_boxL.set_active(false)
 	hit_boxR.set_active(false)
 	hit_boxU.set_active(false)
@@ -58,6 +60,7 @@ func process( _delta: float ) -> PlayerState:
 	#_delta: time from last frame
 func physics_process( _delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed #Decelarate player
+	#Knock player back depending on attacking direction
 	if hit_boxL.hit: 
 		hit_boxL.hit = false
 		player.velocity.x = horizontal_pushback
