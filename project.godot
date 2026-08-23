@@ -23,6 +23,7 @@ config/icon="res://Sprites/icon.svg"
 
 GlobalInput="*uid://c3wn0tutiixgt"
 Transition="*uid://bkiqk1vyd7tda"
+Hud="*uid://c3wfedriomm4h"
 
 [display]
 
