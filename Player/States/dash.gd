@@ -24,9 +24,12 @@ func enter() -> void:
 	player.velocity = dash_dir * dash_speed
 
 func exit() -> void:
+	player.ignore_gravity = false
 	pass
 
 func handle_input(_event: InputEvent) -> PlayerState:
+	if _event.is_action_pressed("attack",true):
+		return attack
 	return next_state
 
 func process(_delta: float) -> PlayerState:
