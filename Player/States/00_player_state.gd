@@ -4,7 +4,7 @@ var player: Player
 var next_state: PlayerState
 
 var hit_boxU: HitBox
-var hit_boxB: HitBox
+var hit_boxD: HitBox
 var hit_boxL: HitBox
 var hit_boxR: HitBox
 
@@ -28,7 +28,7 @@ func setup(p: Player) -> void:
 	hit_boxL = player.hit_boxL
 	hit_boxR = player.hit_boxR
 	hit_boxU = player.hit_boxU
-	hit_boxB = player.hit_boxB
+	hit_boxD = player.hit_boxD
 	
 	#What happens when this state is initialized?
 func init() -> void:

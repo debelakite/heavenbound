@@ -23,7 +23,7 @@ func exit() -> void:
 	#_event: keyboard button pressed
 func handle_input( event : InputEvent) -> PlayerState:
 	if event.is_action_pressed("attack"):
-		return 
+		return attack
 	if event.is_action_pressed("dash", true):
 		return dash
 		
