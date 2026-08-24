@@ -1,8 +1,11 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateAttack extends PlayerState
+
 @onready var _animation_player = $AnimatedSprite2D
-@export var HIT_DURATION = 0.4
-@export var horizontal_pushback = 20
+@export var HIT_DURATION = 0.6
+@export var horizontal_pushback = 500
+@export var vertical_pushback = 0
+
 var hit_timer = 0
 
 #Initialisation of the state
@@ -13,23 +16,40 @@ func init() -> void:
 func enter() -> void:
 	#TODO play animation
 	player._animation_player.play("Attack")
-	
-	#Plays particle effect
-	if player.swing_particles:
-		player.swing_particles.restart()
-		player.swing_particles.emitting = true
+	#Decide on which way the player is attacking, depending on direction they are looking in
+	if player.looking_down:
+		hit_boxD.set_active(true)
+	elif player.looking_up:
+		hit_boxU.set_active(true)
+		
+	elif !player._animation_player.flip_h:
+		hit_boxL.set_active(true)
+	else:
+		hit_boxR.set_active(true)
+		#Plays particle effect
+		if player.swing_particles_right:
+			player.swing_particles_right.restart()
+			player.swing_particles_right.emitting = true
 
-	hit_box.set_active(true)
+	
+
+
+
 	hit_timer = 0
 
 	#Run code upon state exit
 func exit() -> void:
-	pass
+	#Make sure they are not attacking anything anymore
+	hit_boxL.set_active(false)
+	hit_boxR.set_active(false)
+	hit_boxU.set_active(false)
+	hit_boxD.set_active(false)
 	
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
 func handle_input( _event : InputEvent) -> PlayerState:
-	if _event.is_action_pressed("jump",true): #On jump input - enter jump state
+	
+	if _event.is_action_pressed("jump",true) && player.is_on_floor(): #On jump input - enter jump state
 		return jump
 	if _event.is_action_pressed("dash", true) and player.dash_cooldown_timer <= 0.0:
 		return dash
@@ -43,7 +63,6 @@ func process( _delta: float ) -> PlayerState:
 	hit_timer += _delta
 	if hit_timer >= HIT_DURATION: #Do not allow infinite attack spam
 		hit_timer = 0
-		hit_box.set_active(false)
 		if player.velocity.x != 0: #Go to the correct state upon completion
 			return run
 		else:
@@ -54,12 +73,20 @@ func process( _delta: float ) -> PlayerState:
 	#_delta: time from last frame
 func physics_process( _delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed #Decelarate player
-	if hit_box.hit: 
-		hit_box.hit = false
-		if player.velocity.x != 0: #Propel player oposite direction, or if player is not moving, just go left
-			player.velocity.x = -(player.velocity.x/abs(player.velocity.x))*horizontal_pushback
-		else:
-			player.velocity.x = -horizontal_pushback
+	#Knock player back depending on attacking direction
+	if hit_boxL.hit: 
+		hit_boxL.hit = false
+		player.velocity.x = horizontal_pushback
+	if hit_boxR.hit: 
+		hit_boxR.hit = false
+		player.velocity.x = -horizontal_pushback
+	if hit_boxU.hit: 
+		hit_boxU.hit = false
+		player.velocity.y = vertical_pushback
+	if hit_boxD.hit: 
+		hit_boxD.hit = false
+		player.velocity.y = -vertical_pushback
+	
 	return next_state
 	
 func took_damage() -> PlayerState: #If player has taken damage, go to hurt state
