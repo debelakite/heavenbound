@@ -2,7 +2,7 @@
 class_name PlayerStateAttack extends PlayerState
 
 @onready var _animation_player = $AnimatedSprite2D
-@export var HIT_DURATION = 0.6
+@export var HIT_DURATION = 0.4 #animation plays twice if duration is >0.4
 @export var horizontal_pushback = 500
 @export var vertical_pushback = 0
 
