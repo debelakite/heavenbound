@@ -1,11 +1,13 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateAttack extends PlayerState
 
+@onready var _animation_player = $AnimatedSprite2D
 @export var HIT_DURATION = 0.6
 @export var horizontal_pushback = 500
 @export var vertical_pushback = 0
 
 var hit_timer = 0
+
 #Initialisation of the state
 func init() -> void:
 	pass
@@ -13,6 +15,7 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
+	player._animation_player.play("Attack")
 	#Decide on which way the player is attacking, depending on direction they are looking in
 	if player.looking_down:
 		hit_boxD.set_active(true)

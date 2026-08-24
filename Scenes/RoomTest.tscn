@@ -29,9 +29,6 @@ script = ExtResource("1_rjeiw")
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_nsuo6")]
 move_speed = 500.0
 
-[node name="Enemy" parent="." unique_id=631428863 instance=ExtResource("3_xy5uc")]
-position = Vector2(3664, 296)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
 position = Vector2(-6, -3)
 
@@ -120,3 +117,6 @@ grow_vertical = 2
 texture = ExtResource("12_touo5")
 expand_mode = 2
 stretch_mode = 3
+
+[node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("3_xy5uc")]
+position = Vector2(543, 337)
