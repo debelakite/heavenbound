@@ -1,8 +1,10 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateAttack extends PlayerState
+@onready var _animation_player = $AnimatedSprite2D
 @export var HIT_DURATION = 0.4
 @export var horizontal_pushback = 20
 var hit_timer = 0
+
 #Initialisation of the state
 func init() -> void:
 	pass
@@ -10,6 +12,7 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
+	player._animation_player.play("Attack")
 	
 	#Plays particle effect
 	if player.swing_particles:
