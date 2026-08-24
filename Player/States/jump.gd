@@ -22,6 +22,7 @@ func exit() -> void:
 	#Function called upon keyboard input, 
 	#_event: keyboard button pressed
 func handle_input( event : InputEvent) -> PlayerState:
+
 	if event.is_action_pressed("attack",true):
 		return attack
 	if event.is_action_pressed("dash", true) and player.dash_cooldown_timer <= 0.0:

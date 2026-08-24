@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://e62c581x1i41" path="res://Sprites/Backgrounds/peshtera_test_1.png" id="1_7rvta"]
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="2_yxgf3"]
-[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="3_tnt27"]
+[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Enemy/EnemyOld.tscn" id="3_tnt27"]
 [ext_resource type="Texture2D" uid="uid://ciorafdflnbrh" path="res://Sprites/Backgrounds/frame0000.png" id="4_ayn77"]
 [ext_resource type="Texture2D" uid="uid://b0mw5ayuvg6au" path="res://Sprites/Backgrounds/frame0002.png" id="5_lqceu"]
 [ext_resource type="Texture2D" uid="uid://bkxaj3jtsgydf" path="res://Sprites/Backgrounds/frame0004.png" id="6_nfbag"]
