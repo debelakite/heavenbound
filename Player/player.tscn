@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b0w50hvws8355"]
 
 [ext_resource type="Script" uid="uid://4daly0nu07qj" path="res://Player/Scripts/PlayerController.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://b4pg6kr7cl75b" path="res://Sprites/Screenshot_2.png" id="2_btcbx"]
 [ext_resource type="Texture2D" uid="uid://b8q8j50aujlb" path="res://Player/Sprites/falling_animation_spritesheet.png" id="2_fhl08"]
 [ext_resource type="Texture2D" uid="uid://d1lo8tk75ic2t" path="res://Player/Sprites/attack_animation_spritesheet.png" id="2_lfmf2"]
 [ext_resource type="Texture2D" uid="uid://cski10ran830b" path="res://Player/Sprites/idle_animation_spritesheet.png" id="3_btcbx"]
@@ -261,14 +260,6 @@ shape = SubResource("RectangleShape2D_0hol4")
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
 animation = &"Attack"
-
-[node name="Player_Sprite" type="Sprite2D" parent="." unique_id=1858579802]
-visible = false
-z_index = 2
-texture_filter = 1
-position = Vector2(637, 323.125)
-scale = Vector2(0.197, 0.185)
-texture = ExtResource("2_btcbx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)

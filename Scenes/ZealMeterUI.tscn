@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cvi5wpgoax1sq"]
+
+[node name="ZealMeterUI" type="Control" unique_id=1215410625]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2085542359]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 3
+
+[node name="Label" type="Label" parent="." unique_id=969072927]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

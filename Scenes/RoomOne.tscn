@@ -32,7 +32,7 @@ a = Vector2(108.348145, -28.871704)
 b = Vector2(-171.65186, 43.128296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1hta"]
-size = Vector2(238, 428)
+size = Vector2(238, 264)
 
 [node name="RoomOne" type="Node2D" unique_id=420696838]
 
@@ -124,7 +124,7 @@ script = ExtResource("4_drtje")
 target_scene = "uid://dayebwhab6i3h"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=41378918]
-position = Vector2(3976, 1402)
+position = Vector2(3976, 1484)
 shape = SubResource("RectangleShape2D_w1hta")
 
 [connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]

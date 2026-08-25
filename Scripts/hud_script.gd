@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var zeal_meter: ZealMeterUI = $ZealMeterUI
 var player: Player = null
 
 func _ready() -> void:
@@ -7,6 +8,8 @@ func _ready() -> void:
 
 func find_player() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	var meter: ResourceMeter = player.get_node("ResourceMeter")
+	zeal_meter.bind_to_meter(meter)
 	if player:
 		player.health_changed.connect(_on_health_changed)
 
@@ -18,3 +21,5 @@ func _process(_delta: float) -> void:
 	if player and player.dash_cooldown > 0.0:
 		# update dash cooldown indicator using player.dash_cooldown_timer / player.dash_cooldown
 		pass
+		
+		
