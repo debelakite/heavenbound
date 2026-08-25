@@ -73,6 +73,10 @@ func reset_health() -> void:
 	#Intialise the player states upon game start
 func _ready() -> void:
 	initialize_states()
+	if Hud: 
+		Hud.register_player(self)
+	else:
+		push_error("Player: HUD Autoload singleton could not be found!")
 	pass
 	
 	# Look down option when pressing S key
