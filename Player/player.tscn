@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cw4tjw0mqey0l" path="res://Player/States/dash.gd" id="11_dkpta"]
 [ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="11_lfmf2"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
+[ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(27, 133.5)
@@ -360,3 +361,6 @@ collision_mask = 32
 position = Vector2(0, 102)
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
+
+[node name="ResourceMeter" type="Node" parent="." unique_id=2009711821]
+script = ExtResource("16_lfmf2")

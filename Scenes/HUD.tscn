@@ -13,10 +13,10 @@
 script = ExtResource("1_nfm57")
 
 [node name="HealthBarUI" type="TextureRect" parent="." unique_id=1553855430]
-offset_left = 90.0
-offset_top = 90.0
-offset_right = 328.0
-offset_bottom = 158.0
+offset_left = 157.0
+offset_top = 80.0
+offset_right = 352.0
+offset_bottom = 113.0
 expand_mode = 5
 script = ExtResource("1_t385i")
 health_textures = Array[Texture2D]([ExtResource("2_nfm57"), ExtResource("3_b5b84"), ExtResource("4_fbb48"), ExtResource("5_o2vyp"), ExtResource("6_hhtw7")])
