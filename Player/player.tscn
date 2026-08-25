@@ -269,10 +269,11 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="HitBoxR" parent="." unique_id=870380002 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxR" parent="." unique_id=870380002 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxR" unique_id=848643817]
 position = Vector2(66, -1)
@@ -332,30 +333,33 @@ offset_bottom = -79.0
 text = "label"
 horizontal_alignment = 1
 
-[node name="HitBoxL" parent="." unique_id=39112431 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxL" parent="." unique_id=39112431 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxL" unique_id=1419079270]
 position = Vector2(-71, -1)
 shape = SubResource("RectangleShape2D_13qdw")
 debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
 
-[node name="HitBoxU" parent="." unique_id=841292151 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxU" parent="." unique_id=841292151 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxU" unique_id=626259838]
 position = Vector2(-0.5, -99)
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 
-[node name="HitBoxD" parent="." unique_id=1656401362 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxD" parent="." unique_id=1656401362 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxD" unique_id=470195953]
 position = Vector2(0, 102)

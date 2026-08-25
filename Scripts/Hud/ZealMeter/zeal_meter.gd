@@ -6,6 +6,7 @@ class_name ZealMeterUI
 
 @export var progress_bar: TextureProgressBar
 @export var value_label: Label  # optional, e.g. "65/100"
+@export var surface_line: Control #thin line at the progressmeter surface
 
 @export_group("Feel")
 @export var lerp_speed: float = 6.0          # smooth fill interpolation
@@ -29,6 +30,10 @@ func _process(delta: float) -> void:
 		progress_bar.value = lerp(progress_bar.value, _target_value, lerp_speed * delta)
 		if abs(progress_bar.value - _target_value) < 0.05:
 			progress_bar.value = _target_value
+	if surface_line:
+		var percent := progress_bar.value / progress_bar.max_value
+		var bar_height := progress_bar.size.y
+		surface_line.position.y = bar_height * (1.0 - percent)
 
 
 ## Call this once, wherever the HUD wires itself up to the player's
@@ -45,6 +50,7 @@ func bind_to_meter(meter: ResourceMeter) -> void:
 
 
 func _on_charge_changed(current: float, max: float) -> void:
+	print("UI got charge_changed: ", current, "/", max)
 	progress_bar.max_value = max
 	_target_value = current
 	_update_label(current, max)

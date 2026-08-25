@@ -24,10 +24,10 @@ func physics_process(_delta: float) -> EnemyState:
 		
 		if absf(enemy.x_diff) > enemy.stop_distance:
 			enemy.velocity.x = signf(enemy.x_diff) * chase_speed
-			print("Enemy velocity: ", enemy.velocity.x)
+			#print("Enemy velocity: ", enemy.velocity.x)
 		else:
 			enemy.velocity.x = 0.0
-			print("Enemy has stopped chasing due to reaching stop distance")
+			#print("Enemy has stopped chasing due to reaching stop distance")
 	else:
 		enemy.velocity.x = 0.0
 	

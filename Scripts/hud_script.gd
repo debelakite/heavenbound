@@ -6,14 +6,13 @@ var player: Player = null
 func _ready() -> void:
 	call_deferred("find_player")
 
-func find_player() -> void:
-	player = get_tree().get_first_node_in_group("player")
-	if player == null:
-		push_warning("ZealMeterUI: no player found in 'player' group yet")
-		return
-
+func register_player(p: Node) -> void:
+	print("register_player called with: ", p)
+	player = p
 	var meter: ResourceMeter = player.get_node("ResourceMeter")
+	print("Found meter: ", meter)
 	zeal_meter.bind_to_meter(meter)
+
 	player.health_changed.connect(_on_health_changed)
 
 func _on_health_changed(new_stage: int) -> void:

@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 
 func on_hit_landed() -> void:
 	_add_charge(charge_per_hit)
+	print("Zeal charge: ", current_charge, "/", max_charge)
 
 func on_enemy_killed() -> void:
 	_add_charge(charge_per_kill)
