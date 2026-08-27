@@ -29,7 +29,7 @@ var looking_up = false
 var looking_down = false
 @export var dash_cooldown: float = 0.8
 var dash_cooldown_timer: float = 0.0
-
+var has_landed = true
 #endregion
 
 #region /// Health Variables
