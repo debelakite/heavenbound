@@ -29,7 +29,7 @@ func handle_input( event : InputEvent) -> PlayerState:
 		return dash
 		
 	if event.is_action_pressed("jump"): 
-		#On releasing jump return to falling
+		#On pressing jump again go to floating
 		return floating
 		
 	if event.is_action_released( "jump" ): #On release of jump input - slow down upwards movement

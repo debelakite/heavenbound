@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cw4tjw0mqey0l" path="res://Player/States/dash.gd" id="11_dkpta"]
 [ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="11_lfmf2"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
+[ext_resource type="Script" uid="uid://chr48noio2d8n" path="res://Player/float.gd" id="17_pisgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(27, 133.5)
@@ -331,6 +332,10 @@ script = ExtResource("7_5htga")
 [node name="Attack" type="Node" parent="States" unique_id=794747498]
 unique_name_in_owner = true
 script = ExtResource("12_pisgm")
+
+[node name="Float" type="Node2D" parent="States" unique_id=293112431]
+unique_name_in_owner = true
+script = ExtResource("17_pisgm")
 
 [node name="Label" type="Label" parent="." unique_id=886741710]
 offset_left = -46.0

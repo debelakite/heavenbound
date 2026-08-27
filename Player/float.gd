@@ -1,6 +1,12 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateFloat extends PlayerState
 
+@export var bad_controls = true
+@export var timed_float = false
+@export var float_limit = 3
+var float_time = 0
+var time_since_change = 0
+var random_move = (randf_range(-2,2))
 
 #Initialisation of the state
 func init() -> void:
@@ -10,6 +16,7 @@ func init() -> void:
 func enter() -> void:
 	#TODO play animation
 	if player.has_landed:
+		float_time = 0
 		player.has_landed = false
 		player.velocity.y = -340
 
@@ -34,15 +41,23 @@ func handle_input( _event : InputEvent) -> PlayerState:
 
 	#Update function, runs every tick
 	#_delta: time from last frame
-func process( _delta: float ) -> PlayerState:
-	
+func process( delta: float ) -> PlayerState:
+	float_time += delta
+	if timed_float && float_time > float_limit:
+		return fall
 	return next_state
 	
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
-func physics_process( _delta: float ) -> PlayerState:
+func physics_process( delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed #Decelarate player
-	if player.velocity.y > 100 :
+	time_since_change += delta
+	if bad_controls:
+		if time_since_change > 0.5:
+			time_since_change = 0
+			random_move = (randf_range(-1,1))
+		player.velocity.x += 150 * random_move
+	if player.velocity.y > 100 && (float_time < float_limit || !timed_float)  :
 		player.velocity.y = 100
 	if player.is_on_floor():
 		player.has_landed = true
