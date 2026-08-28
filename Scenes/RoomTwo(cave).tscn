@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cuyylrs1b3bxr" path="res://Sprites/Backgrounds/frame0006.png" id="7_vsn5f"]
 [ext_resource type="Texture2D" uid="uid://byu4i4522lwxe" path="res://Sprites/Backgrounds/frame0008.png" id="8_mo8dj"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="9_cyqlv"]
+[ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="10_hcjpq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1hta"]
 normal = Vector2(1, 0)
@@ -23,6 +24,9 @@ b = Vector2(-40, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyqlv"]
 size = Vector2(196, 368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noale"]
+size = Vector2(321.42285, 88)
 
 [node name="RoomTwo(cave)" type="Node2D" unique_id=422851834]
 
@@ -129,5 +133,31 @@ position = Vector2(1535, 490)
 
 [node name="Enemy3" parent="." unique_id=2045343232 instance=ExtResource("3_tnt27")]
 position = Vector2(1732, 696)
+
+[node name="SmallPlatform2" type="Sprite2D" parent="." unique_id=516651545]
+z_index = 1
+position = Vector2(2268, 926.00006)
+scale = Vector2(1.1797235, 0.52671754)
+texture = ExtResource("10_hcjpq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SmallPlatform2" unique_id=712828447]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallPlatform2/StaticBody2D" unique_id=685754570]
+position = Vector2(14.999878, -34)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_noale")
+
+[node name="SmallPlatform3" type="Sprite2D" parent="." unique_id=1646127565]
+z_index = 1
+position = Vector2(2669, 727.00006)
+scale = Vector2(1.1797235, 0.52671754)
+texture = ExtResource("10_hcjpq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SmallPlatform3" unique_id=1447243541]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallPlatform3/StaticBody2D" unique_id=781111178]
+position = Vector2(14.999878, -34)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_noale")
 
 [connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]

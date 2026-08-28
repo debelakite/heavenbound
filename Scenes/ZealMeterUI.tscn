@@ -18,14 +18,16 @@ shader_parameter/highlight_width = 0.02
 [node name="ZealMeterUI" type="Control" unique_id=1215410625 node_paths=PackedStringArray("progress_bar")]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_0ojn8")
 progress_bar = NodePath("TextureProgressBar")
 
 [node name="UnderLayer" type="TextureRect" parent="." unique_id=319521891]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 142.0
+offset_bottom = 242.0
 texture = ExtResource("2_0ojn8")
+expand_mode = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2085542359]
 material = SubResource("ShaderMaterial_fwia3")
@@ -35,10 +37,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 3.0
-offset_top = 1.0
-offset_right = 145.0
-offset_bottom = 243.0
+offset_right = 142.0
+offset_bottom = 242.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 1.0
@@ -48,6 +48,7 @@ texture_progress = ExtResource("4_gems7")
 
 [node name="OverLayer" type="TextureRect" parent="." unique_id=1356287152]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 142.0
+offset_bottom = 242.0
 texture = ExtResource("3_gems7")
+expand_mode = 1

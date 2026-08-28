@@ -15,9 +15,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Heavenbound"
-run/main_scene="uid://dj51d6wtitoa3"
+run/main_scene="uid://bh1i1gqqx4pf6"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://Sprites/icon.svg"
+boot_splash/stretch_mode=4
+boot_splash/image="uid://cuntmpkfwasla"
+config/icon="uid://ytpogjs41fd2"
 
 [autoload]
 

@@ -20,18 +20,27 @@ func enter() -> void:
 	if player.looking_down:
 		print("Activating hit_boxD")
 		hit_boxD.set_active(true)
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
 	elif player.looking_up:
 		print("Activating hit_boxU")
 		hit_boxU.set_active(true)
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
 	elif !player._animation_player.flip_h:
 		print("Activating hit_boxL")
 		hit_boxL.set_active(true)
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
 	else:
 		print("Activating hit_boxR")
 		hit_boxR.set_active(true)
-		if player.swing_particles_right:
-			player.swing_particles_right.restart()
-			player.swing_particles_right.emitting = true
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
 
 	hit_timer = 0
 

@@ -282,9 +282,10 @@ debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
 
 [node name="SwingParticlesR" type="GPUParticles2D" parent="HitBoxR" unique_id=1835337590]
 unique_name_in_owner = true
-position = Vector2(63, -1)
+position = Vector2(64, -1)
 scale = Vector2(0.5, 0.5)
 emitting = false
+amount = 1
 texture = ExtResource("8_gu6f8")
 lifetime = 0.5
 one_shot = true
