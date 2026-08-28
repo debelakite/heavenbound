@@ -14,26 +14,24 @@ func init() -> void:
 		
 	#Run code upon state entrance
 func enter() -> void:
-	#TODO play animation
 	player._animation_player.play("Attack")
-	#Decide on which way the player is attacking, depending on direction they are looking in
+	print("ATTACK enter() called")
+
 	if player.looking_down:
+		print("Activating hit_boxD")
 		hit_boxD.set_active(true)
 	elif player.looking_up:
+		print("Activating hit_boxU")
 		hit_boxU.set_active(true)
-		
 	elif !player._animation_player.flip_h:
+		print("Activating hit_boxL")
 		hit_boxL.set_active(true)
 	else:
+		print("Activating hit_boxR")
 		hit_boxR.set_active(true)
-		#Plays particle effect
 		if player.swing_particles_right:
 			player.swing_particles_right.restart()
 			player.swing_particles_right.emitting = true
-
-	
-
-
 
 	hit_timer = 0
 

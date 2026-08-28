@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b0w50hvws8355"]
 
 [ext_resource type="Script" uid="uid://4daly0nu07qj" path="res://Player/Scripts/PlayerController.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://b4pg6kr7cl75b" path="res://Sprites/Screenshot_2.png" id="2_btcbx"]
 [ext_resource type="Texture2D" uid="uid://b8q8j50aujlb" path="res://Player/Sprites/falling_animation_spritesheet.png" id="2_fhl08"]
 [ext_resource type="Texture2D" uid="uid://d1lo8tk75ic2t" path="res://Player/Sprites/attack_animation_spritesheet.png" id="2_lfmf2"]
 [ext_resource type="Texture2D" uid="uid://cski10ran830b" path="res://Player/Sprites/idle_animation_spritesheet.png" id="3_btcbx"]
@@ -16,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cw4tjw0mqey0l" path="res://Player/States/dash.gd" id="11_dkpta"]
 [ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="11_lfmf2"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
+[ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(27, 133.5)
@@ -262,14 +262,6 @@ scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
 animation = &"Attack"
 
-[node name="Player_Sprite" type="Sprite2D" parent="." unique_id=1858579802]
-visible = false
-z_index = 2
-texture_filter = 1
-position = Vector2(637, 323.125)
-scale = Vector2(0.197, 0.185)
-texture = ExtResource("2_btcbx")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)
 process_callback = 0
@@ -277,10 +269,11 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="HitBoxR" parent="." unique_id=870380002 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxR" parent="." unique_id=870380002 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxR" unique_id=848643817]
 position = Vector2(66, -1)
@@ -340,32 +333,38 @@ offset_bottom = -79.0
 text = "label"
 horizontal_alignment = 1
 
-[node name="HitBoxL" parent="." unique_id=39112431 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxL" parent="." unique_id=39112431 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxL" unique_id=1419079270]
 position = Vector2(-71, -1)
 shape = SubResource("RectangleShape2D_13qdw")
 debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
 
-[node name="HitBoxU" parent="." unique_id=841292151 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxU" parent="." unique_id=841292151 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxU" unique_id=626259838]
 position = Vector2(-0.5, -99)
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 
-[node name="HitBoxD" parent="." unique_id=1656401362 groups=["player_attack"] instance=ExtResource("4_gwnis")]
+[node name="HitBoxD" parent="." unique_id=1656401362 node_paths=PackedStringArray("zeal_meter") groups=["player_attack"] instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
+zeal_meter = NodePath("../ResourceMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxD" unique_id=470195953]
 position = Vector2(0, 102)
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
+
+[node name="ResourceMeter" type="Node" parent="." unique_id=2009711821]
+script = ExtResource("16_lfmf2")

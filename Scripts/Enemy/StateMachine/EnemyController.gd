@@ -53,7 +53,7 @@ func _physics_process(_delta: float) -> void:
 	acquire_player()
 	if Player != null:
 		x_diff = player.global_position.x - global_position.x
-		print("Enemy Pos: ", global_position, " | Target Pos: ", player.global_position, " | x_diff: ", x_diff)
+		#print("Enemy Pos: ", global_position, " | Target Pos: ", player.global_position, " | x_diff: ", x_diff)
 	if flip_cooldown_timer > 0.0:
 		flip_cooldown_timer -= _delta
 	if invincibility_timer > 0.0:

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cvi5wpgoax1sq"]
+
+[ext_resource type="Script" uid="uid://wmxjfo8mmvte" path="res://Scripts/Hud/ZealMeter/zeal_meter.gd" id="1_0ojn8"]
+[ext_resource type="Shader" uid="uid://dwiet1ipe3stu" path="res://Shaders/zeal_shader.gdshader" id="1_8i362"]
+[ext_resource type="Texture2D" uid="uid://cl56hkye0n8vy" path="res://Scripts/Hud/ZealMeter/zeal_under.png" id="2_0ojn8"]
+[ext_resource type="Texture2D" uid="uid://df4c2i5kttmin" path="res://Scripts/Hud/ZealMeter/zeal_over.png" id="3_gems7"]
+[ext_resource type="Texture2D" uid="uid://c0esf7flbpei8" path="res://Scripts/Hud/ZealMeter/progress_fill.png" id="4_gems7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fwia3"]
+shader = ExtResource("1_8i362")
+shader_parameter/wave_speed = 3.0930001469175
+shader_parameter/wave_amplitude = 0.015
+shader_parameter/wave_frequency = 20.7910009875725
+shader_parameter/liquid_color = Color(0.9928791, 0.9802694, 0.7447618, 1)
+shader_parameter/highlight_color = Color(1, 0.98039216, 0.37254903, 1)
+shader_parameter/highlight_width = 0.02
+
+[node name="ZealMeterUI" type="Control" unique_id=1215410625 node_paths=PackedStringArray("progress_bar")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0ojn8")
+progress_bar = NodePath("TextureProgressBar")
+
+[node name="UnderLayer" type="TextureRect" parent="." unique_id=319521891]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0ojn8")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2085542359]
+material = SubResource("ShaderMaterial_fwia3")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 145.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 1.0
+value = 1.0
+fill_mode = 3
+texture_progress = ExtResource("4_gems7")
+
+[node name="OverLayer" type="TextureRect" parent="." unique_id=1356287152]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_gems7")
