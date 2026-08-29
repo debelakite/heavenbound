@@ -40,6 +40,7 @@ var health_stage: int = 4
 signal health_changed(new_stage: int)
 signal player_died
 var is_dead: bool = false
+var respawn_position: Vector2
 #endregion
 
 #region /// Camera Look-Down Variables
@@ -98,6 +99,14 @@ func reset_health() -> void:
 
 	#Intialise the player states upon game start
 func _ready() -> void:
+	if GameState.respawn_position != Vector2.ZERO:
+		respawn_position = GameState.respawn_position
+		global_position = GameState.respawn_position
+		reset_health()
+		if has_node("HurtBox"):
+			get_node("HurtBox").monitorable = true
+	else:
+		respawn_position = global_position
 	initialize_states()
 	if Hud: 
 		Hud.register_player(self)

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://j1urhad43agf" path="res://Sprites/Backgrounds/2.png" id="3_6nocr"]
 [ext_resource type="Texture2D" uid="uid://ca3c4dqwt3qh1" path="res://Sprites/Backgrounds/1.png" id="4_8ysfi"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="4_drtje"]
+[ext_resource type="PackedScene" uid="uid://6hhit7xulyps" path="res://Scenes/Checkpoint.tscn" id="7_jrquj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwl57"]
 size = Vector2(440.98895, 1119.7578)
@@ -161,5 +162,8 @@ offset_top = 979.0
 offset_right = 2535.0
 offset_bottom = 2303.0
 color = Color(0, 0, 0, 1)
+
+[node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("7_jrquj")]
+position = Vector2(1332, 847)
 
 [connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]
