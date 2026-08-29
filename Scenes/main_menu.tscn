@@ -107,6 +107,21 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_t1dhk")
 text = "Play"
 script = ExtResource("4_opfnp")
 
+[node name="ButtonNew" type="Button" parent="VBoxContainer" unique_id=957640275]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_opfnp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhxw7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_8dnnj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vr1f0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1dhk")
+text = "New Game"
+script = ExtResource("4_opfnp")
+
 [node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=2017061626]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2

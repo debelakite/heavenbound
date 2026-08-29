@@ -48,3 +48,8 @@ func load_game() -> bool:
 
 func has_save() -> bool:
 	return FileAccess.file_exists(SAVE_PATH)
+	
+func reset_to_defaults() -> void:
+	respawn_position = Vector2.ZERO
+	respawn_scene_path = ""
+	health_stage = -1

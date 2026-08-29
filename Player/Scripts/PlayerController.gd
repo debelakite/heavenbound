@@ -96,6 +96,7 @@ func heal(amount: int = 1) -> void:
 func reset_health() -> void:
 	health_stage = max_health_stage
 	is_dead = false
+	GameState.health_stage = health_stage
 	health_changed.emit(health_stage)
 
 
