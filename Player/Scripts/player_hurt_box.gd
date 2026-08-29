@@ -1,7 +1,7 @@
 extends Area2D
 class_name PlayerHurtBox
 
-const HIT_EFFECT := preload("res://Scenes/HitEffect.tscn")
+
 @export var owner_player: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

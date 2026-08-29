@@ -14,28 +14,32 @@ func init() -> void:
 		
 	#Run code upon state entrance
 func enter() -> void:
-	player._animation_player.play("Attack")
+	
 	print("ATTACK enter() called")
 
 	if player.looking_down:
+		player._animation_player.play("AttackDown")
 		print("Activating hit_boxD")
 		hit_boxD.set_active(true)
 		if player.swing_particles:
 			player.swing_particles.restart()
 			player.swing_particles.emitting = true
 	elif player.looking_up:
+		player._animation_player.play("AttackUp")
 		print("Activating hit_boxU")
 		hit_boxU.set_active(true)
 		if player.swing_particles:
 			player.swing_particles.restart()
 			player.swing_particles.emitting = true
 	elif !player._animation_player.flip_h:
+		player._animation_player.play("Attack")
 		print("Activating hit_boxL")
 		hit_boxL.set_active(true)
 		if player.swing_particles:
 			player.swing_particles.restart()
 			player.swing_particles.emitting = true
 	else:
+		player._animation_player.play("Attack")
 		print("Activating hit_boxR")
 		hit_boxR.set_active(true)
 		if player.swing_particles:
