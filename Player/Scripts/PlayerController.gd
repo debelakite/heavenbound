@@ -61,6 +61,7 @@ func take_damage(amount: int, source: Node = null) -> void:
 	if is_dead or is_invincible:
 		return
 	health_stage = clamp(health_stage - amount, 0, max_health_stage)
+	GameState.health_stage = health_stage
 	health_changed.emit(health_stage)
 	if health_stage == 0:
 		_die()
@@ -88,6 +89,7 @@ func _flash() -> void:
 # HEALING (yet to be implemented)
 func heal(amount: int = 1) -> void:
 	health_stage = clamp(health_stage + amount, 0, max_health_stage)
+	GameState.health_stage = health_stage
 	health_changed.emit(health_stage)
 
 # RESET HEALTH ON DEATH
@@ -99,10 +101,12 @@ func reset_health() -> void:
 
 	#Intialise the player states upon game start
 func _ready() -> void:
-	if GameState.respawn_position != Vector2.ZERO:
+	#pull from a loaded save, if one exists
+	if GameState.health_stage != -1:
 		respawn_position = GameState.respawn_position
 		global_position = GameState.respawn_position
-		reset_health()
+		health_stage = GameState.health_stage
+		health_changed.emit(health_stage)
 		if has_node("HurtBox"):
 			get_node("HurtBox").monitorable = true
 	else:
@@ -112,7 +116,6 @@ func _ready() -> void:
 		Hud.register_player(self)
 	else:
 		push_error("Player: HUD Autoload singleton could not be found!")
-	pass
 	
 	# Look down option when pressing S key
 func update_camera_look() -> void:

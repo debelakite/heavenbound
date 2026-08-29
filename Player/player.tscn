@@ -359,6 +359,7 @@ size = Vector2(89, 135)
 collision_layer = 2
 script = ExtResource("1_4ntmi")
 dash_cooldown = 2.0
+invincibility_duration = 2.0
 
 [node name="Player_Collision" type="CollisionShape2D" parent="." unique_id=811816401 groups=["player"]]
 z_index = 1

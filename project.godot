@@ -23,10 +23,10 @@ config/icon="uid://ytpogjs41fd2"
 
 [autoload]
 
-GlobalInput="*uid://c3wn0tutiixgt"
 Transition="*uid://bkiqk1vyd7tda"
 Hud="*uid://c3wfedriomm4h"
 GameState="*uid://dhr4vske0elu"
+PauseMenu="*uid://gqdclecbfe2o"
 
 [display]
 
