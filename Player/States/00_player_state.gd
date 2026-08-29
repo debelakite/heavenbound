@@ -1,16 +1,10 @@
 class_name PlayerState extends Node
-
 var player: Player
 var next_state: PlayerState
-
 var hit_boxU: HitBox
 var hit_boxD: HitBox
 var hit_boxL: HitBox
 var hit_boxR: HitBox
-
-
-
-
 #region /// state references
 @onready var idle: PlayerStateIdle = %Idle
 @onready var dash: PlayerStateDash = %Dash
@@ -19,8 +13,7 @@ var hit_boxR: HitBox
 @onready var fall: PlayerStateFall = %Fall
 @onready var hurt: PlayerStateHurt = %Hurt
 @onready var attack: PlayerStateAttack = %Attack
-
-
+@onready var dead: PlayerStateDead = %Dead
 	
 #endregion
 func setup(p: Player) -> void:
@@ -46,11 +39,8 @@ func exit() -> void:
 func handle_input( _event : InputEvent) -> PlayerState:
 	
 	return next_state
-
-
 	#What happens each process tick in this state?
 func process( _delta: float ) -> PlayerState:
-
 	return next_state
 	
 	
@@ -58,3 +48,11 @@ func process( _delta: float ) -> PlayerState:
 func physics_process( _delta: float ) -> PlayerState:
 	
 	return next_state
+
+	#What happens when the player takes damage in this state?
+func took_damage() -> PlayerState:
+	return next_state
+
+	#What happens when the player dies in this state?
+func died() -> PlayerState:
+	return dead

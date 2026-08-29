@@ -40,3 +40,6 @@ func process(_delta: float) -> PlayerState:
 
 func physics_process(_delta: float) -> PlayerState:
 	return next_state
+	
+func took_damage() -> PlayerState: #If player has taken damage, go to hurt state
+	return hurt

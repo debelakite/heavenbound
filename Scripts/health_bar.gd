@@ -11,22 +11,16 @@ func _ready() -> void:
 		current_stage = health_textures.size() - 1
 		texture = health_textures[current_stage]
 
-func bind_to_health(health) -> void:
-	# health = your player's Health/HealthComponent node, assumed to
-	# have current_health, max_health, and a `health_changed` signal.
-	_update_from_health(health.current_health, health.max_health)
-	health.health_changed.connect(_update_from_health)
-
-func _update_from_health(current: float, max: float) -> void:
-	if health_textures.is_empty():
-		return
-	var percent := current / max if max > 0.0 else 0.0
-	var stage_count := health_textures.size()
-	var stage: int = clamp(ceil(percent * (stage_count - 1)), 0, stage_count - 1)
-	_set_stage(stage)
+func bind_to_health(player) -> void:
+	# player = your player node, assumed to have `health_stage`
+	# and a `health_changed(stage: int)` signal
+	print("binding, initial stage: ", player.health_stage)
+	_set_stage(player.health_stage)
+	player.health_changed.connect(_set_stage)
 
 func _set_stage(stage: int) -> void:
+	print("_set_stage got: ", stage, " | current_stage: ", current_stage, " | array size: ", health_textures.size())
 	if stage == current_stage:
-		return  # avoid redundant texture swaps
+		return
 	current_stage = stage
 	texture = health_textures[current_stage]

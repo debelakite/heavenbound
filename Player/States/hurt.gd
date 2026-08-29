@@ -1,6 +1,7 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateHurt extends PlayerState
 
+@onready var _animation_player = $AnimatedSprite2D
 var hurt_timer = 0
 @export var vertical_pushback = 450
 @export var horizontal_pushback = 200
@@ -10,7 +11,7 @@ func init() -> void:
 		
 	#Run code upon state entrance
 func enter() -> void:
-	#TODO play animation
+	player._animation_player.play("Hurt")
 	if player.velocity.x != 0: #Propel player oposite direction, or if player is not moving, just go left
 		player.velocity.x = -(player.velocity.x/abs(player.velocity.x))*horizontal_pushback
 	else:

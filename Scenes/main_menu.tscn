@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dj51d6wtitoa3"]
 
 [ext_resource type="Script" uid="uid://bvg1dffvk5urd" path="res://Scripts/main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://b4pg6kr7cl75b" path="res://Sprites/Screenshot_2.png" id="2_48xlc"]
 [ext_resource type="Texture2D" uid="uid://bwgj1s5vqsxmv" path="res://Sprites/main_menu_template.png" id="3_1ehe0"]
 [ext_resource type="FontFile" uid="uid://cjsb0wvmihom7" path="res://Fonts/Cinzel-VariableFont_wght.ttf" id="3_ce3w2"]
 [ext_resource type="Script" uid="uid://bfjlo454jakes" path="res://Scripts/button_play.gd" id="4_opfnp"]
@@ -81,11 +80,6 @@ grow_vertical = 2
 texture = ExtResource("3_1ehe0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=312646424]
-visible = false
-position = Vector2(1023, 538)
-texture = ExtResource("2_48xlc")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1429143658]
 layout_mode = 1
 anchors_preset = 9
@@ -111,6 +105,21 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_vr1f0")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_t1dhk")
 text = "Play"
+script = ExtResource("4_opfnp")
+
+[node name="ButtonNew" type="Button" parent="VBoxContainer" unique_id=957640275]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_opfnp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yhxw7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_8dnnj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vr1f0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1dhk")
+text = "New Game"
 script = ExtResource("4_opfnp")
 
 [node name="ButtonQuit" type="Button" parent="VBoxContainer" unique_id=2017061626]
@@ -156,6 +165,6 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Pre-Alpha 0.1.9"
+text = "Pre-Alpha 0.2.0"
 
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

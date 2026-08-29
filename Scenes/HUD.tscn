@@ -13,6 +13,7 @@
 script = ExtResource("1_nfm57")
 
 [node name="HealthBarUI" type="TextureRect" parent="." unique_id=1553855430]
+unique_name_in_owner = true
 offset_left = 157.0
 offset_top = 80.0
 offset_right = 352.0
@@ -22,3 +23,7 @@ script = ExtResource("1_t385i")
 health_textures = Array[Texture2D]([ExtResource("2_nfm57"), ExtResource("3_b5b84"), ExtResource("4_fbb48"), ExtResource("5_o2vyp"), ExtResource("6_hhtw7")])
 
 [node name="ZealMeterUi" parent="." unique_id=1215410625 instance=ExtResource("8_nfm57")]
+offset_left = 25.0
+offset_top = 5.0
+offset_right = 25.0
+offset_bottom = 5.0

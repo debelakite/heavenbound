@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c27tpkswc2e"]
 
 [ext_resource type="Script" uid="uid://bvqd8j44dumcp" path="res://Scripts/Enemy/StateMachine/EnemyController.gd" id="1_mo1ky"]
-[ext_resource type="Script" uid="uid://dp564hifota76" path="res://Scripts/hurt_box.gd" id="2_6bs3c"]
+[ext_resource type="Script" uid="uid://dp564hifota76" path="res://Scripts/enemy_hurt_box.gd" id="2_6bs3c"]
 [ext_resource type="Script" uid="uid://cq8oxtn5mgnpj" path="res://Scripts/Enemy/StateMachine/label.gd" id="3_mo1ky"]
 [ext_resource type="Texture2D" uid="uid://cvnvffjbt85k3" path="res://Sprites/Enemy/hellhound.png" id="4_idouy"]
 [ext_resource type="Script" uid="uid://bhxutnsfcfros" path="res://Scripts/Enemy/StateMachine/enemy_idle.gd" id="5_0o0ue"]
@@ -118,3 +118,5 @@ offset_left = -16.0
 offset_top = -72.0
 offset_right = 24.0
 offset_bottom = -49.0
+
+[connection signal="area_entered" from="HurtBox" to="HurtBox" method="_on_area_entered"]

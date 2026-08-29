@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://d1lo8tk75ic2t" path="res://Player/Sprites/attack_animation_spritesheet.png" id="2_lfmf2"]
 [ext_resource type="Texture2D" uid="uid://cski10ran830b" path="res://Player/Sprites/idle_animation_spritesheet.png" id="3_btcbx"]
 [ext_resource type="Texture2D" uid="uid://dom7vx6rm2445" path="res://Player/Sprites/run_animation_spritesheet.png" id="3_k53q1"]
+[ext_resource type="Texture2D" uid="uid://debih6bs344qn" path="res://Player/Sprites/death_animation_spritesheet.png" id="3_n471f"]
 [ext_resource type="PackedScene" uid="uid://btww85v7i3h72" path="res://Scripts/hit_box.tscn" id="4_gwnis"]
 [ext_resource type="Texture2D" uid="uid://b2iq4st1qsvd6" path="res://Player/Sprites/jump_animation_spritesheet.png" id="4_p5o4e"]
+[ext_resource type="Texture2D" uid="uid://dvw26awxtn4lb" path="res://Player/Sprites/hurt_animation_spritesheet.png" id="4_pisgm"]
 [ext_resource type="Script" uid="uid://b0dvq87mtfxf2" path="res://Player/States/hurt.gd" id="7_5htga"]
 [ext_resource type="Texture2D" uid="uid://bqupcucmkgdl7" path="res://Sprites/Particles/Particles(transparent)/slash_03.png" id="8_gu6f8"]
 [ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="8_p5o4e"]
@@ -14,8 +16,10 @@
 [ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="10_dkpta"]
 [ext_resource type="Script" uid="uid://cw4tjw0mqey0l" path="res://Player/States/dash.gd" id="11_dkpta"]
 [ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="11_lfmf2"]
+[ext_resource type="Script" uid="uid://ce4xxsjh2id0a" path="res://Player/States/dead.gd" id="12_o28un"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
 [ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
+[ext_resource type="Script" uid="uid://du10xy57ypgk4" path="res://Player/Scripts/player_hurt_box.gd" id="18_b1ygp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(27, 133.5)
@@ -40,6 +44,30 @@ region = Rect2(4554, 0, 1518, 1200)
 atlas = ExtResource("2_lfmf2")
 region = Rect2(6072, 0, 1518, 1200)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs4pp"]
+atlas = ExtResource("3_n471f")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyprq"]
+atlas = ExtResource("3_n471f")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4lon"]
+atlas = ExtResource("3_n471f")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ynux"]
+atlas = ExtResource("3_n471f")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d30e8"]
+atlas = ExtResource("3_n471f")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pogt"]
+atlas = ExtResource("3_n471f")
+region = Rect2(2000, 1000, 1000, 1000)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pisgm"]
 atlas = ExtResource("2_fhl08")
 region = Rect2(0, 0, 1000, 1000)
@@ -59,6 +87,34 @@ region = Rect2(0, 1000, 1000, 1000)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7emwf"]
 atlas = ExtResource("2_fhl08")
 region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_755ss"]
+atlas = ExtResource("4_pisgm")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbimk"]
+atlas = ExtResource("4_pisgm")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0h3t"]
+atlas = ExtResource("4_pisgm")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4o1l"]
+atlas = ExtResource("4_pisgm")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2n6q"]
+atlas = ExtResource("4_pisgm")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6x0f"]
+atlas = ExtResource("4_pisgm")
+region = Rect2(2000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp1hh"]
+atlas = ExtResource("4_pisgm")
+region = Rect2(0, 2000, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwnis"]
 atlas = ExtResource("3_btcbx")
@@ -148,6 +204,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qs4pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyprq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4lon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ynux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d30e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pogt")
+}],
+"loop": 0,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pisgm")
 }, {
 "duration": 1.0,
@@ -165,6 +244,32 @@ animations = [{
 "loop": 1,
 "name": &"Fall",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_755ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbimk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0h3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4o1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2n6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6x0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp1hh")
+}],
+"loop": 1,
+"name": &"Hurt",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -247,12 +352,16 @@ color = Color(1, 0.96862745, 0.40392157, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(137, 52)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pisgm"]
+size = Vector2(89, 135)
+
 [node name="Player" type="CharacterBody2D" unique_id=28099015 groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_4ntmi")
 dash_cooldown = 2.0
+invincibility_duration = 2.0
 
-[node name="Player_Hurtbox" type="CollisionShape2D" parent="." unique_id=811816401]
+[node name="Player_Collision" type="CollisionShape2D" parent="." unique_id=811816401 groups=["player"]]
 z_index = 1
 position = Vector2(-0.5, 0.25)
 shape = SubResource("RectangleShape2D_0hol4")
@@ -260,7 +369,7 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239629246]
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
-animation = &"Attack"
+animation = &"Dead"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)
@@ -282,9 +391,10 @@ debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
 
 [node name="SwingParticlesR" type="GPUParticles2D" parent="HitBoxR" unique_id=1835337590]
 unique_name_in_owner = true
-position = Vector2(63, -1)
+position = Vector2(64, -1)
 scale = Vector2(0.5, 0.5)
 emitting = false
+amount = 1
 texture = ExtResource("8_gu6f8")
 lifetime = 0.5
 one_shot = true
@@ -297,6 +407,10 @@ script = ExtResource("7_5htga")
 [node name="Idle" type="Node" parent="States" unique_id=591978101]
 unique_name_in_owner = true
 script = ExtResource("8_p5o4e")
+
+[node name="Dead" type="Node" parent="States" unique_id=1423621008]
+unique_name_in_owner = true
+script = ExtResource("12_o28un")
 
 [node name="Dash" type="Node" parent="States" unique_id=635508812]
 unique_name_in_owner = true
@@ -368,3 +482,13 @@ debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 
 [node name="ResourceMeter" type="Node" parent="." unique_id=2009711821]
 script = ExtResource("16_lfmf2")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=620333231 node_paths=PackedStringArray("owner_player") groups=["player_hurtbox"]]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("18_b1ygp")
+owner_player = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=563250138]
+shape = SubResource("RectangleShape2D_pisgm")
+debug_color = Color(0.800826, 0.38966602, 0.014346622, 0.41960785)
