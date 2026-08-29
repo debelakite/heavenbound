@@ -6,6 +6,7 @@ var player: Player = null
 func _ready() -> void:
 	# If you want the HUD to find the player automatically on startup:
 	_find_player_in_tree()
+	
 
 ## Fallback function to locate the player if it's already in the scene tree
 func _find_player_in_tree() -> void:
@@ -21,22 +22,16 @@ func _find_player_in_tree() -> void:
 func register_player(p: Node) -> void:
 	player = p
 	var meter = player.get_node("ResourceMeter")
-	
-	# Force the UI to connect directly to the player's meter signal
+
 	if zeal_meter:
 		zeal_meter.bind_to_meter(meter)
-		
-		# Direct connection line to wake up the yellow function:
 		if not meter.charge_changed.is_connected(zeal_meter._on_charge_changed):
 			meter.charge_changed.connect(zeal_meter._on_charge_changed)
 
-	# Safe connection check
-	if not player.health_changed.is_connected(_on_health_changed):
-		player.health_changed.connect(_on_health_changed)
+	%HealthBarUI.bind_to_health(player)
 
-func _on_health_changed(new_stage: int) -> void:
-	# update health UI
-	pass
+
+
 
 func _process(_delta: float) -> void:
 	# Added a safety check to prevent crash if player is null on frame 1

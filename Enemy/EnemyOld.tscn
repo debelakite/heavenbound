@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c27tpkswc2e"]
 
-[ext_resource type="Script" uid="uid://bvqd8j44dumcp" path="res://Enemy/enemy.gd" id="1_epr5s"]
-[ext_resource type="Script" uid="uid://dp564hifota76" path="res://Scripts/hurt_box.gd" id="3_vso2s"]
-[ext_resource type="Script" uid="uid://cq8oxtn5mgnpj" path="res://Enemy/label.gd" id="4_vso2s"]
+[ext_resource type="Script" uid="uid://bvqd8j44dumcp" path="res://Scripts/Enemy/StateMachine/EnemyController.gd" id="1_epr5s"]
+[ext_resource type="Script" uid="uid://dp564hifota76" path="res://Scripts/enemy_hurt_box.gd" id="3_vso2s"]
+[ext_resource type="Script" uid="uid://cq8oxtn5mgnpj" path="res://Scripts/Enemy/StateMachine/label.gd" id="4_vso2s"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vonkd"]
 load_path = "res://.godot/imported/enemy.jpg-6ce45bd52b3d4573c6634677a32c3424.ctex"

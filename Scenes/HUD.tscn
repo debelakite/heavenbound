@@ -13,6 +13,7 @@
 script = ExtResource("1_nfm57")
 
 [node name="HealthBarUI" type="TextureRect" parent="." unique_id=1553855430]
+unique_name_in_owner = true
 offset_left = 157.0
 offset_top = 80.0
 offset_right = 352.0
