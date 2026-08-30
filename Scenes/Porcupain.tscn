@@ -1,41 +1,81 @@
-[gd_scene format=3 uid="uid://c27tpkswc2e"]
+[gd_scene format=3 uid="uid://nymvs2ktf11j"]
 
-[ext_resource type="Script" uid="uid://bvqd8j44dumcp" path="res://Scripts/Enemy/StateMachine/EnemyController.gd" id="1_mo1ky"]
-[ext_resource type="Script" uid="uid://dp564hifota76" path="res://Scripts/enemy_hurt_box.gd" id="2_6bs3c"]
-[ext_resource type="Script" uid="uid://cq8oxtn5mgnpj" path="res://Scripts/Enemy/StateMachine/label.gd" id="3_mo1ky"]
-[ext_resource type="Texture2D" uid="uid://cvnvffjbt85k3" path="res://Sprites/Enemy/hellhound.png" id="4_idouy"]
-[ext_resource type="Script" uid="uid://bhxutnsfcfros" path="res://Scripts/Enemy/StateMachine/enemy_idle.gd" id="5_0o0ue"]
-[ext_resource type="Script" uid="uid://cceq3sd4x28g" path="res://Scripts/Enemy/StateMachine/enemy_patrol.gd" id="5_idouy"]
-[ext_resource type="Script" uid="uid://dma5ruot35bu7" path="res://Scripts/Enemy/StateMachine/enemy_chase.gd" id="6_6s1gy"]
-[ext_resource type="Script" uid="uid://cwvl43opuufw1" path="res://Scripts/Enemy/StateMachine/enemy_hurt.gd" id="7_uoxpr"]
-[ext_resource type="Script" uid="uid://dne3cq1r4inw4" path="res://Scripts/Enemy/StateMachine/enemy_death.gd" id="8_idouy"]
+[ext_resource type="Script" uid="uid://bvqd8j44dumcp" path="res://Scripts/Enemy/StateMachine/EnemyController.gd" id="1_5kxyt"]
+[ext_resource type="Script" uid="uid://dp564hifota76" path="res://Scripts/enemy_hurt_box.gd" id="2_fweri"]
+[ext_resource type="Script" uid="uid://cq8oxtn5mgnpj" path="res://Scripts/Enemy/StateMachine/label.gd" id="3_legh5"]
+[ext_resource type="Texture2D" uid="uid://cexhw1gyh0tch" path="res://Sprites/Enemy/porcupain_walk_animation_spritesheet.png" id="4_5kxyt"]
+[ext_resource type="Script" uid="uid://bhxutnsfcfros" path="res://Scripts/Enemy/StateMachine/enemy_idle.gd" id="5_jyrwu"]
+[ext_resource type="Script" uid="uid://cceq3sd4x28g" path="res://Scripts/Enemy/StateMachine/enemy_patrol.gd" id="7_fweri"]
+[ext_resource type="Script" uid="uid://cwvl43opuufw1" path="res://Scripts/Enemy/StateMachine/enemy_hurt.gd" id="7_o6pl6"]
+[ext_resource type="Script" uid="uid://dne3cq1r4inw4" path="res://Scripts/Enemy/StateMachine/enemy_death.gd" id="8_8v64p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkela"]
-size = Vector2(144, 88)
+size = Vector2(75, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vso2s"]
-size = Vector2(128, 91.5)
+size = Vector2(85, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2k2y"]
 size = Vector2(879.125, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fweri"]
+atlas = ExtResource("4_5kxyt")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_legh5"]
+atlas = ExtResource("4_5kxyt")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy13r"]
+atlas = ExtResource("4_5kxyt")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyrwu"]
+atlas = ExtResource("4_5kxyt")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rxu7"]
+atlas = ExtResource("4_5kxyt")
+region = Rect2(1000, 1000, 1000, 1000)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37tqn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_idouy")
+"texture": SubResource("AtlasTexture_fweri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_legh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy13r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyrwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rxu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyrwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy13r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_legh5")
 }],
 "loop": 1,
-"name": &"Idle",
-"speed": 5.0
+"name": &"Patrol",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1hta"]
 size = Vector2(1558, 434)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=725079683]
+[node name="Porcupain" type="CharacterBody2D" unique_id=725079683]
 collision_layer = 4
-script = ExtResource("1_mo1ky")
+script = ExtResource("1_5kxyt")
 speed = 200.0
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=905698373]
@@ -43,18 +83,18 @@ position = Vector2(-56, 0)
 target_position = Vector2(0, 104)
 
 [node name="WallCheck" type="RayCast2D" parent="." unique_id=44262350]
-position = Vector2(-41, -17)
+position = Vector2(0, -24)
 target_position = Vector2(-176, 0)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1706663398 node_paths=PackedStringArray("owner_enemy") groups=["enemy_hurtbox"]]
 unique_name_in_owner = true
 collision_layer = 32
 collision_mask = 16
-script = ExtResource("2_6bs3c")
+script = ExtResource("2_fweri")
 owner_enemy = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=711654947]
-position = Vector2(0, 12)
+position = Vector2(-3.5, 8.5)
 shape = SubResource("RectangleShape2D_fkela")
 debug_color = Color(0.8392157, 0.6313726, 0, 1)
 
@@ -65,10 +105,10 @@ offset_top = -80.0
 offset_right = 128.0
 offset_bottom = -57.0
 theme_override_font_sizes/font_size = 45
-script = ExtResource("3_mo1ky")
+script = ExtResource("3_legh5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1413354603]
-position = Vector2(8, 13.75)
+position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_vso2s")
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1249790578]
@@ -82,9 +122,11 @@ debug_color = Color(0.9719295, 0, 0.1586656, 0.41960785)
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=417248053]
-scale = Vector2(0.056322675, 0.05717055)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_37tqn")
-animation = &"Idle"
+animation = &"Patrol"
+frame = 3
+frame_progress = 0.30544505
 
 [node name="LoseArea" type="Area2D" parent="." unique_id=2046588739]
 collision_layer = 0
@@ -97,26 +139,21 @@ debug_color = Color(0.41960785, 0.98039216, 0, 0.41960785)
 
 [node name="States" type="Node" parent="." unique_id=633050722]
 
-[node name="Patrol" type="Node" parent="States" unique_id=821013183]
+[node name="Patrol" type="Node" parent="States" unique_id=1565766710]
 unique_name_in_owner = true
-script = ExtResource("5_idouy")
+script = ExtResource("7_fweri")
 
 [node name="Idle" type="Node" parent="States" unique_id=2067537891]
 unique_name_in_owner = true
-script = ExtResource("5_0o0ue")
-
-[node name="Chase" type="Node" parent="States" unique_id=32238270]
-unique_name_in_owner = true
-script = ExtResource("6_6s1gy")
-chase_speed = 250.0
+script = ExtResource("5_jyrwu")
 
 [node name="Hurt" type="Node" parent="States" unique_id=364811751]
 unique_name_in_owner = true
-script = ExtResource("7_uoxpr")
+script = ExtResource("7_o6pl6")
 
 [node name="Death" type="Node" parent="States" unique_id=1062339228]
 unique_name_in_owner = true
-script = ExtResource("8_idouy")
+script = ExtResource("8_8v64p")
 
 [node name="StateLabel" type="Label" parent="." unique_id=2136533598]
 offset_left = -16.0

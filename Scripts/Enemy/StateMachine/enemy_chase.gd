@@ -3,6 +3,8 @@ class_name EnemyStateChase extends EnemyState
 @export var chase_speed: float = 160.0
 @onready var player: Node2D = null
 
+@onready var _animation_player = $AnimatedSprite2D
+
 func init() -> void:
 	pass
 

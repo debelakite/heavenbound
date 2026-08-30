@@ -5,11 +5,112 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvdls"]
 size = Vector2(339, 234.5)
 
+<<<<<<< Updated upstream
 [node name="Checkpoint" type="Area2D" unique_id=355130871]
+=======
+[sub_resource type="AtlasTexture" id="AtlasTexture_14q6d"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d41ab"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyhkm"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(4096, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oj4b"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(6144, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtsfu"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vgh2"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3njwc"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(4096, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvcyh"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(6144, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjhki"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(0, 4096, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlchq"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(2048, 4096, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqfr3"]
+atlas = ExtResource("2_i3j2t")
+region = Rect2(4096, 4096, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14q6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d41ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyhkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oj4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtsfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vgh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3njwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvcyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjhki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlchq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqfr3")
+}],
+"loop": 1,
+"name": &"Activate",
+"speed": 8.0
+}]
+
+[node name="Checkpoint" type="Area2D" unique_id=355130871 node_paths=PackedStringArray("spawn_point")]
+z_index = 1
+>>>>>>> Stashed changes
 collision_mask = 16
 script = ExtResource("1_wp6dl")
+spawn_point = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=92563427]
 shape = SubResource("RectangleShape2D_rvdls")
 
+<<<<<<< Updated upstream
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=54244454]
+=======
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1385788845]
+position = Vector2(2, -35)
+scale = Vector2(0.53125, 0.40771484)
+sprite_frames = SubResource("SpriteFrames_xrivr")
+animation = &"Activate"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=33093403]
+>>>>>>> Stashed changes

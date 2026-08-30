@@ -3,7 +3,7 @@ class_name Enemy extends CharacterBody2D
 @export var damage_amount: int = 1
 @export var damage_interval: float = 1.0
 @export var flip_deadzone: float = 2.0
-@export var flip_cooldown: float = 0.0
+@export var flip_cooldown: float = 0.3
 @export var stop_distance: float = 32.0
 @export var max_health: int = 3
 @export var invincibility_time: float = 0.3
@@ -100,12 +100,16 @@ func evaluate_facing(x_diff: float) -> void:
 	elif not facing_right and x_diff > flip_deadzone:
 		set_facing(true)
 func set_facing(new_facing_right: bool) -> void:
+	print("set_facing called — new: ", new_facing_right, " current: ", facing_right, " cooldown_timer: ", flip_cooldown_timer)
 	if new_facing_right == facing_right:
+		return
+	if flip_cooldown_timer > 0.0:
 		return
 	facing_right = new_facing_right
 	flip_cooldown_timer = flip_cooldown
-	animated_sprite.flip_h =  facing_right
+	animated_sprite.flip_h = facing_right  # fixed: assumes sprite art faces right by default
 	update_direction(facing_right)
+	print("set_facing APPLIED — facing_right now: ", facing_right)
 func initialize_states() -> void:
 	var children = $States.get_children()
 	if children.size() == 0:
@@ -141,6 +145,11 @@ func update_direction(facing_right_: bool) -> void:
 	var dir = 1.0 if facing_right_ else -1.0
 	ledge_check.position.x = abs(ledge_check.position.x) * dir
 	wall_check.position.x = abs(wall_check.position.x) * dir
+	if player_detection_area:
+		player_detection_area.position.x = abs(player_detection_area.position.x) * dir
+	if player_lose_area:
+		player_lose_area.position.x = abs(player_lose_area.position.x) * dir
+	print("dir: ", dir, " ledge_check.x: ", ledge_check.position.x, " wall_check.x: ", wall_check.position.x)
 func _on_player_detection_body_entered(body: Node2D) -> void:
 	print("player has entered DetectionArea")
 	if body.is_in_group("player"):
