@@ -13,7 +13,7 @@ size = Vector2(440.98895, 1119.7578)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_uq8or"]
 a = Vector2(-406.18298, 92.680176)
-b = Vector2(913.7388, 50.05957)
+b = Vector2(1091.9197, 53.934326)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_l2aln"]
 a = Vector2(-333.87268, -209.22778)
@@ -143,7 +143,7 @@ position = Vector2(72, 467)
 shape = SubResource("WorldBoundaryShape2D_l2aln")
 
 [node name="WorldBorderLeft2" type="CollisionShape2D" parent="StaticBody2D" unique_id=314832313]
-position = Vector2(2175, 672)
+position = Vector2(2026, 755)
 shape = SubResource("WorldBoundaryShape2D_drtje")
 
 [node name="MineshaftDoor" type="Area2D" parent="." unique_id=890354923]
@@ -164,6 +164,6 @@ offset_bottom = 2303.0
 color = Color(0, 0, 0, 1)
 
 [node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("7_jrquj")]
-position = Vector2(1332, 847)
+position = Vector2(1323, 825)
 
 [connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]

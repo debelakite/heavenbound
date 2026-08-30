@@ -2,6 +2,7 @@ extends Area2D
 class_name Checkpoint
 
 @export var spawn_point: Marker2D
+@onready var _animation_player = $AnimatedSprite2D
 var activated: bool = false
 
 func _ready() -> void:
@@ -21,3 +22,4 @@ func _activate() -> void:
 	GameState.set_checkpoint(pos, get_tree().current_scene.scene_file_path)
 	print("checkpoint set: ", pos, " in scene: ", get_tree().current_scene.scene_file_path)
 	#TODO play animation
+	_animation_player.play("Activate")
