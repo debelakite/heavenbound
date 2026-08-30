@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c4ikuldusn3d7"]
+
+[ext_resource type="Script" uid="uid://dlbf4tlmsj8j0" path="res://Scripts/vfx_player.gd" id="1_kctfc"]
+[ext_resource type="Texture2D" uid="uid://cgqu1vvvkpcu1" path="res://Player/Sprites/slash_spritesheet.png" id="2_l74m7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiur2"]
+atlas = ExtResource("2_l74m7")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s7es"]
+atlas = ExtResource("2_l74m7")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go731"]
+atlas = ExtResource("2_l74m7")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kctfc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiur2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s7es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go731")
+}],
+"loop": 0,
+"name": &"Slash",
+"speed": 12.0
+}]
+
+[node name="VfxPlayer" type="Node2D" unique_id=630838974]
+z_index = 1
+script = ExtResource("1_kctfc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=903699981]
+z_index = 1
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_kctfc")
+animation = &"Slash"
+frame = 2
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1700641313]
