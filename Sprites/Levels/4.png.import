@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3i1exl7vdtsu"
-path="res://.godot/imported/big_ASS_platform.png-145c8882ff84bcea5a814831ad922316.ctex"
+uid="uid://cw01d16yo4doe"
+path="res://.godot/imported/4.png-59e0ecebb2a5b16bd974705e7a27b582.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/big_ASS_platform.png"
-dest_files=["res://.godot/imported/big_ASS_platform.png-145c8882ff84bcea5a814831ad922316.ctex"]
+source_file="res://Sprites/Levels/4.png"
+dest_files=["res://.godot/imported/4.png-59e0ecebb2a5b16bd974705e7a27b582.ctex"]
 
 [params]
 

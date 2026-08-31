@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ey20vxdj3wue"
-path="res://.godot/imported/idle_animation.png-b770de697b46d5eccc08ce44cdb44ec3.ctex"
+uid="uid://b5ikmerii3biw"
+path="res://.godot/imported/Layer 1.png-7454e1d4166bf41ab11d8ea804b7682f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/idle_animation.png"
-dest_files=["res://.godot/imported/idle_animation.png-b770de697b46d5eccc08ce44cdb44ec3.ctex"]
+source_file="res://Sprites/Levels/Layer 1.png"
+dest_files=["res://.godot/imported/Layer 1.png-7454e1d4166bf41ab11d8ea804b7682f.ctex"]
 
 [params]
 

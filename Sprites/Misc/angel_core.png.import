@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dspn0sj33365v"
-path="res://.godot/imported/smal_ASS_platform.png-de03445744fd5dda1cd5939a9e9ff39c.ctex"
+uid="uid://ytpogjs41fd2"
+path="res://.godot/imported/angel_core.png-1849e37544a72f31d10f2257c7795350.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/smal_ASS_platform.png"
-dest_files=["res://.godot/imported/smal_ASS_platform.png-de03445744fd5dda1cd5939a9e9ff39c.ctex"]
+source_file="res://Sprites/Misc/angel_core.png"
+dest_files=["res://.godot/imported/angel_core.png-1849e37544a72f31d10f2257c7795350.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l41dolgadd2v"
-path="res://.godot/imported/shovel.png-b0f551df69e78d4ec1d36576cca99e48.ctex"
+uid="uid://ey20vxdj3wue"
+path="res://.godot/imported/idle_animation.png-aadcd1aad7a95d0eb2f96b5af3693799.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/shovel.png"
-dest_files=["res://.godot/imported/shovel.png-b0f551df69e78d4ec1d36576cca99e48.ctex"]
+source_file="res://Sprites/Misc/idle_animation.png"
+dest_files=["res://.godot/imported/idle_animation.png-aadcd1aad7a95d0eb2f96b5af3693799.ctex"]
 
 [params]
 

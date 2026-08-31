@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ytpogjs41fd2"
-path="res://.godot/imported/angel_core.png-e161f0a4d4ec05c423b6a1d82a3c62d9.ctex"
+uid="uid://bx3cn7q77125h"
+path="res://.godot/imported/dark platform.png-c48774bbe39573a61f15c10de50105b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/angel_core.png"
-dest_files=["res://.godot/imported/angel_core.png-e161f0a4d4ec05c423b6a1d82a3c62d9.ctex"]
+source_file="res://Sprites/Levels/dark platform.png"
+dest_files=["res://.godot/imported/dark platform.png-c48774bbe39573a61f15c10de50105b0.ctex"]
 
 [params]
 
