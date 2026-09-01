@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://csh5igrr66tke" path="res://Sprites/Levels/dividers-png-rdcarstn8g3zb1qm-421228855.jpg" id="4_mvu6m"]
 [ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="5_287un"]
 [ext_resource type="Texture2D" uid="uid://b5ikmerii3biw" path="res://Sprites/Levels/Layer 1.png" id="6_3cyh2"]
+[ext_resource type="PackedScene" uid="uid://b8npy7y7q4ogn" path="res://Scenes/Porcupain.tscn" id="9_po2w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0nxl"]
 size = Vector2(2854.25, 20)
@@ -298,5 +299,8 @@ position = Vector2(2873, 1726)
 
 [node name="Enemy2" parent="." unique_id=1441973078 instance=ExtResource("5_287un")]
 position = Vector2(6933, 3176)
+
+[node name="Porcupain" parent="." unique_id=1728171035 instance=ExtResource("9_po2w2")]
+position = Vector2(2117, 1721)
 
 [connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]
