@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://boa2cahvkr5ch"]
+
+[node name="ItemRow" type="Control" unique_id=1593910219]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 402.0
+offset_bottom = 100.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=963242881]
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=129983094]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1166225477]
+layout_mode = 2
