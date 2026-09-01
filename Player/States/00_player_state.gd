@@ -13,7 +13,12 @@ var hit_boxR: HitBox
 @onready var fall: PlayerStateFall = %Fall
 @onready var hurt: PlayerStateHurt = %Hurt
 @onready var attack: PlayerStateAttack = %Attack
+
+@onready var floating: PlayerStateFloat = %Float
+
+
 @onready var dead: PlayerStateDead = %Dead
+
 	
 #endregion
 func setup(p: Player) -> void:
