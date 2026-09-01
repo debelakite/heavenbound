@@ -212,11 +212,6 @@ position = Vector2(2900.414, 2979)
 scale = Vector2(0.289121, 2.5635126)
 texture = ExtResource("3_fgo4y")
 
-[node name="DarkPlatform" type="Sprite2D" parent="StaticBody2D" unique_id=1555625112]
-position = Vector2(497.70343, 1300.25)
-scale = Vector2(0.21482891, 0.2148289)
-texture = ExtResource("3_ku7mn")
-
 [node name="CaveTransition" type="Area2D" parent="." unique_id=979195016]
 collision_layer = 0
 collision_mask = 2
