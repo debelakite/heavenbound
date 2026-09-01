@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2047q8bkjpqe"
-path="res://.godot/imported/edrthgedrtgh.png-f7c79a83fb24354469236ec7527dd5d4.ctex"
+uid="uid://dbr70cnxhml0o"
+path="res://.godot/imported/room5real.png-132d41286ae4e5880ad27c681a106254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Levels/edrthgedrtgh.png"
-dest_files=["res://.godot/imported/edrthgedrtgh.png-f7c79a83fb24354469236ec7527dd5d4.ctex"]
+source_file="res://Sprites/Levels/room5real.png"
+dest_files=["res://.godot/imported/room5real.png-132d41286ae4e5880ad27c681a106254.ctex"]
 
 [params]
 
