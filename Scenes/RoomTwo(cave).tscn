@@ -2,13 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://e62c581x1i41" path="res://Sprites/Backgrounds/peshtera_test_1.png" id="1_7rvta"]
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="2_yxgf3"]
-[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Enemy/EnemyOld.tscn" id="3_tnt27"]
+[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="3_tnt27"]
 [ext_resource type="Texture2D" uid="uid://ciorafdflnbrh" path="res://Sprites/Backgrounds/frame0000.png" id="4_ayn77"]
 [ext_resource type="Texture2D" uid="uid://b0mw5ayuvg6au" path="res://Sprites/Backgrounds/frame0002.png" id="5_lqceu"]
 [ext_resource type="Texture2D" uid="uid://bkxaj3jtsgydf" path="res://Sprites/Backgrounds/frame0004.png" id="6_nfbag"]
 [ext_resource type="Texture2D" uid="uid://cuyylrs1b3bxr" path="res://Sprites/Backgrounds/frame0006.png" id="7_vsn5f"]
 [ext_resource type="Texture2D" uid="uid://byu4i4522lwxe" path="res://Sprites/Backgrounds/frame0008.png" id="8_mo8dj"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="9_cyqlv"]
+[ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="10_hcjpq"]
+=======
+[ext_resource type="PackedScene" uid="uid://6hhit7xulyps" path="res://Scenes/Checkpoint.tscn" id="11_noale"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1hta"]
 normal = Vector2(1, 0)
@@ -23,6 +26,9 @@ b = Vector2(-40, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyqlv"]
 size = Vector2(196, 368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noale"]
+size = Vector2(321.42285, 88)
 
 [node name="RoomTwo(cave)" type="Node2D" unique_id=422851834]
 
@@ -57,10 +63,7 @@ offset_bottom = 1192.0
 texture = ExtResource("1_7rvta")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_yxgf3")]
-position = Vector2(768, 848)
-
-[node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("3_tnt27")]
-position = Vector2(1504, 824)
+position = Vector2(526, 844)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1211965492]
 repeat_size = Vector2(1920, 0)
@@ -123,5 +126,43 @@ target_scene = "uid://duefnejqbtqab"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaveEntrance" unique_id=101604538]
 position = Vector2(14, -48)
 shape = SubResource("RectangleShape2D_cyqlv")
+
+[node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("3_tnt27")]
+position = Vector2(1968, 769)
+
+[node name="Enemy2" parent="." unique_id=1581979762 instance=ExtResource("3_tnt27")]
+position = Vector2(1535, 490)
+
+[node name="Enemy3" parent="." unique_id=2045343232 instance=ExtResource("3_tnt27")]
+position = Vector2(2482, 659)
+
+[node name="SmallPlatform2" type="Sprite2D" parent="." unique_id=516651545]
+z_index = 1
+position = Vector2(2268, 926.00006)
+scale = Vector2(1.1797235, 0.52671754)
+texture = ExtResource("10_hcjpq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SmallPlatform2" unique_id=712828447]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallPlatform2/StaticBody2D" unique_id=685754570]
+position = Vector2(14.999878, -34)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_noale")
+
+[node name="SmallPlatform3" type="Sprite2D" parent="." unique_id=1646127565]
+z_index = 1
+position = Vector2(2669, 727.00006)
+scale = Vector2(1.1797235, 0.52671754)
+texture = ExtResource("10_hcjpq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SmallPlatform3" unique_id=1447243541]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmallPlatform3/StaticBody2D" unique_id=781111178]
+position = Vector2(14.999878, -34)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_noale")
+
+[node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("11_noale")]
+position = Vector2(3086, 854)
 
 [connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]

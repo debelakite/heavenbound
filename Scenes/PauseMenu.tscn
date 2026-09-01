@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://gqdclecbfe2o"]
+
+[ext_resource type="Script" uid="uid://cq0eeeylk1nkl" path="res://Scripts/pause_menu.gd" id="1_lj4oq"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1431519981]
+script = ExtResource("1_lj4oq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=969289595]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=586132408]
+custom_minimum_size = Vector2(200, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=1445909702]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Resume"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1283610442]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Options"
+
+[node name="QuitToMenu" type="Button" parent="VBoxContainer" unique_id=1809549655]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Quit to Menu"

@@ -8,7 +8,7 @@ class_name Player extends CharacterBody2D
 #endregion
 
 #region /// export variables
-@export var move_speed : float = 350
+@export var move_speed : float = 450
 #endregion
 
 #region /// State Machine Variables
@@ -34,6 +34,9 @@ var looking_down = false
 @export var dash_cooldown: float = 0.8
 var dash_cooldown_timer: float = 0.0
 var has_landed = true
+
+@export var invincibility_duration: float = 1.0
+var is_invincible: bool = false
 #endregion
 
 #region /// Health Variables
@@ -41,6 +44,8 @@ var has_landed = true
 var health_stage: int = 4
 signal health_changed(new_stage: int)
 signal player_died
+var is_dead: bool = false
+var respawn_position: Vector2
 #endregion
 
 #region /// Camera Look-Down Variables
@@ -49,35 +54,74 @@ signal player_died
 @onready var camera: Camera2D = $Camera2D
 #region /// Animation Variables
 @onready var _animation_player = $AnimatedSprite2D
-@onready var swing_particles_right: GPUParticles2D = %SwingParticlesR
+@onready var swing_particles: GPUParticles2D = %SwingParticlesR
+@export var flash_interval: float = 0.1
 #endregion
 
 
 
 # 	HEALTHBAR
 
-func take_damage(amount: int = 1) -> void:
+func take_damage(amount: int, source: Node = null) -> void:
+	if is_dead or is_invincible:
+		return
 	health_stage = clamp(health_stage - amount, 0, max_health_stage)
+	GameState.health_stage = health_stage
 	health_changed.emit(health_stage)
-	change_state(current_state.took_damage())
 	if health_stage == 0:
-		player_died.emit()
+		_die()
+		return
+	change_state(current_state.took_damage())
+	_start_invincibility()
+
+func _die() -> void:
+	is_dead = true
+	player_died.emit()
+	change_state(current_state.died())
+
+func _start_invincibility() -> void:
+	is_invincible = true
+	_flash()
+	await get_tree().create_timer(invincibility_duration).timeout
+	is_invincible = false
+	_animation_player.visible = true
+
+func _flash() -> void:
+	while is_invincible:
+		_animation_player.visible = not _animation_player.visible
+		await get_tree().create_timer(flash_interval).timeout
 
 # HEALING (yet to be implemented)
 func heal(amount: int = 1) -> void:
 	health_stage = clamp(health_stage + amount, 0, max_health_stage)
+	GameState.health_stage = health_stage
 	health_changed.emit(health_stage)
 
 # RESET HEALTH ON DEATH
 func reset_health() -> void:
 	health_stage = max_health_stage
+	is_dead = false
+	GameState.health_stage = health_stage
 	health_changed.emit(health_stage)
 
 
 	#Intialise the player states upon game start
 func _ready() -> void:
+	#pull from a loaded save, if one exists
+	if GameState.health_stage != -1:
+		respawn_position = GameState.respawn_position
+		global_position = GameState.respawn_position
+		health_stage = GameState.health_stage
+		health_changed.emit(health_stage)
+		if has_node("HurtBox"):
+			get_node("HurtBox").monitorable = true
+	else:
+		respawn_position = global_position
 	initialize_states()
-	pass
+	if Hud: 
+		Hud.register_player(self)
+	else:
+		push_error("Player: HUD Autoload singleton could not be found!")
 	
 	# Look down option when pressing S key
 func update_camera_look() -> void:
@@ -89,6 +133,8 @@ func update_camera_look() -> void:
 
 	#On input call the handle input function of the current state
 func _unhandled_input(event: InputEvent) -> void:
+	if is_dead:
+		return
 	change_state( current_state.handle_input( event ) )
 	pass
 
@@ -168,4 +214,3 @@ func update_direction() -> void:
 	elif direction.x > 0:
 		_animation_player.flip_h = true
 	pass
-	

@@ -5,17 +5,20 @@ class_name EnemyStateHurt extends EnemyState
 @export var knockback_up_force: float = 80.0
 @export var knockback_decel: float = 600.0
 var timer: float = 0.0
+var facing_before_hurt: bool = true
 
 func init() -> void:
 	pass
 
 func enter() -> void:
+	facing_before_hurt = enemy.facing_right
 	timer = hurt_duration
 	var dir: float = enemy.pending_knockback_dir
 	enemy.velocity.x = dir * knockback_force
 	enemy.velocity.y = -knockback_up_force
 	if enemy.animated_sprite and enemy.animated_sprite.sprite_frames.has_animation("hurt"):
 		enemy.animated_sprite.play("hurt")
+
 
 func exit() -> void:
 	pass
@@ -32,6 +35,10 @@ func physics_process(_delta: float) -> EnemyState:
 	
 	if enemy.is_dead:
 		return death
-	if timer <= 0.0:
-		return chase if enemy.chase else idle
+	if timer <= 0.0 and enemy.is_on_floor():
+		print("Hurt exit — facing_before_hurt: ", facing_before_hurt, " | current facing_right: ", enemy.facing_right, " | pending_knockback_dir: ", enemy.pending_knockback_dir)
+		enemy.set_facing(facing_before_hurt)
+		if enemy.chase and chase:
+			return chase
+		return patrol
 	return next_state

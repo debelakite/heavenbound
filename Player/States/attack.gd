@@ -5,6 +5,10 @@ class_name PlayerStateAttack extends PlayerState
 @export var HIT_DURATION = 0.4 #animation plays twice if duration is >0.4
 @export var horizontal_pushback = 500
 @export var vertical_pushback = 0
+@export var vfx_offset_down = Vector2(0, 80)
+@export var vfx_offset_up = Vector2(0, -80)
+@export var vfx_offset_left = Vector2(-80, 0)
+@export var vfx_offset_right = Vector2(80, 0)
 
 var hit_timer = 0
 
@@ -14,26 +18,54 @@ func init() -> void:
 		
 	#Run code upon state entrance
 func enter() -> void:
-	#TODO play animation
-	player._animation_player.play("Attack")
-	#Decide on which way the player is attacking, depending on direction they are looking in
-	if player.looking_down:
-		hit_boxD.set_active(true)
-	elif player.looking_up:
-		hit_boxU.set_active(true)
-		
-	elif !player._animation_player.flip_h:
-		hit_boxL.set_active(true)
-	else:
-		hit_boxR.set_active(true)
-		#Plays particle effect
-		if player.swing_particles_right:
-			player.swing_particles_right.restart()
-			player.swing_particles_right.emitting = true
-
 	
+	
+	print("ATTACK enter() called")
 
-
+	if player.looking_down:
+		player._animation_player.play("AttackDown")
+		var vfx = preload("res://Scenes/VFXPlayer.tscn").instantiate()
+		hit_boxD.add_child(vfx)
+		vfx.position = vfx_offset_down
+		vfx.play_vfx("Slash", false, true, -90)
+		print("Activating hit_boxD")
+		hit_boxD.set_active(true)
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
+	elif player.looking_up:
+		player._animation_player.play("AttackUp")
+		var vfx = preload("res://Scenes/VFXPlayer.tscn").instantiate()
+		hit_boxU.add_child(vfx)
+		vfx.position = vfx_offset_up
+		vfx.play_vfx("Slash", true, false, -90)
+		print("Activating hit_boxU")
+		hit_boxU.set_active(true)
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
+	elif !player._animation_player.flip_h:
+		player._animation_player.play("Attack")
+		var vfx = preload("res://Scenes/VFXPlayer.tscn").instantiate()
+		hit_boxL.add_child(vfx)
+		vfx.position = vfx_offset_left
+		vfx.play_vfx("Slash", false, false)
+		print("Activating hit_boxL")
+		hit_boxL.set_active(true)
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
+	else:
+		player._animation_player.play("Attack")
+		var vfx = preload("res://Scenes/VFXPlayer.tscn").instantiate()
+		hit_boxR.add_child(vfx)
+		vfx.position = vfx_offset_right
+		vfx.play_vfx("Slash", true, false)
+		print("Activating hit_boxR")
+		hit_boxR.set_active(true)
+		if player.swing_particles:
+			player.swing_particles.restart()
+			player.swing_particles.emitting = true
 
 	hit_timer = 0
 
