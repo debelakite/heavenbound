@@ -150,7 +150,7 @@ shape = SubResource("WorldBoundaryShape2D_drtje")
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_drtje")
-target_scene = "uid://dayebwhab6i3h"
+target_scene = "uid://354icp6gd3si"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=41378918]
 position = Vector2(1825, 781)

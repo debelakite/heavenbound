@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="11_lfmf2"]
 [ext_resource type="Script" uid="uid://ce4xxsjh2id0a" path="res://Player/States/dead.gd" id="12_o28un"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
+[ext_resource type="Script" uid="uid://crk44jlekhpqg" path="res://Player/States/heal.gd" id="14_hshwv"]
 [ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://du10xy57ypgk4" path="res://Player/Scripts/player_hurt_box.gd" id="18_b1ygp"]
 
@@ -324,6 +325,11 @@ animations = [{
 "name": &"Fall",
 "speed": 12.0
 }, {
+"frames": [],
+"loop": 1,
+"name": &"Heal",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_755ss")
@@ -448,7 +454,7 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239629246]
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
-animation = &"AttackDown"
+animation = &"Fall"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)
@@ -461,7 +467,7 @@ drag_vertical_enabled = true
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
-zeal_meter = NodePath("../ResourceMeter")
+zeal_meter = NodePath("../ZealMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxR" unique_id=848643817]
 position = Vector2(66, -1)
@@ -485,6 +491,10 @@ script = ExtResource("7_5htga")
 [node name="Idle" type="Node" parent="States" unique_id=591978101]
 unique_name_in_owner = true
 script = ExtResource("8_p5o4e")
+
+[node name="Heal" type="Node" parent="States" unique_id=757206555]
+unique_name_in_owner = true
+script = ExtResource("14_hshwv")
 
 [node name="Dead" type="Node" parent="States" unique_id=1423621008]
 unique_name_in_owner = true
@@ -529,7 +539,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
-zeal_meter = NodePath("../ResourceMeter")
+zeal_meter = NodePath("../ZealMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxL" unique_id=1419079270]
 position = Vector2(-71, -1)
@@ -540,7 +550,7 @@ debug_color = Color(0.9862271, 0, 0.3305312, 0.41960785)
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
-zeal_meter = NodePath("../ResourceMeter")
+zeal_meter = NodePath("../ZealMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxU" unique_id=626259838]
 position = Vector2(-0.5, -99)
@@ -551,14 +561,14 @@ debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 32
-zeal_meter = NodePath("../ResourceMeter")
+zeal_meter = NodePath("../ZealMeter")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxD" unique_id=470195953]
 position = Vector2(0, 102)
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 
-[node name="ResourceMeter" type="Node" parent="." unique_id=2009711821]
+[node name="ZealMeter" type="Node" parent="." unique_id=2009711821]
 script = ExtResource("16_lfmf2")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=620333231 node_paths=PackedStringArray("owner_player") groups=["player_hurtbox"]]

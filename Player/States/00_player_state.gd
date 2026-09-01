@@ -14,6 +14,8 @@ var hit_boxR: HitBox
 @onready var hurt: PlayerStateHurt = %Hurt
 @onready var attack: PlayerStateAttack = %Attack
 @onready var dead: PlayerStateDead = %Dead
+@onready var heal: Node = %Heal
+
 	
 #endregion
 func setup(p: Player) -> void:

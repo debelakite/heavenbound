@@ -21,7 +21,7 @@ func _find_player_in_tree() -> void:
 
 func register_player(p: Node) -> void:
 	player = p
-	var meter = player.get_node("ResourceMeter")
+	var meter = player.get_node("ZealMeter")
 
 	if zeal_meter:
 		zeal_meter.bind_to_meter(meter)

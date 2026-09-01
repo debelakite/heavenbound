@@ -28,6 +28,8 @@ func handle_input( _event : InputEvent) -> PlayerState:
 		return dash
 	elif _event.is_action_pressed("jump",true): #On jump input - enter jump state
 		return jump
+	if _event.is_action_pressed("heal", true): #On heal input - enter heal state
+		return heal
 	return next_state
 
 
