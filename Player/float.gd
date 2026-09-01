@@ -1,20 +1,18 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateFloat extends PlayerState
 
-@export var bad_controls = true
-@export var timed_float = false
 @export var float_limit = 3
 var float_time = 0
-var time_since_change = 0
-var random_move = (randf_range(-2,2))
 
 #Initialisation of the state
 func init() -> void:
-	pass
+	#Add player progress to the max time the character can float
+	float_limit += player.progress
 		
 	#Run code upon state entrance
 func enter() -> void:
 	#TODO play animation
+	#If player enters fall state the first time after leaving ground, give a small boost up
 	if player.has_landed:
 		float_time = 0
 		player.has_landed = false
@@ -43,7 +41,8 @@ func handle_input( _event : InputEvent) -> PlayerState:
 	#_delta: time from last frame
 func process( delta: float ) -> PlayerState:
 	float_time += delta
-	if timed_float && float_time > float_limit:
+	#If player has floated for too long, stop floating
+	if float_time > float_limit:
 		return fall
 	return next_state
 	
@@ -51,14 +50,10 @@ func process( delta: float ) -> PlayerState:
 	#_delta: time from last frame
 func physics_process( delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed #Decelarate player
-	time_since_change += delta
-	if bad_controls:
-		if time_since_change > 0.5:
-			time_since_change = 0
-			random_move = (randf_range(-1,1))
-		player.velocity.x += 150 * random_move
-	if player.velocity.y > 100 && (float_time < float_limit || !timed_float)  :
+	#if player has not floated too much, start floating
+	if player.velocity.y > 100 && float_time < float_limit :
 		player.velocity.y = 100
+	#If player has landed, mark it and return to idle
 	if player.is_on_floor():
 		player.has_landed = true
 		return idle

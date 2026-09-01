@@ -20,6 +20,10 @@ var previous_state : PlayerState :
 var hurt_state : PlayerState
 #endregion
 
+#region /// player progression variables
+var progress = 0
+#endregion
+
 #region /// Standard Variables
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = 980
