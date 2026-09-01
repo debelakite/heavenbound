@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyv64bx3ffh0" path="res://Sprites/HealthBar/health_bar_3.png" id="5_o2vyp"]
 [ext_resource type="Texture2D" uid="uid://breeqkc6oe18n" path="res://Sprites/HealthBar/health_bar_4.png" id="6_hhtw7"]
 [ext_resource type="PackedScene" uid="uid://cvi5wpgoax1sq" path="res://Scenes/ZealMeterUI.tscn" id="8_nfm57"]
+[ext_resource type="PackedScene" uid="uid://boa2cahvkr5ch" path="res://Scenes/InventoryMenu.tscn" id="9_b5b84"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1569027062]
 script = ExtResource("1_nfm57")
@@ -27,3 +28,5 @@ offset_left = 25.0
 offset_top = 5.0
 offset_right = 25.0
 offset_bottom = 5.0
+
+[node name="InventoryMenu" parent="." unique_id=1593910219 instance=ExtResource("9_b5b84")]

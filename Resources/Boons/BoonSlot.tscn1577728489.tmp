@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d2ubxgc4mrjps"]
+
+[ext_resource type="Script" uid="uid://d88bl2re8w04" path="res://Resources/Boons/boon_slot.gd" id="1_d4b6s"]
+[ext_resource type="Texture2D" uid="uid://dbfx5rhvgnrdp" path="res://Resources/Boons/Icons/divinity_siphon.png" id="2_guy0s"]
+
+[node name="BoonSlot" type="Button" unique_id=1116074916]
+script = ExtResource("1_d4b6s")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1644203999]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_guy0s")

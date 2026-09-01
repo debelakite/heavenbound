@@ -1,9 +1,9 @@
-# key_item_ui.gd
+# key_item_ui.gd (as a page)
 extends Control
 class_name KeyItemUI
 
-@export var item_list_container: VBoxContainer  # or GridContainer for icons
-@export var item_row_scene: PackedScene           # small scene: icon + name + count label
+@export var item_list_container: VBoxContainer
+@export var item_row_scene: PackedScene
 
 var _bound_inventory: KeyItemInventory = null
 
@@ -12,10 +12,14 @@ func bind_to_inventory(inv: KeyItemInventory) -> void:
 	inv.key_item_count_changed.connect(_on_count_changed)
 	_refresh()
 
+func on_page_shown() -> void:
+	_refresh()  # called automatically when tabbed into
+
 func _refresh() -> void:
 	for child in item_list_container.get_children():
 		child.queue_free()
-
+	if _bound_inventory == null:
+		return
 	for entry in _bound_inventory.get_all_held_items():
 		var row = item_row_scene.instantiate()
 		item_list_container.add_child(row)
@@ -23,10 +27,3 @@ func _refresh() -> void:
 
 func _on_count_changed(_item: KeyItem, _new_count: int) -> void:
 	_refresh()
-
-func open() -> void:
-	visible = true
-	_refresh()
-
-func close() -> void:
-	visible = false

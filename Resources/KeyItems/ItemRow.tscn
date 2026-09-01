@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bt6mqg556mq48"]
+
+[node name="ItemRow" type="HBoxContainer" unique_id=753406210]
+offset_right = 197.0
+offset_bottom = 66.0
+
+[node name="Icon" type="TextureRect" parent="." unique_id=2093749999]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="." unique_id=600014820]
+layout_mode = 2
+
+[node name="CountLabel" type="Label" parent="." unique_id=2029471963]
+layout_mode = 2
