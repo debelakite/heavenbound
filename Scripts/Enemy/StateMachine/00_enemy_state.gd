@@ -11,6 +11,8 @@ var hit_box: HitBox
 @onready var chase: EnemyStateChase = %Chase
 @onready var hurt: EnemyStateHurt = %Hurt
 @onready var death: EnemyStateDeath = %Death
+@onready var patrol: EnemyStatePatrol = %Patrol
+
 
 #endregion
 

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cq8oxtn5mgnpj" path="res://Scripts/Enemy/StateMachine/label.gd" id="3_mo1ky"]
 [ext_resource type="Texture2D" uid="uid://cvnvffjbt85k3" path="res://Sprites/Enemy/hellhound.png" id="4_idouy"]
 [ext_resource type="Script" uid="uid://bhxutnsfcfros" path="res://Scripts/Enemy/StateMachine/enemy_idle.gd" id="5_0o0ue"]
+[ext_resource type="Script" uid="uid://cceq3sd4x28g" path="res://Scripts/Enemy/StateMachine/enemy_patrol.gd" id="5_idouy"]
 [ext_resource type="Script" uid="uid://dma5ruot35bu7" path="res://Scripts/Enemy/StateMachine/enemy_chase.gd" id="6_6s1gy"]
 [ext_resource type="Script" uid="uid://cwvl43opuufw1" path="res://Scripts/Enemy/StateMachine/enemy_hurt.gd" id="7_uoxpr"]
 [ext_resource type="Script" uid="uid://dne3cq1r4inw4" path="res://Scripts/Enemy/StateMachine/enemy_death.gd" id="8_idouy"]
@@ -42,7 +43,7 @@ position = Vector2(-56, 0)
 target_position = Vector2(0, 104)
 
 [node name="WallCheck" type="RayCast2D" parent="." unique_id=44262350]
-position = Vector2(0, -24)
+position = Vector2(-41, -17)
 target_position = Vector2(-176, 0)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1706663398 node_paths=PackedStringArray("owner_enemy") groups=["enemy_hurtbox"]]
@@ -95,6 +96,10 @@ shape = SubResource("RectangleShape2D_w1hta")
 debug_color = Color(0.41960785, 0.98039216, 0, 0.41960785)
 
 [node name="States" type="Node" parent="." unique_id=633050722]
+
+[node name="Patrol" type="Node" parent="States" unique_id=821013183]
+unique_name_in_owner = true
+script = ExtResource("5_idouy")
 
 [node name="Idle" type="Node" parent="States" unique_id=2067537891]
 unique_name_in_owner = true

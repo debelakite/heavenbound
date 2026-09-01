@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://byu4i4522lwxe" path="res://Sprites/Backgrounds/frame0008.png" id="8_mo8dj"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="9_cyqlv"]
 [ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="10_hcjpq"]
-=======
 [ext_resource type="PackedScene" uid="uid://6hhit7xulyps" path="res://Scenes/Checkpoint.tscn" id="11_noale"]
+[ext_resource type="PackedScene" uid="uid://nymvs2ktf11j" path="res://Scenes/Porcupain.tscn" id="12_5fa1d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1hta"]
 normal = Vector2(1, 0)
@@ -164,5 +164,8 @@ shape = SubResource("RectangleShape2D_noale")
 
 [node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("11_noale")]
 position = Vector2(3086, 854)
+
+[node name="Porcupain" parent="." unique_id=898439241 instance=ExtResource("12_5fa1d")]
+position = Vector2(3803, 854)
 
 [connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]
