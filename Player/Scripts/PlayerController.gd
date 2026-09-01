@@ -8,7 +8,7 @@ class_name Player extends CharacterBody2D
 #endregion
 
 #region /// export variables
-@export var move_speed : float = 350
+@export var move_speed : float = 450
 #endregion
 
 #region /// State Machine Variables

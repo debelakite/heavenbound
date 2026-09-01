@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://6hhit7xulyps"]
 
 [ext_resource type="Script" uid="uid://cc8cyrnlaqslk" path="res://Scripts/checkpoint.gd" id="1_wp6dl"]
+[ext_resource type="Texture2D" uid="uid://c76mkt0e24h2o" path="res://Sprites/Misc/Zeal_test.png" id="2_i3j2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvdls"]
 size = Vector2(339, 234.5)
 
-<<<<<<< Updated upstream
-[node name="Checkpoint" type="Area2D" unique_id=355130871]
-=======
 [sub_resource type="AtlasTexture" id="AtlasTexture_14q6d"]
 atlas = ExtResource("2_i3j2t")
 region = Rect2(0, 0, 2048, 2048)
@@ -95,7 +93,6 @@ animations = [{
 
 [node name="Checkpoint" type="Area2D" unique_id=355130871 node_paths=PackedStringArray("spawn_point")]
 z_index = 1
->>>>>>> Stashed changes
 collision_mask = 16
 script = ExtResource("1_wp6dl")
 spawn_point = NodePath("Marker2D")
@@ -103,9 +100,6 @@ spawn_point = NodePath("Marker2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=92563427]
 shape = SubResource("RectangleShape2D_rvdls")
 
-<<<<<<< Updated upstream
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=54244454]
-=======
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1385788845]
 position = Vector2(2, -35)
 scale = Vector2(0.53125, 0.40771484)
@@ -113,4 +107,3 @@ sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"Activate"
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=33093403]
->>>>>>> Stashed changes

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cugdrycfka53o"
-path="res://.godot/imported/icon.svg-b67cfb692a937e61d2bda8561d9e8db7.ctex"
+uid="uid://cg3xomq15g77m"
+path="res://.godot/imported/melting_platform.png-99966ac49f9867a1ee8cccecf723a62f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-b67cfb692a937e61d2bda8561d9e8db7.ctex"]
+source_file="res://Sprites/Misc/melting_platform.png"
+dest_files=["res://.godot/imported/melting_platform.png-99966ac49f9867a1ee8cccecf723a62f.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

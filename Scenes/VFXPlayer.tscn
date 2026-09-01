@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://clljlhua5fl7r"]
+[gd_scene format=3 uid="uid://c4ikuldusn3d7"]
 
-[ext_resource type="Script" path="res://Scripts/vfx_player.gd" id="1_kctfc"]
-[ext_resource type="Texture2D" path="res://Player/Sprites/slash_spritesheet.png" id="2_l74m7"]
+[ext_resource type="Script" uid="uid://dlbf4tlmsj8j0" path="res://Scripts/vfx_player.gd" id="1_kctfc"]
+[ext_resource type="Texture2D" uid="uid://cgqu1vvvkpcu1" path="res://Player/Sprites/slash_spritesheet.png" id="2_l74m7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aiur2"]
 atlas = ExtResource("2_l74m7")

@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://dne3cq1r4inw4" path="res://Scripts/Enemy/StateMachine/enemy_death.gd" id="8_idouy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkela"]
-size = Vector2(144, 88)
+size = Vector2(117, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vso2s"]
 size = Vector2(128, 91.5)
@@ -54,7 +54,7 @@ script = ExtResource("2_6bs3c")
 owner_enemy = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=711654947]
-position = Vector2(0, 12)
+position = Vector2(9.5, 13)
 shape = SubResource("RectangleShape2D_fkela")
 debug_color = Color(0.8392157, 0.6313726, 0, 1)
 

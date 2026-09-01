@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuntmpkfwasla"
-path="res://.godot/imported/Lorem Ipsum studios logo.png-302a47ba58b77fabb103f4076aa40e17.ctex"
+uid="uid://c08bco3ufxi1o"
+path="res://.godot/imported/3.png-e8efd8b34aba0c940a9d59c5814d9f09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Lorem Ipsum studios logo.png"
-dest_files=["res://.godot/imported/Lorem Ipsum studios logo.png-302a47ba58b77fabb103f4076aa40e17.ctex"]
+source_file="res://Sprites/Levels/3.png"
+dest_files=["res://.godot/imported/3.png-e8efd8b34aba0c940a9d59c5814d9f09.ctex"]
 
 [params]
 

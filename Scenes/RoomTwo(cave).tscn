@@ -10,12 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://byu4i4522lwxe" path="res://Sprites/Backgrounds/frame0008.png" id="8_mo8dj"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="9_cyqlv"]
 [ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="10_hcjpq"]
-<<<<<<< Updated upstream
 =======
 [ext_resource type="PackedScene" uid="uid://6hhit7xulyps" path="res://Scenes/Checkpoint.tscn" id="11_noale"]
-[ext_resource type="PackedScene" uid="uid://nymvs2ktf11j" path="res://Scenes/Porcupain.tscn" id="12_5fa1d"]
-[ext_resource type="Script" uid="uid://cceq3sd4x28g" path="res://Scripts/Enemy/StateMachine/enemy_patrol.gd" id="13_vofk0"]
->>>>>>> Stashed changes
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1hta"]
 normal = Vector2(1, 0)
@@ -67,7 +63,7 @@ offset_bottom = 1192.0
 texture = ExtResource("1_7rvta")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_yxgf3")]
-position = Vector2(768, 848)
+position = Vector2(526, 844)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1211965492]
 repeat_size = Vector2(1920, 0)
@@ -132,13 +128,13 @@ position = Vector2(14, -48)
 shape = SubResource("RectangleShape2D_cyqlv")
 
 [node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("3_tnt27")]
-position = Vector2(1277, 857)
+position = Vector2(1968, 769)
 
 [node name="Enemy2" parent="." unique_id=1581979762 instance=ExtResource("3_tnt27")]
 position = Vector2(1535, 490)
 
 [node name="Enemy3" parent="." unique_id=2045343232 instance=ExtResource("3_tnt27")]
-position = Vector2(1732, 696)
+position = Vector2(2482, 659)
 
 [node name="SmallPlatform2" type="Sprite2D" parent="." unique_id=516651545]
 z_index = 1
@@ -166,17 +162,7 @@ position = Vector2(14.999878, -34)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_noale")
 
-<<<<<<< Updated upstream
-=======
 [node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("11_noale")]
 position = Vector2(3086, 854)
 
-[node name="Porcupain" parent="." unique_id=898439241 instance=ExtResource("12_5fa1d")]
-position = Vector2(3803, 854)
-
-[node name="Patrol" type="Node" parent="." unique_id=541839904]
-unique_name_in_owner = true
-script = ExtResource("13_vofk0")
-
->>>>>>> Stashed changes
 [connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]

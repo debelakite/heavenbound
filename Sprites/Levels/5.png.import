@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bucf3vq3s2san"
-path="res://.godot/imported/attack_animation_spritesheet.png-117855c25128c5a5ece988195dcee3ef.ctex"
+uid="uid://02k7eaa4jakh"
+path="res://.godot/imported/5.png-4ff9374f0bafd50f4bb0288fa30658af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/attack_animation_spritesheet.png"
-dest_files=["res://.godot/imported/attack_animation_spritesheet.png-117855c25128c5a5ece988195dcee3ef.ctex"]
+source_file="res://Sprites/Levels/5.png"
+dest_files=["res://.godot/imported/5.png-4ff9374f0bafd50f4bb0288fa30658af.ctex"]
 
 [params]
 
