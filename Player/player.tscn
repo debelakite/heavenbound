@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://crk44jlekhpqg" path="res://Player/States/heal.gd" id="14_hshwv"]
 [ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://du10xy57ypgk4" path="res://Player/Scripts/player_hurt_box.gd" id="18_b1ygp"]
+[ext_resource type="Script" uid="uid://cb3luxorrjlpt" path="res://Resources/KeyItems/key_item_inventory.gd" id="22_gpjlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(27, 133.5)
@@ -570,6 +571,9 @@ debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 
 [node name="ZealMeter" type="Node" parent="." unique_id=2009711821]
 script = ExtResource("16_lfmf2")
+
+[node name="KeyItemInventory" type="Node" parent="." unique_id=821872360]
+script = ExtResource("22_gpjlu")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=620333231 node_paths=PackedStringArray("owner_player") groups=["player_hurtbox"]]
 collision_layer = 16
