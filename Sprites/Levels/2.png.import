@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg3xomq15g77m"
-path="res://.godot/imported/melting_platform.png-cecd2cf7e68b9dbf9a2a0184badf22c9.ctex"
+uid="uid://beufc48k0o2l4"
+path="res://.godot/imported/2.png-8f8129cde05fe4518f0cc9c63f22547d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/melting_platform.png"
-dest_files=["res://.godot/imported/melting_platform.png-cecd2cf7e68b9dbf9a2a0184badf22c9.ctex"]
+source_file="res://Sprites/Levels/2.png"
+dest_files=["res://.godot/imported/2.png-8f8129cde05fe4518f0cc9c63f22547d.ctex"]
 
 [params]
 

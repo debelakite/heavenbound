@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6hhit7xulyps"]
 
 [ext_resource type="Script" uid="uid://cc8cyrnlaqslk" path="res://Scripts/checkpoint.gd" id="1_wp6dl"]
-[ext_resource type="Texture2D" uid="uid://c76mkt0e24h2o" path="res://Sprites/Zeal_test.png" id="2_i3j2t"]
+[ext_resource type="Texture2D" uid="uid://c76mkt0e24h2o" path="res://Sprites/Misc/Zeal_test.png" id="2_i3j2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvdls"]
 size = Vector2(339, 234.5)

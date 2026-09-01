@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh1i1gqqx4pf6"]
 
-[ext_resource type="Texture2D" uid="uid://cuntmpkfwasla" path="res://Sprites/Lorem Ipsum studios logo.png" id="1_3edat"]
+[ext_resource type="Texture2D" uid="uid://cuntmpkfwasla" path="res://Sprites/Misc/Lorem Ipsum studios logo.png" id="1_3edat"]
 [ext_resource type="Script" uid="uid://c2dlnboy7jr0k" path="res://Scripts/intro.gd" id="1_vmpge"]
 [ext_resource type="AudioStream" uid="uid://dpxc8ijtuxm5a" path="res://Audio/Lorem Ipsum soundbite.mp3" id="2_rrrc0"]
 

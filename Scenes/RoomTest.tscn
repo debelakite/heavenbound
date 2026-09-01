@@ -4,14 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="2_nsuo6"]
 [ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="3_xy5uc"]
 [ext_resource type="Texture2D" uid="uid://lkjbh5ur2m8f" path="res://Sprites/Backgrounds/background_lineart.png" id="4_eybxx"]
-[ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/melting_platform.png" id="5_2kcn8"]
+[ext_resource type="Texture2D" uid="uid://cg3xomq15g77m" path="res://Sprites/Misc/melting_platform.png" id="5_2kcn8"]
 [ext_resource type="Script" uid="uid://dav8w2nw1q6tr" path="res://Scripts/health_bar.gd" id="6_4kthd"]
 [ext_resource type="Texture2D" uid="uid://bimg2tx2ulcwe" path="res://Sprites/HealthBar/health_bar_0.png" id="7_u0un6"]
 [ext_resource type="Texture2D" uid="uid://xqvja0d8yi17" path="res://Sprites/HealthBar/health_bar_1.png" id="8_3t5aj"]
 [ext_resource type="Texture2D" uid="uid://mkscy748gtf4" path="res://Sprites/HealthBar/health_bar_2.png" id="9_3psj1"]
 [ext_resource type="Texture2D" uid="uid://bvyv64bx3ffh0" path="res://Sprites/HealthBar/health_bar_3.png" id="10_6to28"]
 [ext_resource type="Texture2D" uid="uid://breeqkc6oe18n" path="res://Sprites/HealthBar/health_bar_4.png" id="11_wynj0"]
-[ext_resource type="Texture2D" uid="uid://dvsuuaqc16nwj" path="res://Sprites/death_screen.png" id="12_touo5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(321.42285, 88)
@@ -22,6 +21,9 @@ size = Vector2(5952, 77)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2vmwg"]
 normal = Vector2(0.999928, -0.011999136)
 distance = -289.78644
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w7bbj"]
+load_path = "res://.godot/imported/death_screen.png-f20968d232380f2f65c668d207ccef69.ctex"
 
 [node name="RoomTest" type="Node2D" unique_id=1051485603]
 script = ExtResource("1_rjeiw")
@@ -114,7 +116,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("12_touo5")
+texture = SubResource("CompressedTexture2D_w7bbj")
 expand_mode = 2
 stretch_mode = 3
 
