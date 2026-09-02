@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="5_287un"]
 [ext_resource type="Texture2D" uid="uid://b0mw5ayuvg6au" path="res://Sprites/Backgrounds/frame0002.png" id="5_n2nb7"]
 [ext_resource type="Texture2D" uid="uid://b5ikmerii3biw" path="res://Sprites/Levels/Layer 1.png" id="6_3cyh2"]
-[ext_resource type="Texture2D" uid="uid://bkxaj3jtsgydf" path="res://Sprites/Backgrounds/frame0004.png" id="6_qsibf"]
-[ext_resource type="Texture2D" uid="uid://cuyylrs1b3bxr" path="res://Sprites/Backgrounds/frame0006.png" id="7_glrlr"]
-[ext_resource type="Texture2D" uid="uid://byu4i4522lwxe" path="res://Sprites/Backgrounds/frame0008.png" id="8_1yiwv"]
+[ext_resource type="PackedScene" uid="uid://b8npy7y7q4ogn" path="res://Scenes/Porcupain.tscn" id="9_po2w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0nxl"]
 size = Vector2(2854.25, 20)
@@ -193,5 +191,10 @@ position = Vector2(4407, 1115)
 [node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("5_287un")]
 position = Vector2(2873, 1726)
 
-[connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]
-[connection signal="body_entered" from="CaveTransition" to="CaveTransition" method="_on_body_entered"]
+[node name="Enemy2" parent="." unique_id=1441973078 instance=ExtResource("5_287un")]
+position = Vector2(6933, 3176)
+
+[node name="Porcupain" parent="." unique_id=1728171035 instance=ExtResource("9_po2w2")]
+position = Vector2(2117, 1721)
+
+[connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]

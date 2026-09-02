@@ -20,6 +20,10 @@ var previous_state : PlayerState :
 var hurt_state : PlayerState
 #endregion
 
+#region /// player progression variables
+var progress = 0
+#endregion
+
 #region /// Standard Variables
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = 980
@@ -29,6 +33,7 @@ var looking_up = false
 var looking_down = false
 @export var dash_cooldown: float = 0.8
 var dash_cooldown_timer: float = 0.0
+var has_landed = true
 
 @export var invincibility_duration: float = 1.0
 var is_invincible: bool = false

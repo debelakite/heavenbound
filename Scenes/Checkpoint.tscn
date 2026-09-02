@@ -91,10 +91,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Checkpoint" type="Area2D" unique_id=355130871]
+[node name="Checkpoint" type="Area2D" unique_id=355130871 node_paths=PackedStringArray("spawn_point")]
 z_index = 1
 collision_mask = 16
 script = ExtResource("1_wp6dl")
+spawn_point = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=92563427]
 shape = SubResource("RectangleShape2D_rvdls")
@@ -104,3 +105,5 @@ position = Vector2(2, -35)
 scale = Vector2(0.53125, 0.40771484)
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"Activate"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=33093403]
