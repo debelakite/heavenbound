@@ -9,4 +9,5 @@ id = "divinity_siphon"
 display_name = "Divinity Siphon"
 description = "Rips the essence of felled enemies. Killing enemies fills your Zeal Meter"
 display_icon = ExtResource("1_id3wy")
+grants_zeal_from_kills = true
 metadata/_custom_type_script = "uid://dqfvm7dnsuo1a"

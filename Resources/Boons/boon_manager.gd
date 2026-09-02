@@ -79,3 +79,37 @@ func enter_loadout_mode() -> void:
 ## Called when the player leaves the bench (walks away, closes menu, etc.)
 func exit_loadout_mode() -> void:
 	_can_modify_loadout = false
+
+func get_heal_speed_multiplier() -> float:
+	var result := 1.0
+	for boon in equipped_boons:
+		result *= boon.heal_speed_multiplier
+	return result
+
+func get_damage_multiplier() -> float:
+	var result := 1.0
+	for boon in equipped_boons:
+		result *= boon.damage_multiplier
+	return result
+
+func get_zeal_gain_multiplier() -> float:
+	var result := 1.0
+	for boon in equipped_boons:
+		result *= boon.zeal_gain_multiplier
+	return result
+
+
+
+#region Special Boon Checks
+func has_passive_zeal_regen() -> bool:
+	for boon in equipped_boons:
+		if boon.passive_zeal_regen:
+			return true
+	return false
+
+func has_zeal_from_kills() -> bool:
+	for boon in equipped_boons:
+		if boon.grants_zeal_from_kills:
+			return true
+	return false
+#endregion

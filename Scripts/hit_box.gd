@@ -2,7 +2,6 @@ extends Area2D
 class_name HitBox
 
 var hit: bool = false
-@export var damage: int = 10
 @export var zeal_meter: ResourceMeter  # drag the player's ResourceMeter node here in the Inspector
 
 func _ready() -> void:

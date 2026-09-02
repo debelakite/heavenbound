@@ -459,7 +459,7 @@ sprite_frames = SubResource("SpriteFrames_scqu4")
 animation = &"Fall"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(0.2, 0.2)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -570,8 +570,9 @@ position = Vector2(0, 102)
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 
-[node name="ZealMeter" type="Node" parent="." unique_id=2009711821]
+[node name="ZealMeter" type="Node" parent="." unique_id=2009711821 node_paths=PackedStringArray("boon_manager")]
 script = ExtResource("16_lfmf2")
+boon_manager = NodePath("../BoonManager")
 
 [node name="KeyItemInventory" type="Node" parent="." unique_id=821872360]
 script = ExtResource("22_gpjlu")

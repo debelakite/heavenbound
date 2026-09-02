@@ -284,13 +284,14 @@ scale = Vector2(5.6430516, 5.6430516)
 texture = ExtResource("6_3cyh2")
 
 [node name="MineshaftDoor" type="Area2D" parent="." unique_id=978708225]
+position = Vector2(317, 1679)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_ab6cj")
 target_scene = "uid://duefnejqbtqab"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=1504860135]
-position = Vector2(314, 1674)
+position = Vector2(18, 7)
 shape = SubResource("RectangleShape2D_287un")
 
 [node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("5_287un")]

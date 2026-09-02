@@ -18,7 +18,9 @@ func enter() -> void:
 
 	var meter: ResourceMeter = player.get_node("ZealMeter")
 	if meter.try_heal():
+		var speed_mult = player.boon_manager.get_heal_speed_multiplier()
 		player._animation_player.play("Heal")
+		player._animation_player.speed_scale = speed_mult
 	else: #bails out of heal immediately if not enough zeal
 		_already_healed = true  # prevents heal() from firing in process()
 		next_state = idle

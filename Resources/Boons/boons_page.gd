@@ -13,6 +13,7 @@ func bind_to_boon_manager(mgr: BoonManager) -> void:
 	mgr.notches_changed.connect(_on_notches_changed)
 	mgr.boon_equipped.connect(_on_loadout_changed)
 	mgr.boon_unequipped.connect(_on_loadout_changed)
+	mgr.equip_failed.connect(func(boon, reason): print("Equip failed: ", reason))
 	_refresh()
 
 func on_page_shown() -> void:
