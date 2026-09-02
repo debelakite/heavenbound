@@ -153,7 +153,10 @@ func _physics_process( _delta: float) -> void:
 		velocity.y += gravity * _delta
 	if dash_cooldown_timer > 0.0:
 		dash_cooldown_timer -= _delta
-
+	var children = self.get_children()
+	for s in children:
+		if s is Shot:
+			s._physics_process(_delta)
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
 
