@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b1yg6yyybyc24"]
+
+[ext_resource type="Texture2D" uid="uid://cvlsa2nwpx1w7" path="res://Sprites/Levels/room4.png" id="1_dvjp5"]
+[ext_resource type="Texture2D" uid="uid://csh5igrr66tke" path="res://Sprites/Levels/dividers-png-rdcarstn8g3zb1qm-421228855.jpg" id="2_quotn"]
+[ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="3_quotn"]
+[ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="4_i2ofu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
+size = Vector2(2742, 72.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2ofu"]
+size = Vector2(172, 226)
+
+[node name="Node2D" type="Node2D" unique_id=544722121]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=704971698]
+
+[node name="Room4" type="Sprite2D" parent="StaticBody2D" unique_id=1956176011]
+z_index = -2
+position = Vector2(1045.0001, -1250)
+scale = Vector2(0.7320725, 0.7320725)
+texture = ExtResource("1_dvjp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=49439468]
+position = Vector2(1111, -783)
+shape = SubResource("RectangleShape2D_xhkb1")
+
+[node name="Sprite2D6" type="Sprite2D" parent="StaticBody2D" unique_id=485851048]
+z_index = -1
+position = Vector2(-1656.9998, -1435.0001)
+scale = Vector2(1.4852618, 2.6536853)
+texture = ExtResource("2_quotn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="StaticBody2D" unique_id=679779151]
+z_index = -1
+position = Vector2(1122, -4689)
+scale = Vector2(2.284206, 1.1125196)
+texture = ExtResource("2_quotn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="StaticBody2D" unique_id=83007663]
+z_index = -1
+position = Vector2(3740, -1448)
+scale = Vector2(1.4852618, 2.6536853)
+texture = ExtResource("2_quotn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="StaticBody2D" unique_id=2092692379]
+z_index = -1
+position = Vector2(1221, 2224.0002)
+scale = Vector2(3.181312, 1.2146981)
+texture = ExtResource("2_quotn")
+
+[node name="Player" parent="." unique_id=28099015 instance=ExtResource("3_quotn")]
+position = Vector2(251, -894)
+
+[node name="LiftTransition" type="Area2D" parent="." unique_id=249819682]
+position = Vector2(-124, -1112)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_i2ofu")
+target_scene = "uid://bvarsqckyqms"
+spawn_point_id = "LiftTransitionMarker"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LiftTransition" unique_id=1028229054]
+position = Vector2(172, 184)
+shape = SubResource("RectangleShape2D_i2ofu")
+
+[node name="LiftTransition2" type="Area2D" parent="." unique_id=1292391610]
+position = Vector2(1877, -1247)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_i2ofu")
+target_scene = "uid://bfvmc461m0upe"
+spawn_point_id = "LiftTransitionMarker"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LiftTransition2" unique_id=882759131]
+position = Vector2(170, 315)
+shape = SubResource("RectangleShape2D_i2ofu")
+
+[node name="LiftTransitionMarker2" type="Marker2D" parent="LiftTransition2" unique_id=1136165340]
+position = Vector2(58, 317)
+
+[connection signal="body_entered" from="LiftTransition" to="LiftTransition" method="_on_body_entered"]
+[connection signal="body_entered" from="LiftTransition2" to="LiftTransition2" method="_on_body_entered"]
