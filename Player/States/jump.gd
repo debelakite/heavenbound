@@ -27,7 +27,7 @@ func handle_input( event : InputEvent) -> PlayerState:
 		return attack
 	if event.is_action_pressed("dash", true) and player.dash_cooldown_timer <= 0.0:
 		return dash
-	if event.is_action_pressed("special"):
+	if event.is_action_pressed("special", true) and player.resource_meter.try_cast("shotgun_shot"):
 		return shoot
 	if event.is_action_pressed("jump"): 
 		#On pressing jump again go to floating

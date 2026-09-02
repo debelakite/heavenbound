@@ -28,7 +28,7 @@ func handle_input( _event : InputEvent) -> PlayerState:
 	if _event.is_action_pressed("attack",true):
 		#If attack is pressed, comence an attack
 		return attack
-	if _event.is_action_pressed("special"):
+	if _event.is_action_pressed("special", true) and player.resource_meter.try_cast("shotgun_shot"):
 		return shoot
 	if _event.is_action_pressed("dash") and player.dash_cooldown_timer <= 0.0:
 		#Allow for dashing while floating

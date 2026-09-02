@@ -6,26 +6,29 @@ class_name PlayerStateShooting extends PlayerState
 @export var horizontal_pushback = 500
 @export var vertical_pushback = 0
 const shot := preload("res://Player/Attacks/Shot.tscn")
-
 var shot_timer = 0
-
 #Initialisation of the state
 func init() -> void:
 	pass
 		
 	#Run code upon state entrance
 func enter() -> void:
+	
 	shot_timer = 0
 	var projectile_instance = shot.instantiate() as Shot
 	projectile_instance.position = player.position
 	if player.looking_down:
 		projectile_instance.direction = Vector2.DOWN
+		player.velocity.y = -500
 	elif player.looking_up:
 		projectile_instance.direction = Vector2.UP
+		player.velocity.y = 500
 	elif !player._animation_player.flip_h:
 		projectile_instance.direction = Vector2.LEFT
+		player.velocity.x = 500
 	else:
 		projectile_instance.direction = Vector2.RIGHT
+		player.velocity.x = -500
 	player.add_child(projectile_instance)
 	#Run code upon state exit
 func exit() -> void:
@@ -53,7 +56,6 @@ func process( delta: float ) -> PlayerState:
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
 func physics_process( _delta: float ) -> PlayerState:
-	player.velocity.x = player.direction.x * player.move_speed #Decelarate player
 	
 	return next_state
 	

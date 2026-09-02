@@ -569,6 +569,7 @@ shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.98290104, 0.05732984, 0.30548167, 0.41960785)
 
 [node name="ResourceMeter" type="Node" parent="." unique_id=2009711821]
+unique_name_in_owner = true
 script = ExtResource("16_lfmf2")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=620333231 node_paths=PackedStringArray("owner_player") groups=["player_hurtbox"]]
