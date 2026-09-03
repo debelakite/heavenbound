@@ -24,6 +24,8 @@ func handle_input( _event : InputEvent) -> PlayerState:
 		return attack
 	if _event.is_action_pressed("dash", true) and player.dash_cooldown_timer <= 0.0:
 		return dash
+	if _event.is_action_pressed("jump"):
+		return floating
 	return next_state
 
 
@@ -38,6 +40,7 @@ func process( _delta: float ) -> PlayerState:
 	#_delta: time from last frame
 func physics_process( _delta: float ) -> PlayerState:
 	if player.is_on_floor():
+		player.has_landed = true
 		return idle
 	player.velocity.x = player.direction.x * player.move_speed
 	return next_state

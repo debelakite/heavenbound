@@ -2,6 +2,8 @@
 class_name PlayerStateRun extends PlayerState
 
 @onready var _animation_player = $AnimatedSprite2D
+@export var coyote_time = 0.1
+var coyote_timer = 0
 
 	#Initialisation of the state
 func init() -> void:
@@ -10,7 +12,7 @@ func init() -> void:
 	#Run code upon state entrance
 func enter() -> void:
 	player._animation_player.play("Run")
-	pass
+	coyote_timer = 0
 		
 	#Run code upon state exit
 func exit() -> void:
@@ -42,10 +44,13 @@ func process( _delta: float ) -> PlayerState:
 	#Update function for physics, runs every tick
 	#_delta: time from last frame
 	
-func physics_process( _delta: float ) -> PlayerState:
+func physics_process( delta: float ) -> PlayerState:
 	player.velocity.x = player.direction.x * player.move_speed
 	if player.is_on_floor() == false: #If player not on floor but running, enter fall state
-		return fall
+		#Delay falling for a bit after no longer being on the ground
+		coyote_timer += delta
+		if coyote_timer > coyote_time:
+			return fall
 	return next_state
 
 func took_damage() -> PlayerState: #If player has taken damage, go to hurt state

@@ -146,7 +146,8 @@ shape = SubResource("WorldBoundaryShape2D_l2aln")
 position = Vector2(2026, 755)
 shape = SubResource("WorldBoundaryShape2D_drtje")
 
-[node name="MineshaftDoor" type="Area2D" parent="." unique_id=890354923]
+[node name="CaveEntrance" type="Area2D" parent="." unique_id=890354923]
+position = Vector2(-13, 13)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_drtje")
@@ -156,6 +157,9 @@ target_scene = "uid://354icp6gd3si"
 z_index = 1
 position = Vector2(1825, 781)
 shape = SubResource("RectangleShape2D_w1hta")
+
+[node name="CaveEntranceMarker" type="Marker2D" parent="." unique_id=513953397]
+position = Vector2(1688, 817)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=428807832]
 offset_left = -556.0
@@ -170,4 +174,4 @@ position = Vector2(1323, 822)
 [node name="FromMine" type="Marker2D" parent="." unique_id=344055090]
 position = Vector2(1635, 775)
 
-[connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]

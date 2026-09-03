@@ -28,7 +28,11 @@ func handle_input( event : InputEvent) -> PlayerState:
 	if event.is_action_pressed("dash", true) and player.dash_cooldown_timer <= 0.0:
 		return dash
 		
-	elif event.is_action_released( "jump" ): #On release of jump input - slow down upwards movement
+	if event.is_action_pressed("jump"): 
+		#On pressing jump again go to floating
+		return floating
+		
+	if event.is_action_released( "jump" ): #On release of jump input - slow down upwards movement
 		player.velocity.y *= 0.9
 	return next_state
 
