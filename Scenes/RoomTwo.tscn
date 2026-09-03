@@ -114,6 +114,8 @@ position = Vector2(1601.3248, 1791.9625)
 scale = Vector2(5.6430516, 5.6430516)
 texture = ExtResource("6_3cyh2")
 
+[node name="MineshaftDoor" type="Area2D" parent="." unique_id=978708225]
+position = Vector2(317, 1679)
 [node name="Parallax2D" type="Parallax2D" parent="StaticBody2D" unique_id=685662363]
 scroll_offset = Vector2(15334.294, 1201.0603)
 repeat_size = Vector2(1920, 0)
@@ -168,10 +170,9 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_ab6cj")
 target_scene = "uid://duefnejqbtqab"
-spawn_point_id = "CaveEntranceMarker"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveEntrance" unique_id=1504860135]
-position = Vector2(314, 1674)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=1504860135]
+position = Vector2(18, 7)
 shape = SubResource("RectangleShape2D_287un")
 
 [node name="CaveTransition" type="Area2D" parent="." unique_id=131057129]
@@ -194,6 +195,14 @@ position = Vector2(2873, 1726)
 [node name="Enemy2" parent="." unique_id=1441973078 instance=ExtResource("5_287un")]
 position = Vector2(6933, 3176)
 
+[node name="Enemy3" parent="." unique_id=792618430 instance=ExtResource("5_287un")]
+position = Vector2(2742, 1572)
+
+[node name="Enemy4" parent="." unique_id=317763459 instance=ExtResource("5_287un")]
+position = Vector2(3183, 1481)
+
+[node name="Enemy5" parent="." unique_id=1954388315 instance=ExtResource("5_287un")]
+position = Vector2(3575, 1444)
 [node name="Porcupain" parent="." unique_id=1728171035 instance=ExtResource("9_po2w2")]
 position = Vector2(2117, 1721)
 

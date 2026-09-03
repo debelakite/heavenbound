@@ -7,6 +7,12 @@ class_name Player extends CharacterBody2D
 @onready var hit_boxD: HitBox = %HitBoxD
 #endregion
 
+#region ///onready variables
+@onready var zeal_meter: ResourceMeter = $ZealMeter
+@onready var key_item_inventory: KeyItemInventory = $KeyItemInventory
+@onready var boon_manager: BoonManager = $BoonManager
+#endregion
+
 #region /// export variables
 @export var move_speed : float = 450
 #endregion
@@ -107,6 +113,10 @@ func reset_health() -> void:
 
 	#Intialise the player states upon game start
 func _ready() -> void:
+	
+	#TEST BOON
+	var test_boon = preload("res://Resources/Boons/divinity_siphon.tres")
+	$BoonManager.discover_boon(test_boon)
 	#pull from a loaded save, if one exists
 	if GameState.health_stage != -1:
 		respawn_position = GameState.respawn_position

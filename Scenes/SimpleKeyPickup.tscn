@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cx3qxy8bin86o"]
+
+[ext_resource type="Script" uid="uid://m3e4lf4tph57" path="res://Resources/KeyItems/key_item_pickup.gd" id="1_3svgm"]
+
+[node name="SimpleKeyPickup" type="Area2D" unique_id=2133474301]
+script = ExtResource("1_3svgm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=33614220]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1175085243]

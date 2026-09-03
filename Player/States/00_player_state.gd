@@ -18,6 +18,7 @@ var hit_boxR: HitBox
 
 
 @onready var dead: PlayerStateDead = %Dead
+@onready var heal: Node = %Heal
 
 	
 #endregion

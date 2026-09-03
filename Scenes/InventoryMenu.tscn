@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://boa2cahvkr5ch"]
+
+[ext_resource type="Script" uid="uid://mg24u3gh2m0m" path="res://Scripts/iventory_menu.gd" id="1_kefbm"]
+[ext_resource type="Script" uid="uid://c4y5jrouofrwf" path="res://Resources/KeyItems/key_item_ui.gd" id="2_w5leg"]
+[ext_resource type="Script" uid="uid://btljd2lbus5ww" path="res://Resources/Boons/boons_page.gd" id="3_buebr"]
+[ext_resource type="PackedScene" uid="uid://bt6mqg556mq48" path="res://Resources/KeyItems/ItemRow.tscn" id="3_w5leg"]
+[ext_resource type="PackedScene" uid="uid://d2ubxgc4mrjps" path="res://Resources/Boons/BoonSlot.tscn" id="5_buebr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(0, 0, 0, 0.4509804)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.87058824, 0.69411767, 0.14901961, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.34117648)
+shadow_size = 7
+
+[node name="InventoryMenu" type="Control" unique_id=1593910219 node_paths=PackedStringArray("pages", "tab_labels")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kefbm")
+pages = [NodePath("MainPanel/TabHeader/PageContainer/BoonsPage"), NodePath("MainPanel/TabHeader/PageContainer/KeyItemsPage")]
+tab_labels = [NodePath("MainPanel/TabHeader/BoonsTabLabel"), NodePath("MainPanel/TabHeader/KeyItemsTabLabel"), NodePath("MainPanel/TabHeader/MapTabLabel")]
+
+[node name="Background" type="ColorRect" parent="." unique_id=243435636]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7529412)
+
+[node name="MainPanel" type="Panel" parent="." unique_id=1186963169]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrivr")
+
+[node name="Frame" type="NinePatchRect" parent="MainPanel" unique_id=1894104787]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabHeader" type="HBoxContainer" parent="MainPanel" unique_id=963242881]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -27.0
+offset_bottom = -4.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="KeyItemsTabLabel" type="Label" parent="MainPanel/TabHeader" unique_id=423955224]
+layout_mode = 2
+text = "Relics"
+
+[node name="BoonsTabLabel" type="Label" parent="MainPanel/TabHeader" unique_id=1166225477]
+layout_mode = 2
+text = "Boons"
+
+[node name="MapTabLabel" type="Label" parent="MainPanel/TabHeader" unique_id=999244367]
+layout_mode = 2
+text = "Map"
+
+[node name="PageContainer" type="Control" parent="MainPanel/TabHeader" unique_id=334177288]
+layout_mode = 2
+
+[node name="KeyItemsPage" type="Control" parent="MainPanel/TabHeader/PageContainer" unique_id=215790964 node_paths=PackedStringArray("item_list_container")]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -112.0
+offset_top = 44.0
+offset_right = -72.0
+offset_bottom = 84.0
+script = ExtResource("2_w5leg")
+item_list_container = NodePath("ItemListContainer")
+item_row_scene = ExtResource("3_w5leg")
+
+[node name="ItemListContainer" type="VBoxContainer" parent="MainPanel/TabHeader/PageContainer/KeyItemsPage" unique_id=3115940]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 4.0
+offset_right = 30.0
+offset_bottom = 44.0
+
+[node name="BoonsPage" type="Control" parent="MainPanel/TabHeader/PageContainer" unique_id=2078324494 node_paths=PackedStringArray("owned_grid", "notch_label")]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -111.0
+offset_top = 54.0
+offset_right = -6.0
+offset_bottom = 151.0
+script = ExtResource("3_buebr")
+owned_grid = NodePath("OwnerGrid")
+boon_slot_scene = ExtResource("5_buebr")
+notch_label = NodePath("NotchLabel")
+
+[node name="OwnerGrid" type="GridContainer" parent="MainPanel/TabHeader/PageContainer/BoonsPage" unique_id=2122285515]
+layout_mode = 0
+offset_left = -323.0
+offset_top = 18.0
+offset_right = 410.0
+offset_bottom = 451.0
+columns = 2
+
+[node name="NotchLabel" type="Label" parent="MainPanel/TabHeader/PageContainer/BoonsPage" unique_id=2003877267]
+layout_mode = 0
+offset_right = 108.0
+offset_bottom = 32.0
+
+[node name="MapPage" type="Control" parent="MainPanel/TabHeader/PageContainer" unique_id=310156807]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
