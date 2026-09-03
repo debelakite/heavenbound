@@ -19,8 +19,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		print("1. Player touched Area2D")
 		if target_scene.is_empty():
 			print("ERROR: Target scene variable is empty in Inspector!")
 			return
 		set_deferred("monitoring", false)
-		Transition.change_scene(target_scene, spawn_point_id)
+		Transition.change_scene(target_scene)
