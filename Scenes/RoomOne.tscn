@@ -153,9 +153,9 @@ collision_mask = 2
 script = ExtResource("4_drtje")
 target_scene = "uid://354icp6gd3si"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=41378918]
+[node name="MineshaftDoor#CollisionShape2D" type="CollisionShape2D" parent="CaveEntrance" unique_id=41378918]
 z_index = 1
-position = Vector2(1825, 781)
+position = Vector2(1838, 768)
 shape = SubResource("RectangleShape2D_w1hta")
 
 [node name="CaveEntranceMarker" type="Marker2D" parent="." unique_id=513953397]
