@@ -139,12 +139,16 @@ scale = Vector2(0.82221264, 0.82221276)
 shape = SubResource("RectangleShape2D_orjmt")
 
 [node name="Checkpoint" parent="StaticBody2D" unique_id=355130871 instance=ExtResource("2_u1xt1")]
+<<<<<<< Updated upstream
 position = Vector2(752.1719, 1366.5)
 
 [node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D" unique_id=1759830764]
 position = Vector2(213, 4014)
 scale = Vector2(0.066143386, 0.41463023)
 texture = ExtResource("3_fgo4y")
+=======
+position = Vector2(693, 1373)
+>>>>>>> Stashed changes
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=29569558]
 position = Vector2(1161.1719, 1737.5)
@@ -188,6 +192,7 @@ texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1788226369]
 position = Vector2(710, 1563)
+<<<<<<< Updated upstream
 polygon = PackedVector2Array(-657, -95, -657, -119, 270, -129, 260, -111, 238, -91, 199, -74, 166, -76, 146, -64, 118, -39, 77, -27, 42, -20)
 
 [node name="Sprite2D5" type="Sprite2D" parent="StaticBody2D" unique_id=637241717]
@@ -221,6 +226,20 @@ spawn_point_id = "CaveTransitionMarker"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaveTransition" unique_id=1166807653]
 position = Vector2(144, 1330)
+=======
+polygon = PackedVector2Array(-657, -95, -658, -116, -144, -114, 225, -117, 230, -112, 219, -99, 192, -79, 162, -66, 139, -64, 105, -55, 77, -27, -4, -15)
+
+[node name="CaveTransition" type="Area2D" parent="." unique_id=979195016]
+position = Vector2(212, 1036)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_u1xt1")
+target_scene = "uid://bnw1l0dq8n8s0"
+spawn_point_id = "Ot3kum2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveTransition" unique_id=1166807653]
+position = Vector2(-82, 189)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_fgo4y")
 
 [node name="LiftTransition" type="Area2D" parent="." unique_id=587991537]
@@ -235,7 +254,78 @@ position = Vector2(144, 1330)
 shape = SubResource("RectangleShape2D_fgo4y")
 
 [node name="LiftTransitionMarker" type="Marker2D" parent="LiftTransition" unique_id=644048655]
+<<<<<<< Updated upstream
 position = Vector2(-12, 1331)
+=======
+position = Vector2(-31, 1294)
+
+[node name="Floor" type="Sprite2D" parent="LiftTransition" unique_id=550208126]
+z_index = -6
+position = Vector2(994, 1747)
+scale = Vector2(0.6345795, 0.6345794)
+texture = ExtResource("8_x1nt8")
+
+[node name="Fade5" type="Sprite2D" parent="." unique_id=1712500836]
+z_index = -2
+position = Vector2(1435.0001, 833.99994)
+scale = Vector2(1.7465819, 0.884129)
+texture = ExtResource("9_x1nt8")
+
+[node name="Fade6" type="Sprite2D" parent="." unique_id=675216936]
+z_index = -2
+position = Vector2(2633.9998, 2150)
+rotation = 1.5707964
+scale = Vector2(3.0505483, 0.78168404)
+texture = ExtResource("9_x1nt8")
+
+[node name="Fade7" type="Sprite2D" parent="." unique_id=1588053093]
+z_index = -2
+position = Vector2(1408, 3864.9995)
+rotation = 3.1415927
+scale = Vector2(1.7465819, 0.884129)
+texture = ExtResource("9_x1nt8")
+
+[node name="Fade8" type="Sprite2D" parent="." unique_id=1039761629]
+z_index = -2
+position = Vector2(133.00012, 2372)
+rotation = -1.5707964
+scale = Vector2(2.4289832, 0.78168404)
+texture = ExtResource("9_x1nt8")
+
+[node name="CaveBackground" type="Sprite2D" parent="." unique_id=1741046521]
+z_index = -7
+position = Vector2(232, 1571.0001)
+scale = Vector2(2.8354166, 2.8354166)
+texture = ExtResource("13_orjmt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=119135954]
+offset_left = 2861.0
+offset_top = -1152.0
+offset_right = 5589.0
+offset_bottom = 5414.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1447917405]
+offset_left = -1116.0
+offset_top = 4027.0
+offset_right = 4711.0
+offset_bottom = 5381.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=671215000]
+offset_left = -3307.0
+offset_top = 145.0
+offset_right = 16.0
+offset_bottom = 5692.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=380042198]
+offset_left = -3353.0
+offset_top = -1162.0
+offset_right = 3871.0
+offset_bottom = 636.0
+color = Color(0, 0, 0, 1)
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="CaveTransition" to="CaveTransition" method="_on_body_entered"]
 [connection signal="body_entered" from="LiftTransition" to="LiftTransition" method="_on_body_entered"]

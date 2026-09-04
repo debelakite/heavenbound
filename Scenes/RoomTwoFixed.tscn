@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://bnw1l0dq8n8s0"]
+
+[ext_resource type="Texture2D" uid="uid://d3gn367p8gp62" path="res://Sprites/Levels/CaveSprites/Entrance.png" id="1_ebggo"]
+[ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="2_dspft"]
+[ext_resource type="Texture2D" uid="uid://drrwvaew66raa" path="res://Sprites/Levels/CaveSprites/Rails.png" id="3_lkatb"]
+[ext_resource type="Texture2D" uid="uid://b3fqev87m8i5t" path="res://Sprites/Levels/CaveSprites/MainWall2.png" id="4_bculg"]
+[ext_resource type="Texture2D" uid="uid://cso88ww0nblyh" path="res://Sprites/Levels/CaveSprites/RoofAngle.png" id="5_mt6by"]
+[ext_resource type="Texture2D" uid="uid://cb8i4vgvll15r" path="res://Sprites/Levels/CaveSprites/Roof.png" id="6_ufnam"]
+[ext_resource type="Texture2D" uid="uid://tcy8s43s2yks" path="res://Sprites/Levels/CaveSprites/Fade.png" id="7_dspft"]
+[ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="8_lkatb"]
+[ext_resource type="Texture2D" uid="uid://daafyajkbj56" path="res://Sprites/Levels/Cave_parallax/Stallag3.png" id="9_ufnam"]
+[ext_resource type="Texture2D" uid="uid://c74qc2ee66fr8" path="res://Sprites/Levels/Cave_parallax/Stallag1.png" id="10_e0wwt"]
+[ext_resource type="Texture2D" uid="uid://x55lcsbp0r6t" path="res://Sprites/Levels/Cave_parallax/Stallag2.png" id="11_ca80h"]
+[ext_resource type="Texture2D" uid="uid://bjiwga7fuggvm" path="res://Sprites/Levels/Cave_parallax/Stallag6.png" id="12_1xvph"]
+[ext_resource type="Texture2D" uid="uid://s5u0pya2trq8" path="res://Sprites/Levels/Cave_parallax/Stallag5.png" id="13_xkyvs"]
+[ext_resource type="Texture2D" uid="uid://dn2f7rapjljtw" path="res://Sprites/Levels/Cave_parallax/Stallag4.png" id="14_ir6ln"]
+[ext_resource type="Texture2D" uid="uid://c52o1ea8dahld" path="res://Sprites/Levels/CaveSprites/CaveBackground.png" id="15_xkyvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
+size = Vector2(2996.5, 77.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3v5h"]
+size = Vector2(73.94989, 730)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bculg"]
+size = Vector2(138.5, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkatb"]
+size = Vector2(172, 586.5)
+
+[node name="Node2D" type="Node2D" unique_id=207800952]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2004870452]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=708108542]
+position = Vector2(1617.75, 393.75)
+shape = SubResource("RectangleShape2D_xhkb1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=377369987]
+position = Vector2(3002, 217)
+polygon = PackedVector2Array(-3, 2, -3.036621, -58.2417, 7.963379, -97.2417, 113.96338, -96.2417, 118.96338, -205.2417, 129.96338, -214.2417, 190.96338, -212.2417, 192.96338, -288.2417, 195.96338, -314.2417, 1002.9634, -311.2417, -366, 141, -366, 13, -352, 2)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1466328221]
+position = Vector2(82.025055, 67)
+shape = SubResource("RectangleShape2D_t3v5h")
+
+[node name="Entrance" type="Sprite2D" parent="." unique_id=464162101]
+z_index = -5
+position = Vector2(454, 227)
+scale = Vector2(0.6200121, 0.62001204)
+texture = ExtResource("1_ebggo")
+
+[node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_dspft")]
+z_index = -5
+position = Vector2(326, 296)
+
+[node name="Rails" type="Sprite2D" parent="." unique_id=32408990]
+z_index = -5
+position = Vector2(1328.4941, 584.125)
+scale = Vector2(0.82391304, 0.82391304)
+texture = ExtResource("3_lkatb")
+
+[node name="MainWall2" type="Sprite2D" parent="." unique_id=185032631]
+z_index = -5
+position = Vector2(3552, 998.99994)
+scale = Vector2(0.62849826, 0.6284984)
+texture = ExtResource("4_bculg")
+
+[node name="RoofAngle" type="Sprite2D" parent="." unique_id=979676354]
+z_index = -5
+position = Vector2(3970.0002, -624.00006)
+scale = Vector2(0.730579, 0.7305791)
+texture = ExtResource("5_mt6by")
+
+[node name="Roof" type="Sprite2D" parent="." unique_id=966783464]
+z_index = -5
+position = Vector2(1256.5955, -285.25)
+scale = Vector2(0.7997631, 0.7997631)
+texture = ExtResource("6_ufnam")
+
+[node name="Fade8" type="Sprite2D" parent="." unique_id=1540715516]
+z_index = -2
+position = Vector2(1107.9999, -312.00513)
+rotation = 6.2831855
+scale = Vector2(1.5822712, 0.8238193)
+texture = ExtResource("7_dspft")
+
+[node name="Fade9" type="Sprite2D" parent="." unique_id=1911125419]
+z_index = -2
+position = Vector2(80.00001, 523.29443)
+rotation = -1.5707964
+scale = Vector2(1.1057155, 0.76645136)
+texture = ExtResource("7_dspft")
+
+[node name="Fade10" type="Sprite2D" parent="." unique_id=1259981526]
+z_index = -2
+position = Vector2(2244.0002, 689.99994)
+rotation = 3.1415927
+scale = Vector2(2.5512953, 0.76645136)
+texture = ExtResource("7_dspft")
+
+[node name="Fade11" type="Sprite2D" parent="." unique_id=661352949]
+z_index = -2
+position = Vector2(4573, -1021)
+rotation = 6.2831855
+scale = Vector2(1.5822712, 0.87547207)
+texture = ExtResource("7_dspft")
+
+[node name="Fade12" type="Sprite2D" parent="." unique_id=535865768]
+z_index = -2
+position = Vector2(3105.7637, -733.8605)
+rotation = -0.6632251
+scale = Vector2(0.88538814, 0.87547207)
+texture = ExtResource("7_dspft")
+
+[node name="Fade13" type="Sprite2D" parent="." unique_id=1684615829]
+z_index = -2
+position = Vector2(3948.9998, -61)
+rotation = 1.5707964
+scale = Vector2(1.5822712, 0.87547207)
+texture = ExtResource("7_dspft")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2152431]
+offset_left = -1265.0
+offset_top = -1492.0
+offset_right = -14.0
+offset_bottom = 1597.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1502312127]
+offset_left = -1265.0
+offset_top = 821.0
+offset_right = 5061.0
+offset_bottom = 2387.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=434095720]
+offset_left = 4089.0
+offset_top = -2037.0
+offset_right = 6057.0
+offset_bottom = 2387.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1613811931]
+offset_left = -1265.0
+offset_top = -1737.0
+offset_right = 2561.0
+offset_bottom = -488.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=860848493]
+offset_left = 1746.0
+offset_top = -2222.0
+offset_right = 6059.0
+offset_bottom = -1096.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=1552449147]
+offset_left = 2281.0002
+offset_top = -921.00024
+offset_right = 3160.6038
+offset_bottom = -428.00024
+rotation = -0.6632251
+color = Color(0, 0, 0, 1)
+
+[node name="CaveEntrance" type="Area2D" parent="." unique_id=604359485]
+position = Vector2(188, 267)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_lkatb")
+target_scene = "uid://duefnejqbtqab"
+spawn_point_id = "CaveEntranceMarker"
+
+[node name="MineshaftDoor" type="CollisionShape2D" parent="CaveEntrance" unique_id=1318507615]
+z_index = 1
+shape = SubResource("RectangleShape2D_bculg")
+
+[node name="CaveTransition" type="Area2D" parent="." unique_id=1993327621]
+position = Vector2(3890, -376)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_lkatb")
+target_scene = "uid://bvarsqckyqms"
+spawn_point_id = "Ot3kum2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveTransition" unique_id=923805451]
+position = Vector2(19, -13)
+shape = SubResource("RectangleShape2D_lkatb")
+
+[node name="Ot3kum2" type="Marker2D" parent="CaveTransition" unique_id=476299900]
+position = Vector2(-159, 120)
+
+[node name="Parallax2" type="Parallax2D" parent="." unique_id=1947265612]
+scale = Vector2(0.49, 0.49)
+scroll_scale = Vector2(0.8, 1)
+scroll_offset = Vector2(-2638, 677)
+
+[node name="Stallag4" type="Sprite2D" parent="Parallax2" unique_id=438965757]
+z_index = -7
+position = Vector2(8685.715, -1171.4287)
+scale = Vector2(1.4653518, 2.40559)
+texture = ExtResource("9_ufnam")
+
+[node name="Stallag1" type="Sprite2D" parent="Parallax2" unique_id=1035187366]
+z_index = -7
+position = Vector2(13361.226, -2308.1636)
+scale = Vector2(2.6509628, 2.6509628)
+texture = ExtResource("10_e0wwt")
+
+[node name="Stallag3" type="Sprite2D" parent="Parallax2" unique_id=1632165860]
+z_index = -7
+position = Vector2(7138.7754, -1244.898)
+scale = Vector2(2.4341094, 2.4341097)
+texture = ExtResource("11_ca80h")
+
+[node name="Stallag6" type="Sprite2D" parent="Parallax2" unique_id=49412773]
+z_index = -7
+position = Vector2(11491.837, -1751.0205)
+scale = Vector2(1.305324, 3.039315)
+texture = ExtResource("9_ufnam")
+
+[node name="Stallag2" type="Sprite2D" parent="Parallax2" unique_id=697398916]
+z_index = -6
+position = Vector2(9985.714, -1244.898)
+scale = Vector2(2.382897, 2.382897)
+texture = ExtResource("10_e0wwt")
+
+[node name="Stallag5" type="Sprite2D" parent="." unique_id=130879790]
+z_index = -4
+position = Vector2(2311, 483)
+scale = Vector2(1.6494944, 1.6494944)
+texture = ExtResource("13_xkyvs")
+
+[node name="Stallag7" type="Sprite2D" parent="." unique_id=547283696]
+z_index = -4
+position = Vector2(1267.9998, 438.9999)
+scale = Vector2(1.5412955, 1.5412955)
+texture = ExtResource("12_1xvph")
+
+[node name="Stallag8" type="Sprite2D" parent="." unique_id=2088563922]
+z_index = -4
+position = Vector2(585, 438.99994)
+scale = Vector2(0.9778989, 0.97789896)
+texture = ExtResource("14_ir6ln")
+
+[node name="CaveBackground" type="Sprite2D" parent="." unique_id=630490644]
+z_index = -7
+position = Vector2(2059, 0)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("15_xkyvs")
+
+[connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]
+[connection signal="body_entered" from="CaveTransition" to="CaveTransition" method="_on_body_entered"]

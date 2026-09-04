@@ -87,7 +87,7 @@ texture = ExtResource("4_8ysfi")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_3mjr0")]
 z_index = 6
-position = Vector2(296, 393)
+position = Vector2(345, 376)
 move_speed = 400.0
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1837396749]
@@ -132,9 +132,59 @@ shape = SubResource("RectangleShape2D_b1lj4")
 position = Vector2(3726.0203, 1339.745)
 shape = SubResource("RectangleShape2D_l2aln")
 
+<<<<<<< Updated upstream
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D2" unique_id=843010960]
 position = Vector2(184.43878, 1444.898)
 shape = SubResource("RectangleShape2D_drtje")
+=======
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1679362707]
+position = Vector2(1216.3265, 1361.2245)
+shape = SubResource("RectangleShape2D_xhkb1")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=2098737176]
+position = Vector2(2014.8046, 1685.6072)
+polygon = PackedVector2Array(117.84851, -22.341919, 168.86877, 165.41321, -127.04944, 171.53564, -141.3352, -163.1582, -120.927, -32.54602)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1718545288]
+shape = SubResource("RectangleShape2D_rdw2d")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2" unique_id=972760383]
+position = Vector2(-312.24487, 975.51013)
+shape = SubResource("RectangleShape2D_u0nxl")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1527102394]
+position = Vector2(1763.5562, 828.68524)
+polygon = PackedVector2Array(46.64795, 14.171875, 87.46423, 50.906616, 116.035645, 61.110657, 142.56628, 28.45758, 132.36218, -2.154663, 171.1377, -2.154663, 226.23975, 12.1311035, 277.26013, 12.1311035, 277.26013, -20.521973, -6.41333, -22.562805, -18.658203, -185.82813, -26.821533, 83.55963, 24.198975, -0.11383057)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=428807832]
+z_index = -7
+offset_left = -1983.6735
+offset_top = 2151.0205
+offset_right = 6677.8345
+offset_bottom = 4438.7744
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D2" unique_id=457566459]
+z_index = -7
+offset_left = 4634.694
+offset_top = -1683.6735
+offset_right = 6881.633
+offset_bottom = 2993.3882
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="StaticBody2D2" unique_id=1667272165]
+z_index = -7
+offset_left = -2840.8164
+offset_top = -4997.959
+offset_right = 5771.4287
+offset_bottom = -1398.449
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1122360034]
+position = Vector2(-292.53726, 1605.8439)
+scale = Vector2(2.0408163, 2.0408163)
+polygon = PackedVector2Array(1.3432617, 0.13647461, 13.343262, -47.863525, 21.343262, -54.863525, 34.34326, -48.863525, 30.343262, -85.863525, 40.34326, -106.863525, 70.34326, -110.863525, 81.34326, -101.863525, 97.34326, -70.863525, 102.34326, -86.863525, 130.34326, -100.863525, 148.34326, -148.86353, 155.34326, -154.86353, 178.34326, -159.86353, 217.34326, -134.86353, 242.34326, -146.86353, 261.34326, -199.86353, 287.34326, -205.86353, 299.34326, -198.86353, 324.34326, -180.86353, 342.34326, -158.86353, 361.34326, -168.86353, 371.34326, -167.86353, 373.34326, -19.863525)
+>>>>>>> Stashed changes
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=213689497]
 
@@ -151,11 +201,11 @@ position = Vector2(-13, 13)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_drtje")
-target_scene = "uid://354icp6gd3si"
+target_scene = "uid://bnw1l0dq8n8s0"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=41378918]
+[node name="MineshaftDoor#CollisionShape2D" type="CollisionShape2D" parent="CaveEntrance" unique_id=41378918]
 z_index = 1
-position = Vector2(1825, 781)
+position = Vector2(1930, 782)
 shape = SubResource("RectangleShape2D_w1hta")
 
 [node name="CaveEntranceMarker" type="Marker2D" parent="." unique_id=513953397]
@@ -169,7 +219,7 @@ offset_bottom = 2303.0
 color = Color(0, 0, 0, 1)
 
 [node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("7_jrquj")]
-position = Vector2(1323, 822)
+position = Vector2(1395, 828)
 
 [node name="FromMine" type="Marker2D" parent="." unique_id=344055090]
 position = Vector2(1635, 775)
