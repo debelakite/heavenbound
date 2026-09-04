@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var zeal_meter: ZealMeterUI = $ZealMeterUi
+@onready var inventory_menu: InventoryMenu = $InventoryMenu
 var player: Player = null
 
 func _ready() -> void:
@@ -21,17 +22,19 @@ func _find_player_in_tree() -> void:
 
 func register_player(p: Node) -> void:
 	player = p
-	var meter = player.get_node("ResourceMeter")
-
+	var meter = player.get_node("ZealMeter")
 	if zeal_meter:
 		zeal_meter.bind_to_meter(meter)
 		if not meter.charge_changed.is_connected(zeal_meter._on_charge_changed):
 			meter.charge_changed.connect(zeal_meter._on_charge_changed)
-
 	%HealthBarUI.bind_to_health(player)
+	inventory_menu.pages[0].bind_to_boon_manager(player.get_node("BoonManager"))
+	inventory_menu.pages[1].bind_to_inventory(player.get_node("KeyItemInventory"))
 
 
-
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("open_inventory") and not inventory_menu.is_open:
+		inventory_menu.open()
 
 func _process(_delta: float) -> void:
 	# Added a safety check to prevent crash if player is null on frame 1

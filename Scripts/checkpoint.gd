@@ -7,12 +7,21 @@ var activated: bool = false
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_hurtbox"):
 		var player = area.owner_player
 		if player:
 			_activate()
+			if player.has_node("BoonManager"):
+				player.get_node("BoonManager").enter_loadout_mode()
+
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("player_hurtbox"):
+		var player = area.owner_player
+		if player and player.has_node("BoonManager"):
+			player.get_node("BoonManager").exit_loadout_mode()
 
 func _activate() -> void:
 	if activated:

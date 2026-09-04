@@ -1,5 +1,6 @@
 extends Node
 
+var target_spawn_id: String = ""
 var respawn_position: Vector2 = Vector2.ZERO
 var respawn_scene_path: String = ""
 var health_stage: int = -1  # -1 = no save data yet, use default
