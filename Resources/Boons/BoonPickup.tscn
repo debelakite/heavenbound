@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bpbqyhj2t6kg2"]
+
+[ext_resource type="Script" uid="uid://weydvsv56a0v" path="res://Resources/Boons/boon_pickup.gd" id="1_sr3ee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr3ee"]
+
+[node name="BoonPickup" type="Area2D" unique_id=1001133659]
+script = ExtResource("1_sr3ee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1019887092]
+shape = SubResource("RectangleShape2D_sr3ee")

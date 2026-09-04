@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Boon" format=3 uid="uid://bcwv4ay6bd8pu"]
+
+[ext_resource type="Script" uid="uid://dqfvm7dnsuo1a" path="res://Resources/Boons/boon.gd" id="1_5uh6g"]
+[ext_resource type="Texture2D" uid="uid://dbfx5rhvgnrdp" path="res://Resources/Boons/Icons/divinity_siphon.png" id="1_id3wy"]
+
+[resource]
+script = ExtResource("1_5uh6g")
+id = "divinity_siphon"
+display_name = "Divinity Siphon"
+description = "Rips the essence of felled enemies. Killing enemies fills your Zeal Meter"
+display_icon = ExtResource("1_id3wy")
+grants_zeal_from_kills = true
+metadata/_custom_type_script = "uid://dqfvm7dnsuo1a"

@@ -165,6 +165,6 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Pre-Alpha 0.2.2"
+text = "Pre-Alpha 0.2.4"
 
 [connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

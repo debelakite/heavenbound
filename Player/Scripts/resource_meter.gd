@@ -8,6 +8,8 @@ signal charge_depleted
 signal charge_full
 signal insufficient_charge(required: float, available: float)
 
+@export var boon_manager: BoonManager
+
 @export_group("Capacity")
 @export var max_charge: float = 100.0
 @export var starting_charge: float = 0.0
@@ -35,14 +37,21 @@ var _regen_locked_timer: float = 0.0
 
 func _ready() -> void:
 	current_charge = clamp(starting_charge, 0.0, max_charge)
+	if boon_manager == null:
+		boon_manager = get_parent().get_node("BoonManager")
 
 func _process(delta: float) -> void:
 	if _regen_locked_timer > 0.0:
 		_regen_locked_timer -= delta
 		return
 
-	if passive_regen_rate > 0.0 and current_charge < max_charge:
-		_add_charge(passive_regen_rate * delta)
+	var regen_enabled = passive_regen_rate > 0.0
+	if boon_manager:
+		regen_enabled = regen_enabled or boon_manager.has_passive_zeal_regen()
+
+	if regen_enabled and current_charge < max_charge:
+		var rate = passive_regen_rate if passive_regen_rate > 0.0 else 5.0  # fallback rate if boon-granted
+		_add_charge(rate * delta)
 
 
 # ---------- Gaining charge ----------
@@ -53,7 +62,8 @@ func on_hit_landed() -> void:
 	print("Zeal charge: ", current_charge, "/", max_charge)
 
 func on_enemy_killed() -> void:
-	_add_charge(charge_per_kill)
+	if boon_manager and boon_manager.has_zeal_from_kills():
+		_add_charge(charge_per_kill)
 
 func add_charge_custom(amount: float) -> void:
 	_add_charge(amount)
