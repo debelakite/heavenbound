@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4m8u6qp0sb1t"
-path="res://.godot/imported/6.png-7b0d4c2aab2f548f78b950fdd8b0ee1a.ctex"
+uid="uid://3135nq6dy8hn"
+path="res://.godot/imported/Spikes.png-ae1c92390706aa2c92fabc7bf37f1435.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Levels/6.png"
-dest_files=["res://.godot/imported/6.png-7b0d4c2aab2f548f78b950fdd8b0ee1a.ctex"]
+source_file="res://Sprites/Levels/CaveSprites/Spikes.png"
+dest_files=["res://.godot/imported/Spikes.png-ae1c92390706aa2c92fabc7bf37f1435.ctex"]
 
 [params]
 
