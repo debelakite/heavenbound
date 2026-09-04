@@ -166,15 +166,15 @@ position = Vector2(-13, 13)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_drtje")
-target_scene = "uid://354icp6gd3si"
+target_scene = "uid://bvarsqckyqms"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=41378918]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveEntrance" unique_id=41378918]
 z_index = 1
-position = Vector2(1825, 781)
+position = Vector2(1838, 768)
 shape = SubResource("RectangleShape2D_w1hta")
 
-[node name="CaveEntranceMarker" type="Marker2D" parent="." unique_id=513953397]
-position = Vector2(1688, 817)
+[node name="CaveEntranceMarker" type="Marker2D" parent="CaveEntrance" unique_id=513953397]
+position = Vector2(1701, 804)
 
 [node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("7_jrquj")]
 position = Vector2(1323, 822)
