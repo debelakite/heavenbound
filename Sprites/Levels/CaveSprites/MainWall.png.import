@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuemtr5v8mlo3"
-path="res://.godot/imported/1.png-4c47cff36ef7dab1aeab15f357bb5ba9.ctex"
+uid="uid://cpq7bwq0k7gk0"
+path="res://.godot/imported/MainWall.png-2be72487777821289606b1546d4b3748.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Levels/1.png"
-dest_files=["res://.godot/imported/1.png-4c47cff36ef7dab1aeab15f357bb5ba9.ctex"]
+source_file="res://Sprites/Levels/CaveSprites/MainWall.png"
+dest_files=["res://.godot/imported/MainWall.png-2be72487777821289606b1546d4b3748.ctex"]
 
 [params]
 

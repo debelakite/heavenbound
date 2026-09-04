@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://354icp6gd3si"]
 
-[ext_resource type="Texture2D" uid="uid://ch1e0emwekcke" path="res://Sprites/Levels/room2.png" id="2_3cyh2"]
+[ext_resource type="Texture2D" uid="uid://dn2f7rapjljtw" path="res://Sprites/Levels/Cave_parallax/Stallag4.png" id="1_qsibf"]
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="2_cpume"]
+[ext_resource type="Texture2D" uid="uid://d3gn367p8gp62" path="res://Sprites/Levels/CaveSprites/Entrance.png" id="4_287un"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="4_ab6cj"]
-[ext_resource type="Texture2D" uid="uid://csh5igrr66tke" path="res://Sprites/Levels/dividers-png-rdcarstn8g3zb1qm-421228855.jpg" id="4_mvu6m"]
-[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="5_287un"]
-[ext_resource type="Texture2D" uid="uid://b0mw5ayuvg6au" path="res://Sprites/Backgrounds/frame0002.png" id="5_n2nb7"]
-[ext_resource type="Texture2D" uid="uid://b5ikmerii3biw" path="res://Sprites/Levels/Layer 1.png" id="6_3cyh2"]
-[ext_resource type="PackedScene" uid="uid://b8npy7y7q4ogn" path="res://Scenes/Porcupain.tscn" id="9_po2w2"]
+[ext_resource type="Texture2D" uid="uid://c74qc2ee66fr8" path="res://Sprites/Levels/Cave_parallax/Stallag1.png" id="4_vh4ew"]
+[ext_resource type="Texture2D" uid="uid://drrwvaew66raa" path="res://Sprites/Levels/CaveSprites/Rails.png" id="5_mvu6m"]
+[ext_resource type="Texture2D" uid="uid://daafyajkbj56" path="res://Sprites/Levels/Cave_parallax/Stallag3.png" id="5_qoyx1"]
+[ext_resource type="Texture2D" uid="uid://cb8i4vgvll15r" path="res://Sprites/Levels/CaveSprites/Roof.png" id="6_ep40l"]
+[ext_resource type="Texture2D" uid="uid://x55lcsbp0r6t" path="res://Sprites/Levels/Cave_parallax/Stallag2.png" id="6_xat2b"]
+[ext_resource type="Texture2D" uid="uid://b3fqev87m8i5t" path="res://Sprites/Levels/CaveSprites/MainWall2.png" id="7_3cyh2"]
+[ext_resource type="Texture2D" uid="uid://cso88ww0nblyh" path="res://Sprites/Levels/CaveSprites/RoofAngle.png" id="8_po2w2"]
+[ext_resource type="Texture2D" uid="uid://c52o1ea8dahld" path="res://Sprites/Levels/CaveSprites/CaveBackground.png" id="9_n2nb7"]
+[ext_resource type="PackedScene" uid="uid://nymvs2ktf11j" path="res://Scenes/Porcupain.tscn" id="9_po2w2"]
+[ext_resource type="Texture2D" uid="uid://tcy8s43s2yks" path="res://Sprites/Levels/CaveSprites/Fade.png" id="10_n2nb7"]
+[ext_resource type="Texture2D" uid="uid://s5u0pya2trq8" path="res://Sprites/Levels/Cave_parallax/Stallag5.png" id="12_1yiwv"]
+[ext_resource type="Texture2D" uid="uid://bjiwga7fuggvm" path="res://Sprites/Levels/Cave_parallax/Stallag6.png" id="13_e2j37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0nxl"]
 size = Vector2(2854.25, 20)
@@ -16,28 +24,123 @@ size = Vector2(2854.25, 20)
 size = Vector2(502.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mngj7"]
-size = Vector2(920.5, 20)
+size = Vector2(771.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgn58"]
 size = Vector2(20, 255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvu6m"]
+size = Vector2(172, 226)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_287un"]
 size = Vector2(172, 226)
 
 [node name="RoomTwo" type="Node2D" unique_id=289457314]
 
+[node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_cpume")]
+z_index = -4
+position = Vector2(430, 1719)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1193622350]
+scroll_scale = Vector2(0.7, 1)
+
+[node name="Stallag3" type="Sprite2D" parent="Parallax2D" unique_id=1765470496]
+z_index = -6
+position = Vector2(1257.0001, 1523.5)
+scale = Vector2(0.765781, 0.765781)
+texture = ExtResource("5_qoyx1")
+
+[node name="Parallax2" type="Parallax2D" parent="." unique_id=1553676104]
+scale = Vector2(0.49, 0.49)
+scroll_scale = Vector2(0.8, 1)
+
+[node name="Stallag4" type="Sprite2D" parent="Parallax2" unique_id=1390825643]
+z_index = -6
+position = Vector2(7257.1426, 2391.8367)
+scale = Vector2(2.0408163, 3.9012573)
+texture = ExtResource("5_qoyx1")
+
+[node name="Stallag1" type="Sprite2D" parent="Parallax2" unique_id=1801082516]
+z_index = -6
+position = Vector2(1669.3878, 3109.1836)
+scale = Vector2(1.8586005, 1.8586005)
+texture = ExtResource("4_vh4ew")
+
+[node name="Stallag2" type="Sprite2D" parent="Parallax2" unique_id=129146679]
+z_index = -6
+position = Vector2(4422.4487, 3152.0408)
+scale = Vector2(2.0408163, 2.0408163)
+texture = ExtResource("6_xat2b")
+
+[node name="Stallag3" type="Sprite2D" parent="Parallax2" unique_id=471133281]
+z_index = -6
+position = Vector2(8861.225, 1616.3264)
+scale = Vector2(3.8781586, 3.8781588)
+texture = ExtResource("4_vh4ew")
+
+[node name="Parallax1" type="Parallax2D" parent="." unique_id=2019656413]
+scale = Vector2(0.49, 0.49)
+scroll_offset = Vector2(1, 2)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=557494243]
 position = Vector2(6.706421, -1.0603485)
 
-[node name="Player" parent="StaticBody2D" unique_id=28099015 instance=ExtResource("2_cpume")]
-z_index = 2
-position = Vector2(570.2936, 1682.0603)
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D" unique_id=1926412867]
+z_index = -1
+offset_left = 4798.2935
+offset_top = -944.9397
+offset_right = 7696.2935
+offset_bottom = 4286.0605
+color = Color(0, 0, 0, 1)
 
-[node name="Room2" type="Sprite2D" parent="StaticBody2D" unique_id=1583433847]
-z_index = -2
-position = Vector2(2263.2935, 1943.0603)
-scale = Vector2(0.81820107, 0.818201)
-texture = ExtResource("2_3cyh2")
+[node name="ColorRect4" type="ColorRect" parent="StaticBody2D" unique_id=1923297292]
+z_index = -1
+offset_left = -261.70654
+offset_top = 2490.0603
+offset_right = 5616.2935
+offset_bottom = 4286.0605
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="StaticBody2D" unique_id=1392697329]
+z_index = -1
+offset_left = -261.70654
+offset_top = 2490.0603
+offset_right = 5616.2935
+offset_bottom = 4286.0605
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="StaticBody2D" unique_id=706679930]
+z_index = -1
+offset_left = -22.706543
+offset_top = -1057.9397
+offset_right = 3179.2935
+offset_bottom = 901.0603
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="StaticBody2D" unique_id=925423707]
+z_index = -1
+offset_left = 2495.2935
+offset_top = -1057.9397
+offset_right = 5697.2935
+offset_bottom = 127.0603
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="StaticBody2D" unique_id=369168647]
+z_index = -1
+offset_left = 2783.2935
+offset_top = 118.06015
+offset_right = 3563.2935
+offset_bottom = 755.0602
+rotation = -0.6632251
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="StaticBody2D" unique_id=1791752551]
+z_index = -1
+offset_left = -3392.7065
+offset_top = -1057.9397
+offset_right = -190.70654
+offset_bottom = 4286.0605
+color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=956448076]
 position = Vector2(1655.1686, 1799.0603)
@@ -64,11 +167,11 @@ position = Vector2(3800.2935, 1373.0603)
 polygon = PackedVector2Array(6, -58, 3, -116, 9, -136, 10, -155, 68, -155, 60, -78, 60, -6, 0, -6)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1844201901]
-position = Vector2(4312.0435, 1228.0603)
+position = Vector2(4237.5435, 1228.0603)
 shape = SubResource("RectangleShape2D_mngj7")
 
 [node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D" unique_id=554376820]
-position = Vector2(231.29358, 1682.0603)
+position = Vector2(217.29358, 1683.0603)
 shape = SubResource("RectangleShape2D_pgn58")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1761545709]
@@ -165,7 +268,8 @@ repeat_times = 3
 position = Vector2(896, 424)
 texture = ExtResource("8_1yiwv")
 
-[node name="CaveEntrance" type="Area2D" parent="." unique_id=978708225]
+[node name="CaveEntrance" type="Area2D" parent="." unique_id=1602102205]
+position = Vector2(304, 1685)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_ab6cj")
@@ -175,25 +279,75 @@ target_scene = "uid://duefnejqbtqab"
 position = Vector2(18, 7)
 shape = SubResource("RectangleShape2D_287un")
 
-[node name="CaveTransition" type="Area2D" parent="." unique_id=131057129]
+[node name="Room2East" type="Area2D" parent="." unique_id=815258215]
+position = Vector2(4494, 1110)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_ab6cj")
 target_scene = "uid://bvarsqckyqms"
-spawn_point_id = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveTransition" unique_id=1081477402]
-position = Vector2(4519, 1104)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2East" unique_id=1701905943]
+position = Vector2(33, -6)
 shape = SubResource("RectangleShape2D_287un")
 
-[node name="CaveTransitionMarker" type="Marker2D" parent="CaveTransition" unique_id=732230899]
-position = Vector2(4407, 1115)
+[node name="Ot3kum2" type="Marker2D" parent="Room2East" unique_id=1952261633]
+position = Vector2(-82, 1)
 
-[node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("5_287un")]
-position = Vector2(2873, 1726)
+[node name="Entrance" type="Sprite2D" parent="." unique_id=347856415]
+z_index = -5
+position = Vector2(581, 1671)
+scale = Vector2(0.6387545, 0.6387544)
+texture = ExtResource("4_287un")
 
-[node name="Enemy2" parent="." unique_id=1441973078 instance=ExtResource("5_287un")]
-position = Vector2(6933, 3176)
+[node name="Rails" type="Sprite2D" parent="." unique_id=869426761]
+z_index = -5
+position = Vector2(1502.8463, 2070.313)
+scale = Vector2(1.0002185, 1.0002186)
+texture = ExtResource("5_mvu6m")
+
+[node name="Roof" type="Sprite2D" parent="." unique_id=772297952]
+z_index = -5
+position = Vector2(1497, 1172)
+scale = Vector2(0.9549765, 0.9549764)
+texture = ExtResource("6_ep40l")
+
+[node name="MainWall2" type="Sprite2D" parent="." unique_id=1738980212]
+z_index = -5
+position = Vector2(4283, 2661.0002)
+scale = Vector2(0.82617193, 0.82617223)
+texture = ExtResource("7_3cyh2")
+
+[node name="RoofAngle" type="Sprite2D" parent="." unique_id=1218441496]
+z_index = -5
+position = Vector2(5009, 684)
+texture = ExtResource("8_po2w2")
+
+[node name="CaveBackground" type="Sprite2D" parent="." unique_id=1233014381]
+z_index = -7
+position = Vector2(2741, 1455)
+scale = Vector2(2.8354166, 2.8354166)
+texture = ExtResource("9_n2nb7")
+
+[node name="Fade" type="Sprite2D" parent="." unique_id=967087279]
+z_index = -2
+position = Vector2(4562, 1897.0001)
+rotation = 1.5707964
+scale = Vector2(2.797365, 1)
+texture = ExtResource("10_n2nb7")
+
+[node name="Fade2" type="Sprite2D" parent="." unique_id=1479973516]
+z_index = -2
+position = Vector2(224.00002, 1617.0001)
+rotation = -1.5707964
+scale = Vector2(2.76788, 1.4038744)
+texture = ExtResource("10_n2nb7")
+
+[node name="Fade3" type="Sprite2D" parent="." unique_id=1491397902]
+z_index = -2
+position = Vector2(2413, 2199)
+rotation = 3.1415927
+scale = Vector2(2.6668124, 1.0924481)
+texture = ExtResource("10_n2nb7")
 
 [node name="Enemy3" parent="." unique_id=792618430 instance=ExtResource("5_287un")]
 position = Vector2(2742, 1572)
@@ -206,4 +360,5 @@ position = Vector2(3575, 1444)
 [node name="Porcupain" parent="." unique_id=1728171035 instance=ExtResource("9_po2w2")]
 position = Vector2(2117, 1721)
 
-[connection signal="body_entered" from="MineshaftDoor" to="MineshaftDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]
+[connection signal="body_entered" from="Room2East" to="Room2East" method="_on_body_entered"]
