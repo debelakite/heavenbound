@@ -92,6 +92,7 @@ move_speed = 400.0
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1837396749]
 scale = Vector2(0.49, 0.49)
+metadata/surface_type = "stone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1282278590]
 position = Vector2(631.71423, 1268.3673)
@@ -153,7 +154,7 @@ collision_mask = 2
 script = ExtResource("4_drtje")
 target_scene = "uid://354icp6gd3si"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MineshaftDoor" unique_id=41378918]
+[node name="MineshaftDoor#CollisionShape2D" type="CollisionShape2D" parent="." unique_id=41378918]
 z_index = 1
 position = Vector2(1825, 781)
 shape = SubResource("RectangleShape2D_w1hta")

@@ -21,12 +21,17 @@ boot_splash/stretch_mode=4
 boot_splash/image="uid://cuntmpkfwasla"
 config/icon="uid://ytpogjs41fd2"
 
+[audio]
+
+buses/default_bus_layout="uid://bovqx552vbkdi"
+
 [autoload]
 
 Transition="*uid://bkiqk1vyd7tda"
 Hud="*uid://c3wfedriomm4h"
 GameState="*uid://dhr4vske0elu"
 PauseMenu="*uid://gqdclecbfe2o"
+SoundManager="*uid://c13a3d1v5th20"
 
 [display]
 
