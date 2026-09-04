@@ -11,7 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://x55lcsbp0r6t" path="res://Sprites/Levels/Cave_parallax/Stallag2.png" id="6_wu4kk"]
 [ext_resource type="Texture2D" uid="uid://ciruuylj3opby" path="res://Sprites/Levels/CaveSprites/Floor.png" id="8_x1nt8"]
 [ext_resource type="Texture2D" uid="uid://tcy8s43s2yks" path="res://Sprites/Levels/CaveSprites/Fade.png" id="9_x1nt8"]
+[ext_resource type="Texture2D" uid="uid://d3gn367p8gp62" path="res://Sprites/Levels/CaveSprites/Entrance.png" id="13_7qkw7"]
 [ext_resource type="Texture2D" uid="uid://c52o1ea8dahld" path="res://Sprites/Levels/CaveSprites/CaveBackground.png" id="13_orjmt"]
+[ext_resource type="Texture2D" uid="uid://drrwvaew66raa" path="res://Sprites/Levels/CaveSprites/Rails.png" id="14_8xkdv"]
+[ext_resource type="Texture2D" uid="uid://cso88ww0nblyh" path="res://Sprites/Levels/CaveSprites/RoofAngle.png" id="15_xi1ja"]
+[ext_resource type="Texture2D" uid="uid://cb8i4vgvll15r" path="res://Sprites/Levels/CaveSprites/Roof.png" id="16_bsj62"]
+[ext_resource type="Texture2D" uid="uid://dn2f7rapjljtw" path="res://Sprites/Levels/Cave_parallax/Stallag4.png" id="17_bsj62"]
+[ext_resource type="Texture2D" uid="uid://bjiwga7fuggvm" path="res://Sprites/Levels/Cave_parallax/Stallag6.png" id="18_dqfor"]
+[ext_resource type="Texture2D" uid="uid://s5u0pya2trq8" path="res://Sprites/Levels/Cave_parallax/Stallag5.png" id="19_o7wby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku7mn"]
 size = Vector2(327, 20)
@@ -37,15 +44,17 @@ size = Vector2(24, 83)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjmt"]
 size = Vector2(1923.4692, 25.811035)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
+size = Vector2(3310.9998, 51.81067)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgo4y"]
-size = Vector2(172, 449)
+size = Vector2(245, 291)
 
 [node name="Node2D" type="Node2D" unique_id=1827178365]
-position = Vector2(-134, -825)
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("5_fgo4y")]
 z_index = -5
-position = Vector2(329, 1372)
+position = Vector2(-3919, 1993)
 
 [node name="MainWall2" type="Sprite2D" parent="." unique_id=296288946]
 z_index = -5
@@ -70,9 +79,15 @@ position = Vector2(-10259.693, 2457.1426)
 scale = Vector2(2.3764288, 3.9012573)
 texture = ExtResource("4_3g0es")
 
+[node name="Stallag5" type="Sprite2D" parent="Parallax2" unique_id=742610585]
+z_index = -6
+position = Vector2(-20226.531, -128.57146)
+scale = Vector2(2.0408163, 2.0408163)
+texture = ExtResource("5_orjmt")
+
 [node name="Stallag1" type="Sprite2D" parent="Parallax2" unique_id=1197310357]
 z_index = -6
-position = Vector2(-12193.877, -1585.7145)
+position = Vector2(-12351.0205, -1506.1226)
 scale = Vector2(2.6509628, 2.6509628)
 texture = ExtResource("5_orjmt")
 
@@ -93,6 +108,18 @@ z_index = -6
 position = Vector2(-10363.775, -380.2296)
 scale = Vector2(1.9899654, 4.6334333)
 texture = ExtResource("4_3g0es")
+
+[node name="Stallag7" type="Sprite2D" parent="Parallax2" unique_id=1519638284]
+z_index = -6
+position = Vector2(-19379.592, -146.93878)
+scale = Vector2(1.7339824, 1.7339823)
+texture = ExtResource("4_3g0es")
+
+[node name="Stallag8" type="Sprite2D" parent="Parallax2" unique_id=1373008073]
+z_index = -6
+position = Vector2(-17120.408, -157.14279)
+scale = Vector2(1.9299951, 1.9299952)
+texture = ExtResource("6_wu4kk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1128187263]
 
@@ -187,7 +214,7 @@ scale = Vector2(0.82221264, 0.82221276)
 shape = SubResource("RectangleShape2D_orjmt")
 
 [node name="Checkpoint" parent="StaticBody2D" unique_id=355130871 instance=ExtResource("2_u1xt1")]
-position = Vector2(586, 1359)
+position = Vector2(726, 1366)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=29569558]
 position = Vector2(1161.1719, 1737.5)
@@ -240,19 +267,26 @@ scale = Vector2(0.106589146, 0.07998652)
 texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1788226369]
-position = Vector2(710, 1563)
-polygon = PackedVector2Array(-657, -95, -657, -119, 242, -122, 248, -114, 227, -95, 198, -79, 187, -71, 139, -64, 113, -40, 77, -27, 42, -20)
+position = Vector2(694, 1564)
+polygon = PackedVector2Array(-657, -95, -656, -111, 242, -122, 248, -114, 233, -97, 218, -85, 177, -66, 139, -64, 114, -52, 101, -37, 96, -32, 11, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=988519696]
+position = Vector2(-2692.5, 2088.9053)
+shape = SubResource("RectangleShape2D_xhkb1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=403403603]
+polygon = PackedVector2Array(-1397, 2066, -1392, 2007, -1398, 1985, -1399, 1914, -1395, 1906, -1395, 1885, -1380, 1876, -904, 1876, -903, 1794, -896, 1772, -889, 1743, -743, 1744, -738, 1599, -723, 1587, -642, 1588, -636, 1533, -640, 1491, -632, 1466, -633, 1453, 64, 1453, -986, 2056)
 
 [node name="CaveTransition" type="Area2D" parent="." unique_id=979195016]
 position = Vector2(174, 1346)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_u1xt1")
-target_scene = "uid://354icp6gd3si"
-spawn_point_id = "Ot3kum2"
+target_scene = "uid://duefnejqbtqab"
+spawn_point_id = "CaveEntranceMarker"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CaveTransition" unique_id=1166807653]
-position = Vector2(-45, -16)
+position = Vector2(-4370.5, 570.5)
 shape = SubResource("RectangleShape2D_fgo4y")
 
 [node name="LiftTransition" type="Area2D" parent="." unique_id=587991537]
@@ -277,8 +311,35 @@ texture = ExtResource("8_x1nt8")
 
 [node name="Fade5" type="Sprite2D" parent="." unique_id=1712500836]
 z_index = -2
-position = Vector2(1435.0001, 833.99994)
-scale = Vector2(1.7465819, 0.884129)
+position = Vector2(845.9618, 717.0001)
+scale = Vector2(2.1266243, 0.884129)
+texture = ExtResource("9_x1nt8")
+
+[node name="Fade8" type="Sprite2D" parent="." unique_id=704552734]
+z_index = -2
+position = Vector2(-3098, 1509)
+scale = Vector2(1.7395986, 0.78168404)
+texture = ExtResource("9_x1nt8")
+
+[node name="Fade9" type="Sprite2D" parent="." unique_id=145259777]
+z_index = -2
+position = Vector2(-2461.1587, 2398.0002)
+rotation = 3.1415927
+scale = Vector2(2.5453024, 0.6110299)
+texture = ExtResource("9_x1nt8")
+
+[node name="Fade10" type="Sprite2D" parent="." unique_id=719878730]
+z_index = -2
+position = Vector2(-4328.0005, 1933.0001)
+rotation = -1.5707964
+scale = Vector2(0.7171913, 0.37335756)
+texture = ExtResource("9_x1nt8")
+
+[node name="Fade11" type="Sprite2D" parent="." unique_id=30738453]
+z_index = -2
+position = Vector2(-123, 3217.9998)
+rotation = -1.5707964
+scale = Vector2(0.9002099, 0.71955377)
 texture = ExtResource("9_x1nt8")
 
 [node name="Fade6" type="Sprite2D" parent="." unique_id=675216936]
@@ -290,21 +351,21 @@ texture = ExtResource("9_x1nt8")
 
 [node name="Fade7" type="Sprite2D" parent="." unique_id=1588053093]
 z_index = -2
-position = Vector2(1408, 3864.9995)
+position = Vector2(1428.0001, 3865)
 rotation = 3.1415927
 scale = Vector2(1.7465819, 0.884129)
 texture = ExtResource("9_x1nt8")
 
-[node name="Fade8" type="Sprite2D" parent="." unique_id=1039761629]
+[node name="Fade12" type="Sprite2D" parent="." unique_id=278299563]
 z_index = -2
-position = Vector2(112.00005, 2310.2246)
-rotation = -1.5707964
-scale = Vector2(2.4289832, 0.78168404)
+position = Vector2(-1021.5542, 994.0833)
+rotation = -0.6632251
+scale = Vector2(0.79556483, 0.7635379)
 texture = ExtResource("9_x1nt8")
 
 [node name="CaveBackground" type="Sprite2D" parent="." unique_id=1741046521]
 z_index = -7
-position = Vector2(211, 1527.0001)
+position = Vector2(-869, 1875)
 scale = Vector2(2.8354166, 2.8354166)
 texture = ExtResource("13_orjmt")
 
@@ -322,19 +383,86 @@ offset_right = 4711.0
 offset_bottom = 5381.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="." unique_id=671215000]
-offset_left = -3358.0
-offset_top = -133.0
-offset_right = -35.0
-offset_bottom = 5414.0
+[node name="Entrance" type="Sprite2D" parent="." unique_id=535038156]
+z_index = -6
+position = Vector2(-3727, 1858)
+texture = ExtResource("13_7qkw7")
+
+[node name="Rails" type="Sprite2D" parent="." unique_id=1733398517]
+z_index = -5
+position = Vector2(-2976, 2342)
+texture = ExtResource("14_8xkdv")
+
+[node name="RoofAngle" type="Sprite2D" parent="." unique_id=1866021686]
+z_index = -5
+position = Vector2(-60, 1163)
+scale = Vector2(0.76059324, 0.76059324)
+texture = ExtResource("15_xi1ja")
+
+[node name="Roof" type="Sprite2D" parent="." unique_id=630144443]
+z_index = -5
+position = Vector2(-2841, 1528.0001)
+scale = Vector2(0.79739374, 0.79739374)
+texture = ExtResource("16_bsj62")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1218700925]
+offset_left = -5687.0
+offset_top = 2457.0
+offset_right = -223.0
+offset_bottom = 4511.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="." unique_id=380042198]
-offset_left = -3380.0
-offset_top = -1173.0
-offset_right = 3844.0
-offset_bottom = 625.0
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1593401897]
+offset_left = -5072.0
+offset_top = -729.0
+offset_right = -1537.0
+offset_bottom = 1306.0
 color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=472954474]
+offset_left = -5697.0
+offset_top = -740.0
+offset_right = -4389.0
+offset_bottom = 2706.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=1678954715]
+offset_left = -2175.0
+offset_top = -1494.0
+offset_right = 3232.0
+offset_bottom = 590.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="." unique_id=817017163]
+offset_left = -1860.9265
+offset_top = 830.0775
+offset_right = -344.82373
+offset_bottom = 1341.6655
+rotation = -0.6632251
+color = Color(0, 0, 0, 1)
+
+[node name="Stallag4" type="Sprite2D" parent="." unique_id=1833171421]
+z_index = -4
+position = Vector2(-3731, 2186)
+scale = Vector2(1.1221498, 1.12215)
+texture = ExtResource("17_bsj62")
+
+[node name="Stallag5" type="Sprite2D" parent="." unique_id=705767365]
+z_index = -4
+position = Vector2(1305, 3605)
+scale = Vector2(1.2592202, 1.2592205)
+texture = ExtResource("17_bsj62")
+
+[node name="Stallag6" type="Sprite2D" parent="." unique_id=2014206805]
+z_index = -4
+position = Vector2(-3011, 2044)
+texture = ExtResource("18_dqfor")
+
+[node name="Stallag7" type="Sprite2D" parent="." unique_id=13536990]
+z_index = -4
+position = Vector2(-2037, 2147)
+scale = Vector2(1.3426967, 1.3426965)
+texture = ExtResource("19_o7wby")
 
 [connection signal="body_entered" from="CaveTransition" to="CaveTransition" method="_on_body_entered"]
 [connection signal="body_entered" from="LiftTransition" to="LiftTransition" method="_on_body_entered"]
