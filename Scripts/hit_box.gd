@@ -23,8 +23,8 @@ func _on_enemy_died() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy_hurtbox"):
-		var owner_enemy = area.owner_enemy
-		owner_enemy.take_damage(1, get_parent())
+		var owner_enemy = area.get_parent()
+		owner_enemy.take_damage(250, 25)  # damage, poise_damage
 		hit = true
 		if zeal_meter:
 			zeal_meter.on_hit_landed()

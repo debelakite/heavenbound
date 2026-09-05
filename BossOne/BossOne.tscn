@@ -161,9 +161,11 @@ shape = SubResource("RectangleShape2D_2eu7o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea" unique_id=1054260292]
 shape = SubResource("RectangleShape2D_hq2td")
 
-[node name="HurtBoxArea" type="Area2D" parent="." unique_id=404858263]
+[node name="HurtBoxArea" type="Area2D" parent="." unique_id=404858263 groups=["enemy_hurtbox"]]
+collision_layer = 32
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxArea" unique_id=1159374696]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxArea" unique_id=1159374696 groups=["enemy_hurtbox"]]
 position = Vector2(4, 28)
 shape = SubResource("RectangleShape2D_mksdp")
 debug_color = Color(0.80784315, 0.11764706, 0.07058824, 0.41960785)
@@ -212,3 +214,6 @@ offset_left = -24.0
 offset_top = -248.0
 offset_right = 16.0
 offset_bottom = -225.0
+
+[connection signal="area_entered" from="HitBoxArea" to="." method="_on_hit_box_area_area_entered"]
+[connection signal="area_entered" from="HurtBoxArea" to="." method="_on_hurt_box_area_area_entered"]
