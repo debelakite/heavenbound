@@ -148,7 +148,7 @@ size = Vector2(120, 296)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8cpd"]
 size = Vector2(1032, 376)
 
-[node name="BousWan" type="CharacterBody2D" unique_id=1376592960]
+[node name="BossOne" type="CharacterBody2D" unique_id=1376592960]
 script = ExtResource("1_hq2td")
 attack_pools = Array[Array]([[null, ExtResource("2_r8cpd")], [ExtResource("2_r8cpd")]])
 
@@ -156,7 +156,7 @@ attack_pools = Array[Array]([[null, ExtResource("2_r8cpd")], [ExtResource("2_r8c
 unique_name_in_owner = true
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_w1hta")
-animation = &"Death"
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351564209]
 position = Vector2(-4, 28)
