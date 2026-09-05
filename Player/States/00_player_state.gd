@@ -13,7 +13,7 @@ var hit_boxR: HitBox
 @onready var fall: PlayerStateFall = %Fall
 @onready var hurt: PlayerStateHurt = %Hurt
 @onready var attack: PlayerStateAttack = %Attack
-@onready var shoot: PlayerStateShooting = %Shooting
+
 @onready var floating: PlayerStateFloat = %Float
 
 
