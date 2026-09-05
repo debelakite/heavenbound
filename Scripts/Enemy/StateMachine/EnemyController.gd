@@ -5,12 +5,12 @@ class_name Enemy extends CharacterBody2D
 @export var flip_deadzone: float = 2.0
 @export var flip_cooldown: float = 0.3
 @export var stop_distance: float = 32.0
-@export var max_health: int = 3
+@export var max_health: float = 80
 @export var invincibility_time: float = 0.3
 var facing_right: bool = true
 var flip_cooldown_timer: float = 0.0
 var player: CharacterBody2D = null
-var current_health: int
+var current_health: float
 var invincibility_timer: float = 0.0
 var is_dead: bool = false
 var pending_knockback_dir: float = 0.0
@@ -69,12 +69,12 @@ func _physics_process(_delta: float) -> void:
 			
 	move_and_slide()
 
-func take_damage(amount: int, source: Node2D = null) -> void:
+func take_damage(amount: float, source: Node2D = null) -> void:
 	if is_dead or invincibility_timer > 0.0:
 		return
 	
 	current_health -= amount
-	current_health = maxi(current_health, 0)
+	current_health = maxi(current_health, 0.0)
 	invincibility_timer = invincibility_time
 	health_changed.emit(current_health, max_health)
 	
@@ -85,7 +85,7 @@ func take_damage(amount: int, source: Node2D = null) -> void:
 	else:
 		pending_knockback_dir = -1.0 if facing_right else 1.0
 	
-	if current_health <= 0:
+	if current_health <= 0.0:
 		is_dead = true
 		died.emit()
 		change_state($States/Death)

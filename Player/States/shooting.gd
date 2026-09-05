@@ -1,6 +1,7 @@
 @icon( "res://Player/States/state.png" )
 class_name PlayerStateShooting extends PlayerState
 
+@onready var _animation_player = $AnimatedSprite2D
 
 @export var HIT_DURATION = 0.4 #animation plays twice if duration is >0.4
 @export var horizontal_pushback = 500
@@ -18,15 +19,18 @@ func enter() -> void:
 	var projectile_instance = shot.instantiate() as Shot
 	projectile_instance.position = player.position
 	if player.looking_down:
+		player._animation_player.play("ShootDown")
 		projectile_instance.direction = Vector2.DOWN
 		player.velocity.y = -500
 	elif player.looking_up:
 		projectile_instance.direction = Vector2.UP
 		player.velocity.y = 500
 	elif !player._animation_player.flip_h:
+		player._animation_player.play("Shoot")
 		projectile_instance.direction = Vector2.LEFT
 		player.velocity.x = 500
 	else:
+		player._animation_player.play("Shoot")
 		projectile_instance.direction = Vector2.RIGHT
 		player.velocity.x = -500
 	player.add_child(projectile_instance)

@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://crk44jlekhpqg" path="res://Player/States/heal.gd" id="14_hshwv"]
 [ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://du10xy57ypgk4" path="res://Player/Scripts/player_hurt_box.gd" id="18_b1ygp"]
-[ext_resource type="Script" uid="uid://c24kxgbh0igt1" path="res://Player/States/shooting.gd" id="20_gpjlu"]
+[ext_resource type="Script" uid="uid://b161vmtq07p51" path="res://Player/States/shooting.gd" id="20_gpjlu"]
 [ext_resource type="Script" uid="uid://chr48noio2d8n" path="res://Player/float.gd" id="20_hshwv"]
 [ext_resource type="Script" uid="uid://cb3luxorrjlpt" path="res://Resources/KeyItems/key_item_inventory.gd" id="22_gpjlu"]
 [ext_resource type="Script" uid="uid://dshy83fx66rf6" path="res://Resources/Boons/boon_manager.gd" id="23_8mwp6"]
@@ -428,7 +428,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jp1hh")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Hurt",
 "speed": 12.0
 }, {
@@ -567,8 +567,7 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239629246]
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
-animation = &"ShootDown"
-frame_progress = 0.91296154
+animation = &"Hurt"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)
