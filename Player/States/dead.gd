@@ -28,9 +28,9 @@ func _respawn_after_delay() -> void:
 func _respawn() -> void:
 	if GameState.respawn_scene_path != "" and GameState.respawn_scene_path != get_tree().current_scene.scene_file_path:
 		get_tree().call_deferred("change_scene_to_file", GameState.respawn_scene_path)
-		return
 	player.reset_health()
 	player.velocity = Vector2.ZERO  # clear any leftover fall/knockback velocity
+	var health = player.health_stage
 	player.global_position = GameState.respawn_position
 	if player.has_node("HurtBox"):
 		player.get_node("HurtBox").monitorable = true
