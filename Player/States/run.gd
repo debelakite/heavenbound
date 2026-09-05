@@ -28,7 +28,7 @@ func handle_input( _event : InputEvent) -> PlayerState:
 	elif _event.is_action_pressed("jump",true): #On jump input - enter jump state
 		return jump
 
-	if _event.is_action_pressed("special", true) and player.resource_meter.try_cast("shotgun_shot"):
+	if _event.is_action_pressed("special", true) and player.zeal_meter.try_cast("shotgun_shot"):
 		return shoot
 
 	if _event.is_action_pressed("heal", true): #On heal input - enter heal state

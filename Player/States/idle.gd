@@ -24,7 +24,7 @@ func exit() -> void:
 func handle_input( _event : InputEvent) -> PlayerState:
 	if _event.is_action_pressed("attack",true):
 		return attack
-	if _event.is_action_pressed("special", true) and player.resource_meter.try_cast("shotgun_shot"):
+	if _event.is_action_pressed("special", true) and player.zeal_meter.try_cast("shotgun_shot"):
 		return shoot
 	if _event.is_action_pressed("dash", true) and player.dash_cooldown_timer <= 0.0:
 
