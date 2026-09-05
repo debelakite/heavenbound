@@ -7,7 +7,7 @@ var timer: float = 0.0
 
 func enter():
 	timer = stagger_duration
-	boss.animation_player.play("stagger")
+	boss._animation_player.play("stagger")
 	boss.hitbox_area.monitoring = false
 	boss.poise = boss.max_poise   # refill poise so it isn't immediately re-triggered
 

@@ -1,3 +1,4 @@
+# StateMachine.gd
 extends Node
 class_name StateMachine
 
@@ -10,6 +11,9 @@ func _ready():
 	for child in get_children():
 		child.boss = boss
 	current_state = initial_state
+
+
+func start():
 	current_state.enter()
 
 func _physics_process(delta):

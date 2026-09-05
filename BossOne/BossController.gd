@@ -2,9 +2,9 @@
 extends CharacterBody2D
 class_name BossController
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var hitbox_area: Area2D = $HitboxArea
-@onready var hurtbox_area: Area2D = $HurtboxArea
+@onready var _animation_player = %AnimatedSprite2D
+@onready var hitbox_area: Area2D = $HitBoxArea
+@onready var hurtbox_area: Area2D = $HurtBoxArea
 @onready var state_machine: StateMachine = $StateMachine
 
 @export var attack_pools: Array[Array] = []       # Array[Array[AttackData]], indexed by phase
@@ -24,6 +24,7 @@ func _ready():
 	current_hp = max_hp
 	poise = max_poise
 	hurtbox_area.area_entered.connect(_on_hurtbox_area_entered)
+	state_machine.start() 
 
 func _physics_process(delta):
 	# cooldowns tick centrally, independent of state

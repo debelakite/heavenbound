@@ -7,7 +7,7 @@ var timer: float = 0.0
 
 func enter():
 	timer = idle_duration
-	boss.animation_player.play("idle")
+	boss._animation_player.play("Idle")
 	boss.hitbox_area.monitoring = false
 
 func physics_update(delta: float):

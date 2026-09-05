@@ -4,7 +4,7 @@ extends BossState
 var timer: float = 0.0
 
 func enter():
-	boss.animation_player.play(boss.current_attack.attack_anim)
+	boss._animation_player.play(boss.current_attack.attack_anim)
 	boss.hitbox_area.monitoring = true
 	boss.last_attack_name = boss.current_attack.name
 	timer = boss.current_attack.active_time

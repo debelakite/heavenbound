@@ -9,7 +9,7 @@ var timer: float = 0.0
 func enter():
 	timer = transition_duration
 	boss.phase += 1
-	boss.animation_player.play("phase_transition_" + str(boss.phase))
+	boss._animation_player.play("phase_transition_" + str(boss.phase))
 	boss.hitbox_area.monitoring = false
 
 	if invincible_during_transition:

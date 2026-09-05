@@ -6,7 +6,7 @@ extends BossState
 var timer: float = 0.0
 
 func enter():
-	boss.animation_player.play("recover")
+	boss._animation_player.play("recover")
 	boss.hitbox_area.monitoring = false
 	timer = boss.current_attack.recover_time if boss.current_attack else recover_duration_fallback
 

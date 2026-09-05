@@ -3,7 +3,7 @@ extends BossState
 var timer: float = 0.0
 
 func enter():
-	boss.animation_player.play(boss.current_attack.telegraph_anim)
+	boss._animation_player.play(boss.current_attack.telegraph_anim)
 	timer = boss.current_attack.windup_time
 
 func physics_update(delta):
