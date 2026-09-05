@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://bex1l8atmhqe8"]
+
+[ext_resource type="Script" uid="uid://b2bb22syvw15c" path="res://BossOne/BossController.gd" id="1_hq2td"]
+[ext_resource type="Texture2D" uid="uid://8nrc82cwr7e" path="res://BossOne/idle_spritesheet.png" id="2_mksdp"]
+[ext_resource type="Resource" uid="uid://dkoa6do54mefu" path="res://BossOne/lance_thrust.tres" id="2_r8cpd"]
+[ext_resource type="Texture2D" uid="uid://c8fspqgqi6c1" path="res://BossOne/telegraph_spritesheet.png" id="3_r8cpd"]
+[ext_resource type="Script" uid="uid://pcf0i0xucx1o" path="res://BossOne/state_machine.gd" id="4_7w8bf"]
+[ext_resource type="Script" uid="uid://vvos82l5lb1i" path="res://BossOne/boss_idle_state.gd" id="5_6c73x"]
+[ext_resource type="Script" uid="uid://0mc536g7if0f" path="res://BossOne/boss_decide_state.gd" id="6_qo80t"]
+[ext_resource type="Script" uid="uid://7qqyh5ietjp1" path="res://BossOne/boss_telegraph.gd" id="7_6xh1r"]
+[ext_resource type="Script" uid="uid://dg7csewh1c76r" path="res://BossOne/boss_attack_state.gd" id="8_eiy3p"]
+[ext_resource type="Script" uid="uid://cwjltnslcep4h" path="res://BossOne/boss_recover_state.gd" id="9_ecp7n"]
+[ext_resource type="Script" uid="uid://rpbdwvdors4d" path="res://BossOne/boss_staggered_state.gd" id="10_3jgq7"]
+[ext_resource type="Script" uid="uid://bm2gsa6on7v5u" path="res://BossOne/boss_phase_transition.gd" id="11_3pvq7"]
+[ext_resource type="Script" uid="uid://cejbxup1a1hag" path="res://BossOne/boss_dead_state.gd" id="13_r8cpd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpm3i"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(0, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqhsy"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(2064, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c22p"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(4128, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl3fm"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(6192, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqn12"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(0, 2752, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vtvo"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(2064, 2752, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiads"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(4128, 2752, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5pby"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(6192, 2752, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_617h1"]
+atlas = ExtResource("2_mksdp")
+region = Rect2(0, 5504, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nexs4"]
+atlas = ExtResource("3_r8cpd")
+region = Rect2(0, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b808n"]
+atlas = ExtResource("3_r8cpd")
+region = Rect2(2064, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6cii"]
+atlas = ExtResource("3_r8cpd")
+region = Rect2(4128, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mebux"]
+atlas = ExtResource("3_r8cpd")
+region = Rect2(6192, 0, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kp7l"]
+atlas = ExtResource("3_r8cpd")
+region = Rect2(0, 2752, 2064, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnwme"]
+atlas = ExtResource("3_r8cpd")
+region = Rect2(2064, 2752, 2064, 2752)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1hta"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpm3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqhsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c22p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl3fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqn12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vtvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiads")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5pby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_617h1")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nexs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b808n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6cii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mebux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kp7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnwme")
+}],
+"loop": 1,
+"name": &"Telegraph",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eu7o"]
+size = Vector2(72, 296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq2td"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mksdp"]
+size = Vector2(120, 296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8cpd"]
+size = Vector2(1032, 376)
+
+[node name="BossOne" type="CharacterBody2D" unique_id=1376592960]
+script = ExtResource("1_hq2td")
+attack_pools = Array[Array]([[null, ExtResource("2_r8cpd")], [ExtResource("2_r8cpd")]])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1971252501]
+unique_name_in_owner = true
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_w1hta")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351564209]
+position = Vector2(-4, 28)
+shape = SubResource("RectangleShape2D_2eu7o")
+
+[node name="HitBoxArea" type="Area2D" parent="." unique_id=1083837002]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea" unique_id=1054260292]
+shape = SubResource("RectangleShape2D_hq2td")
+
+[node name="HurtBoxArea" type="Area2D" parent="." unique_id=404858263 groups=["enemy_hurtbox"]]
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxArea" unique_id=1159374696 groups=["enemy_hurtbox"]]
+position = Vector2(4, 28)
+shape = SubResource("RectangleShape2D_mksdp")
+debug_color = Color(0.80784315, 0.11764706, 0.07058824, 0.41960785)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=835676672]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=632506090]
+shape = SubResource("RectangleShape2D_r8cpd")
+debug_color = Color(0, 0.84056264, 0.33853802, 0.41960785)
+
+[node name="StateMachine" type="Node" parent="." unique_id=154633213 node_paths=PackedStringArray("initial_state", "debug_label")]
+script = ExtResource("4_7w8bf")
+initial_state = NodePath("Idle")
+debug_label = NodePath("../DebugStateLabel")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=707318141]
+unique_name_in_owner = true
+script = ExtResource("5_6c73x")
+
+[node name="Decide" type="Node" parent="StateMachine" unique_id=1713769776]
+unique_name_in_owner = true
+script = ExtResource("6_qo80t")
+
+[node name="Telegraph" type="Node" parent="StateMachine" unique_id=1521945439]
+unique_name_in_owner = true
+script = ExtResource("7_6xh1r")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1909337397]
+unique_name_in_owner = true
+script = ExtResource("8_eiy3p")
+
+[node name="Recover" type="Node" parent="StateMachine" unique_id=876395690]
+unique_name_in_owner = true
+script = ExtResource("9_ecp7n")
+
+[node name="Staggered" type="Node" parent="StateMachine" unique_id=1708325574]
+unique_name_in_owner = true
+script = ExtResource("10_3jgq7")
+
+[node name="PhaseTransition" type="Node" parent="StateMachine" unique_id=1339295411]
+unique_name_in_owner = true
+script = ExtResource("11_3pvq7")
+
+[node name="Dead" type="Node" parent="StateMachine" unique_id=1659982542]
+unique_name_in_owner = true
+script = ExtResource("13_r8cpd")
+
+[node name="DebugStateLabel" type="Label" parent="." unique_id=1344660829]
+offset_left = -24.0
+offset_top = -248.0
+offset_right = 16.0
+offset_bottom = -225.0
+
+[connection signal="area_entered" from="HitBoxArea" to="." method="_on_hit_box_area_area_entered"]
+[connection signal="area_entered" from="HurtBoxArea" to="." method="_on_hurt_box_area_area_entered"]

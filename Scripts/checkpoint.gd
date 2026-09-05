@@ -22,6 +22,7 @@ func _on_area_exited(area: Area2D) -> void:
 		var player = area.owner_player
 		if player and player.has_node("BoonManager"):
 			player.get_node("BoonManager").exit_loadout_mode()
+			_deactivate()
 
 func _activate() -> void:
 	if activated:
@@ -30,5 +31,17 @@ func _activate() -> void:
 	var pos = spawn_point.global_position if spawn_point else global_position
 	GameState.set_checkpoint(pos, get_tree().current_scene.scene_file_path)
 	print("checkpoint set: ", pos, " in scene: ", get_tree().current_scene.scene_file_path)
-	#TODO play animation
+
 	_animation_player.play("Activate")
+	await _animation_player.animation_finished
+	_animation_player.play("Active")
+
+func _deactivate() -> void:
+	if not activated:
+		return
+	activated = false
+
+	_animation_player.play("Deactivate")
+	await _animation_player.animation_finished
+	_animation_player.play("Inactive")
+	_animation_player.stop()  # freezes on first frame since Inactive is "static"
