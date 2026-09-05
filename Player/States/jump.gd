@@ -28,7 +28,8 @@ func handle_input( event : InputEvent) -> PlayerState:
 	if event.is_action_pressed("dash", true) and player.dash_cooldown_timer <= 0.0:
 		return dash
 
-	if event.is_action_pressed("special", true) and player.zeal_meter.try_cast("shotgun_shot"):
+	if event.is_action_pressed("special", true) and player.zeal_meter.current_charge > 20:
+		player.zeal_meter._try_spend(20)
 		return shoot
 
 	if event.is_action_pressed("jump"): 

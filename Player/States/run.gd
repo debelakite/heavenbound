@@ -28,7 +28,8 @@ func handle_input( _event : InputEvent) -> PlayerState:
 	elif _event.is_action_pressed("jump",true): #On jump input - enter jump state
 		return jump
 
-	if _event.is_action_pressed("special", true) and player.zeal_meter.try_cast("shotgun_shot"):
+	if _event.is_action_pressed("special", true) and player.zeal_meter.current_charge > 20:
+		player.zeal_meter._try_spend(20)
 		return shoot
 
 	if _event.is_action_pressed("heal", true): #On heal input - enter heal state
