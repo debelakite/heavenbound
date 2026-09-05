@@ -1,6 +1,8 @@
 extends Area2D
 class_name HitBox
 
+@export var damage: float = 250.0
+@export var poise_damage: float = 25.0
 var hit: bool = false
 @export var zeal_meter: ResourceMeter  # drag the player's ResourceMeter node here in the Inspector
 
@@ -24,7 +26,10 @@ func _on_enemy_died() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy_hurtbox"):
 		var owner_enemy = area.get_parent()
-		owner_enemy.take_damage(250, 25)  # damage, poise_damage
+		if owner_enemy is BossController:
+			owner_enemy.take_damage(damage, poise_damage)
+		else:
+			owner_enemy.take_damage(damage, get_parent())
 		hit = true
 		if zeal_meter:
 			zeal_meter.on_hit_landed()
