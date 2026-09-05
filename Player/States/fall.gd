@@ -26,6 +26,11 @@ func handle_input( _event : InputEvent) -> PlayerState:
 		return dash
 	if _event.is_action_pressed("jump"):
 		return floating
+
+	if _event.is_action_pressed("special", true) and player.zeal_meter.current_charge > 20:
+		player.zeal_meter._try_spend(20)
+		return shoot
+
 	return next_state
 
 
