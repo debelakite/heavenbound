@@ -33,7 +33,6 @@ func handle_input( _event : InputEvent) -> PlayerState:
 
 	if _event.is_action_pressed("heal", true): #On heal input - enter heal state
 		return heal
-
 	return next_state
 	
 

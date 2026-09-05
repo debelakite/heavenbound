@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://du10xy57ypgk4" path="res://Player/Scripts/player_hurt_box.gd" id="18_b1ygp"]
 [ext_resource type="Script" uid="uid://c24kxgbh0igt1" path="res://Player/States/shooting.gd" id="20_gpjlu"]
-[ext_resource type="Script" uid="uid://chr48noio2d8n" path="res://Player/States/float.gd" id="20_hshwv"]
+[ext_resource type="Script" uid="uid://chr48noio2d8n" path="res://Player/float.gd" id="20_hshwv"]
 [ext_resource type="Script" uid="uid://cb3luxorrjlpt" path="res://Resources/KeyItems/key_item_inventory.gd" id="22_gpjlu"]
 [ext_resource type="Script" uid="uid://dshy83fx66rf6" path="res://Resources/Boons/boon_manager.gd" id="23_8mwp6"]
 
