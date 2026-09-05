@@ -30,6 +30,7 @@ signal insufficient_charge(required: float, available: float)
 	"minor_smite": 15.0,
 	"radiant_burst": 40.0,
 	"ascension_nova": 80.0,
+	"shotgun_shot": 20.0
 }
 
 var current_charge: float = 0.0

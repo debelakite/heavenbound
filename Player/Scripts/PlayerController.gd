@@ -40,7 +40,7 @@ var looking_down = false
 @export var dash_cooldown: float = 0.8
 var dash_cooldown_timer: float = 0.0
 var has_landed = true
-
+@onready var resource_meter: ResourceMeter = %ResourceMeter
 @export var invincibility_duration: float = 1.0
 var is_invincible: bool = false
 #endregion
@@ -163,7 +163,10 @@ func _physics_process( _delta: float) -> void:
 		velocity.y += gravity * _delta
 	if dash_cooldown_timer > 0.0:
 		dash_cooldown_timer -= _delta
-
+	var children = self.get_children()
+	for s in children:
+		if s is Shot:
+			s._physics_process(_delta)
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
 
