@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76mkt0e24h2o"
-path="res://.godot/imported/Zeal_test.png-9a70d8b866f8045b29894da8f1963e76.ctex"
+uid="uid://bb5wbwhee58gu"
+path="res://.godot/imported/spritesheet_activate.png-52eabf5a646ae547769358c0f2d6e21d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Misc/Zeal_test.png"
-dest_files=["res://.godot/imported/Zeal_test.png-9a70d8b866f8045b29894da8f1963e76.ctex"]
+source_file="res://Sprites/spritesheet_activate.png"
+dest_files=["res://.godot/imported/spritesheet_activate.png-52eabf5a646ae547769358c0f2d6e21d.ctex"]
 
 [params]
 
