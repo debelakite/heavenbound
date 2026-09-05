@@ -132,12 +132,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eu7o"]
+size = Vector2(72, 296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hq2td"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mksdp"]
+size = Vector2(120, 296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8cpd"]
+size = Vector2(1032, 376)
 
 [node name="BousWan" type="CharacterBody2D" unique_id=1376592960]
 script = ExtResource("1_hq2td")
@@ -150,6 +153,7 @@ sprite_frames = SubResource("SpriteFrames_w1hta")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351564209]
+position = Vector2(-4, 28)
 shape = SubResource("RectangleShape2D_2eu7o")
 
 [node name="HitBoxArea" type="Area2D" parent="." unique_id=1083837002]
@@ -160,16 +164,20 @@ shape = SubResource("RectangleShape2D_hq2td")
 [node name="HurtBoxArea" type="Area2D" parent="." unique_id=404858263]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxArea" unique_id=1159374696]
+position = Vector2(4, 28)
 shape = SubResource("RectangleShape2D_mksdp")
+debug_color = Color(0.80784315, 0.11764706, 0.07058824, 0.41960785)
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=835676672]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=632506090]
 shape = SubResource("RectangleShape2D_r8cpd")
+debug_color = Color(0, 0.84056264, 0.33853802, 0.41960785)
 
-[node name="StateMachine" type="Node" parent="." unique_id=154633213 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=154633213 node_paths=PackedStringArray("initial_state", "debug_label")]
 script = ExtResource("4_7w8bf")
 initial_state = NodePath("Idle")
+debug_label = NodePath("../DebugStateLabel")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=707318141]
 unique_name_in_owner = true
@@ -198,3 +206,9 @@ script = ExtResource("10_3jgq7")
 [node name="PhaseTransition" type="Node" parent="StateMachine" unique_id=1339295411]
 unique_name_in_owner = true
 script = ExtResource("11_3pvq7")
+
+[node name="DebugStateLabel" type="Label" parent="." unique_id=1344660829]
+offset_left = -24.0
+offset_top = -248.0
+offset_right = 16.0
+offset_bottom = -225.0
