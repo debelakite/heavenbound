@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cwjltnslcep4h" path="res://BossOne/boss_recover_state.gd" id="9_ecp7n"]
 [ext_resource type="Script" uid="uid://rpbdwvdors4d" path="res://BossOne/boss_staggered_state.gd" id="10_3jgq7"]
 [ext_resource type="Script" uid="uid://bm2gsa6on7v5u" path="res://BossOne/boss_phase_transition.gd" id="11_3pvq7"]
+[ext_resource type="Script" uid="uid://cejbxup1a1hag" path="res://BossOne/boss_dead_state.gd" id="13_r8cpd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpm3i"]
 atlas = ExtResource("2_mksdp")
@@ -75,6 +76,11 @@ region = Rect2(2064, 2752, 2064, 2752)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w1hta"]
 animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpm3i")
@@ -150,7 +156,7 @@ attack_pools = Array[Array]([[null, ExtResource("2_r8cpd")], [ExtResource("2_r8c
 unique_name_in_owner = true
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_w1hta")
-animation = &"Idle"
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351564209]
 position = Vector2(-4, 28)
@@ -208,6 +214,10 @@ script = ExtResource("10_3jgq7")
 [node name="PhaseTransition" type="Node" parent="StateMachine" unique_id=1339295411]
 unique_name_in_owner = true
 script = ExtResource("11_3pvq7")
+
+[node name="Dead" type="Node" parent="StateMachine" unique_id=1659982542]
+unique_name_in_owner = true
+script = ExtResource("13_r8cpd")
 
 [node name="DebugStateLabel" type="Label" parent="." unique_id=1344660829]
 offset_left = -24.0

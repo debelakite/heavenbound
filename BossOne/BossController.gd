@@ -2,6 +2,8 @@
 extends CharacterBody2D
 class_name BossController
 
+signal died
+
 @onready var _animation_player = %AnimatedSprite2D
 @onready var hitbox_area: Area2D = $HitBoxArea
 @onready var hurtbox_area: Area2D = $HurtBoxArea
