@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://jic0515485d"]
+
+[ext_resource type="Script" uid="uid://xv2c5d75bnur" path="res://BossOne/spear_projectile.gd" id="1_b4yaj"]
+[ext_resource type="Texture2D" uid="uid://cmfqyui8mxf6u" path="res://BossOne/spear_projectile.png" id="2_bxepa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4yaj"]
+size = Vector2(308, 6)
+
+[node name="SpearProjectile" type="Area2D" unique_id=682722272]
+script = ExtResource("1_b4yaj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=777373556]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_bxepa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=692308430]
+position = Vector2(12, 7)
+shape = SubResource("RectangleShape2D_b4yaj")

@@ -2,7 +2,7 @@
 extends BossState
 
 func enter():
-	boss._animation_player.play("death")
+	boss._animation_player.play("Death")
 	boss.hitbox_area.monitoring = false
 	boss.hurtbox_area.monitoring = false
 	boss.set_physics_process(false)

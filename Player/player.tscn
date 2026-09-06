@@ -692,6 +692,7 @@ unique_name_in_owner = true
 script = ExtResource("20_hshwv")
 
 [node name="Label" type="Label" parent="." unique_id=886741710]
+visible = false
 offset_left = -46.0
 offset_top = -102.0
 offset_right = 54.0
