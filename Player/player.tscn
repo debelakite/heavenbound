@@ -572,9 +572,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f8nak")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"ShootUp",
-"speed": 8.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
@@ -609,8 +609,8 @@ shape = SubResource("RectangleShape2D_0hol4")
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
 animation = &"ShootUp"
-frame = 3
-frame_progress = 0.14795966
+frame = 4
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)
