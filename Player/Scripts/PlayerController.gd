@@ -64,6 +64,10 @@ var respawn_position: Vector2
 @export var flash_interval: float = 0.1
 #endregion
 
+#region /// Sound Variables
+@export var footstep_interval := 0.4  # tune to walk speed
+var footstep_timer := 0.0
+#endregion
 
 
 # 	HEALTHBAR
@@ -113,7 +117,7 @@ func reset_health() -> void:
 
 	#Intialise the player states upon game start
 func _ready() -> void:
-	
+	_animation_player.frame_changed.connect(_on_frame_changed)
 	#TEST BOON
 	var test_boon = preload("res://Resources/Boons/divinity_siphon.tres")
 	$BoonManager.discover_boon(test_boon)
@@ -133,6 +137,24 @@ func _ready() -> void:
 	else:
 		push_error("Player: HUD Autoload singleton could not be found!")
 	
+
+func _on_frame_changed():
+	if _animation_player.animation == "Run": #Selects which animation will play sfx
+		if _animation_player.frame == 2 or _animation_player.frame == 5: # plays sfx based on number of foot contact frames
+			_on_footstep_frame()
+
+func _on_footstep_frame():
+	var surface = get_surface_under_feet()
+	SoundManager.play_footstep(surface)
+
+
+
+
+
+
+
+
+
 	# Look down option when pressing S key
 func update_camera_look() -> void:
 	var target_offset_y = 0.0
@@ -166,6 +188,8 @@ func _physics_process( _delta: float) -> void:
 
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
+	
+
 
 
 #Gathers all player states in an array and initializes them
@@ -224,3 +248,23 @@ func update_direction() -> void:
 	elif direction.x > 0:
 		_animation_player.flip_h = true
 	pass
+
+
+
+
+func get_surface_under_feet() -> String:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(
+		global_position,
+		global_position + Vector2(0, 70)
+	)
+	query.collide_with_areas = false
+	query.collide_with_bodies = true
+	var result = space_state.intersect_ray(query)
+	if result:
+		print("hit collider: ", result.collider.name, " meta: ", result.collider.get_meta("surface_type") if result.collider.has_meta("surface_type") else "NONE")
+	else:
+		print("ray hit nothing")
+	if result and result.collider.has_meta("surface_type"):
+		return result.collider.get_meta("surface_type")
+	return "stone"

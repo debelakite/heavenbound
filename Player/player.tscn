@@ -567,7 +567,7 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239629246]
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
-animation = &"Hurt"
+animation = &"Run"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)
