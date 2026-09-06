@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://d17ba8oo881d"]
 
-[ext_resource type="Script" uid="uid://c1qe8hj0p2hg1" path="res://Scripts/main.gd" id="1_rjeiw"]
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="2_nsuo6"]
 [ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="3_xy5uc"]
 [ext_resource type="Texture2D" uid="uid://lkjbh5ur2m8f" path="res://Sprites/Backgrounds/background_lineart.png" id="4_eybxx"]
@@ -26,13 +25,13 @@ distance = -289.78644
 load_path = "res://.godot/imported/death_screen.png-f20968d232380f2f65c668d207ccef69.ctex"
 
 [node name="RoomTest" type="Node2D" unique_id=1051485603]
-script = ExtResource("1_rjeiw")
 
 [node name="Player" parent="." unique_id=28099015 instance=ExtResource("2_nsuo6")]
 move_speed = 500.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589145229]
 position = Vector2(-6, -3)
+metadata/surface_type = "sand"
 
 [node name="Background" type="TextureRect" parent="StaticBody2D" unique_id=1843034894]
 z_index = -5

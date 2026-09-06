@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AttackData" format=3 uid="uid://c3wffspgqyuty"]
+
+[ext_resource type="Script" uid="uid://cxjybx777pj8l" path="res://BossOne/attack_data.gd" id="1_yks4x"]
+
+[resource]
+script = ExtResource("1_yks4x")
+name = "punishment"
+metadata/_custom_type_script = "uid://cxjybx777pj8l"

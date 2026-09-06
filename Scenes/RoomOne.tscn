@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="4_drtje"]
 [ext_resource type="Texture2D" uid="uid://pi1857cb7q0x" path="res://Sprites/Levels/Level1Sprites/Sky.png" id="6_jrquj"]
 [ext_resource type="PackedScene" uid="uid://6hhit7xulyps" path="res://Scenes/Checkpoint.tscn" id="7_jrquj"]
+[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="8_6nocr"]
+[ext_resource type="PackedScene" uid="uid://bex1l8atmhqe8" path="res://BossOne/BossOne.tscn" id="9_8ysfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3v5h"]
 size = Vector2(274.39987, 485.93457)
@@ -95,6 +97,7 @@ texture = ExtResource("6_jrquj")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1837396749]
 scale = Vector2(0.49, 0.49)
+metadata/surface_type = "stone"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1718522697]
 position = Vector2(1734.2286, 1536.845)
@@ -186,5 +189,11 @@ position = Vector2(1323, 822)
 
 [node name="FromMine" type="Marker2D" parent="." unique_id=344055090]
 position = Vector2(1635, 775)
+
+[node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("8_6nocr")]
+position = Vector2(520, 440)
+
+[node name="BossOne" parent="." unique_id=1376592960 instance=ExtResource("9_8ysfi")]
+position = Vector2(1120, 680)
 
 [connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]
