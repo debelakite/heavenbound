@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://ce4xxsjh2id0a" path="res://Player/States/dead.gd" id="12_o28un"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
 [ext_resource type="Texture2D" uid="uid://cjq2iefqto2l0" path="res://Player/Sprites/shoot_down_animation_spritesheet.png" id="13_efx54"]
+[ext_resource type="Texture2D" uid="uid://d3gmyi06veise" path="res://Player/Sprites/shoot_up_animation_spritesheet.png" id="14_755ss"]
 [ext_resource type="Script" uid="uid://crk44jlekhpqg" path="res://Player/States/heal.gd" id="14_hshwv"]
 [ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://du10xy57ypgk4" path="res://Player/Scripts/player_hurt_box.gd" id="18_b1ygp"]
@@ -271,6 +272,26 @@ region = Rect2(0, 1000, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxi5p"]
 atlas = ExtResource("13_efx54")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxu6j"]
+atlas = ExtResource("14_755ss")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdkl3"]
+atlas = ExtResource("14_755ss")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68syb"]
+atlas = ExtResource("14_755ss")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0uyb"]
+atlas = ExtResource("14_755ss")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8nak"]
+atlas = ExtResource("14_755ss")
 region = Rect2(1000, 1000, 1000, 1000)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_scqu4"]
@@ -534,6 +555,26 @@ animations = [{
 "loop": 1,
 "name": &"ShootDown",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxu6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdkl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68syb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0uyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8nak")
+}],
+"loop": 1,
+"name": &"ShootUp",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
@@ -567,7 +608,9 @@ shape = SubResource("RectangleShape2D_0hol4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=239629246]
 scale = Vector2(0.13800001, 0.13800001)
 sprite_frames = SubResource("SpriteFrames_scqu4")
-animation = &"Run"
+animation = &"ShootUp"
+frame = 3
+frame_progress = 0.14795966
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1493851510]
 zoom = Vector2(1.5, 1.5)

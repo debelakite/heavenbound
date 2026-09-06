@@ -12,6 +12,7 @@ func init() -> void:
 	pass
 
 func enter() -> void:
+	player._animation_player.play("Dash")
 	timer = dash_duration
 	player.ignore_gravity = true
 	player.dash_cooldown_timer = player.dash_cooldown
