@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://pi1857cb7q0x" path="res://Sprites/Levels/Level1Sprites/Sky.png" id="6_jrquj"]
 [ext_resource type="Texture2D" uid="uid://cu7hm5byvhxr0" path="res://Sprites/Tutorial/start1.png" id="8_6nocr"]
 [ext_resource type="Texture2D" uid="uid://bjilllb30fqqc" path="res://Sprites/Backgrounds/roomonebackground.png" id="9_8ysfi"]
-[ext_resource type="PackedScene" uid="uid://bex1l8atmhqe8" path="res://BossOne/BossOne.tscn" id="10_5grtn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3v5h"]
 size = Vector2(274.39987, 485.93457)
@@ -196,8 +195,5 @@ position = Vector2(1701, 804)
 
 [node name="FromMine" type="Marker2D" parent="." unique_id=344055090]
 position = Vector2(1761, 791)
-
-[node name="BossOne" parent="." unique_id=1376592960 instance=ExtResource("10_5grtn")]
-position = Vector2(1339, 695)
 
 [connection signal="body_entered" from="CaveEntrance" to="CaveEntrance" method="_on_body_entered"]
