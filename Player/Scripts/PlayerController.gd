@@ -121,21 +121,22 @@ func reset_health() -> void:
 	#Intialise the player states upon game start
 func _ready() -> void:
 	_animation_player.frame_changed.connect(_on_frame_changed)
-	#TEST BOON
 	var test_boon = preload("res://Resources/Boons/divinity_siphon.tres")
 	$BoonManager.discover_boon(test_boon)
-	#pull from a loaded save, if one exists
-	if GameState.health_stage != -1:
+
+	if GameState.pending_position_restore:
 		respawn_position = GameState.respawn_position
 		global_position = GameState.respawn_position
 		health_stage = GameState.health_stage
 		health_changed.emit(health_stage)
+		GameState.pending_position_restore = false
 		if has_node("HurtBox"):
 			get_node("HurtBox").monitorable = true
 	else:
 		respawn_position = global_position
+
 	initialize_states()
-	if Hud: 
+	if Hud:
 		Hud.register_player(self)
 	else:
 		push_error("Player: HUD Autoload singleton could not be found!")
@@ -149,13 +150,6 @@ func _on_frame_changed():
 func _on_footstep_frame():
 	var surface = get_surface_under_feet()
 	SoundManager.play_footstep(surface)
-
-
-
-
-
-
-
 
 
 	# Look down option when pressing S key

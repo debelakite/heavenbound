@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://das6jplr1ijwv"]
 
-[ext_resource type="Script" uid="uid://dgabfgmqwmi2h" path="res://Scenes/AreaHitbox.gd" id="1_2ln2y"]
+[ext_resource type="Script" uid="uid://dgabfgmqwmi2h" path="res://Scripts/AreaHitbox.gd" id="1_2ln2y"]
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="1_gutuq"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="2_gutuq"]
 [ext_resource type="Texture2D" uid="uid://bx3cn7q77125h" path="res://Sprites/Levels/dark platform.png" id="2_vovh5"]
 [ext_resource type="Texture2D" uid="uid://tcy8s43s2yks" path="res://Sprites/Levels/CaveSprites/Fade.png" id="4_6ocil"]
 [ext_resource type="Texture2D" uid="uid://wwx2sxeogwre" path="res://Sprites/Levels/CaveSprites/DamageSpikes.png" id="5_sp15d"]
-[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="6_1pwhr"]
 [ext_resource type="Texture2D" uid="uid://ciruuylj3opby" path="res://Sprites/Levels/CaveSprites/Floor.png" id="7_e16ni"]
 [ext_resource type="Texture2D" uid="uid://cpq7bwq0k7gk0" path="res://Sprites/Levels/CaveSprites/MainWall.png" id="8_c2e18"]
 [ext_resource type="Texture2D" uid="uid://u6m2t3scncs8" path="res://Sprites/Levels/CaveSprites/Lvl3Wall.png" id="9_c2e18"]
@@ -14,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c74qc2ee66fr8" path="res://Sprites/Levels/Cave_parallax/Stallag1.png" id="11_o3g7d"]
 [ext_resource type="Texture2D" uid="uid://x55lcsbp0r6t" path="res://Sprites/Levels/Cave_parallax/Stallag2.png" id="12_2ln2y"]
 [ext_resource type="Texture2D" uid="uid://c52o1ea8dahld" path="res://Sprites/Levels/CaveSprites/CaveBackground.png" id="13_o3g7d"]
+[ext_resource type="PackedScene" uid="uid://bex1l8atmhqe8" path="res://BossOne/BossOne.tscn" id="14_2ln2y"]
+[ext_resource type="Texture2D" uid="uid://b5g0lhpvqqyuw" path="res://Sprites/Tutorial/text5.png" id="15_nhcj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdw2d"]
 size = Vector2(4954, 87)
@@ -160,12 +161,6 @@ rotation = 1.5707964
 scale = Vector2(3.3786032, 1.5688921)
 texture = ExtResource("4_6ocil")
 
-[node name="Enemy2" parent="." unique_id=1219120810 instance=ExtResource("6_1pwhr")]
-position = Vector2(-1356, 1311)
-
-[node name="Enemy3" parent="." unique_id=1493320931 instance=ExtResource("6_1pwhr")]
-position = Vector2(-3305, 1262)
-
 [node name="Fade10" type="Sprite2D" parent="." unique_id=1079254776]
 z_index = -2
 position = Vector2(-889, 1909.0002)
@@ -266,8 +261,16 @@ texture = ExtResource("10_cqked")
 
 [node name="CaveBackground" type="Sprite2D" parent="." unique_id=1275713199]
 z_index = -10
-position = Vector2(29858, 581)
+position = Vector2(-1228, 546.00006)
 scale = Vector2(4.8528647, 2.8354166)
 texture = ExtResource("13_o3g7d")
+
+[node name="BossOne" parent="." unique_id=1376592960 instance=ExtResource("14_2ln2y")]
+position = Vector2(-2901, 1192)
+
+[node name="Text5" type="Sprite2D" parent="." unique_id=2017236340]
+position = Vector2(-627.8146, 135.5)
+scale = Vector2(1.0365536, 1.0365535)
+texture = ExtResource("15_nhcj0")
 
 [connection signal="body_entered" from="LiftTransition3" to="LiftTransition3" method="_on_body_entered"]
