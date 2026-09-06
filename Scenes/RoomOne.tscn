@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duefnejqbtqab"]
 
 [ext_resource type="PackedScene" uid="uid://b0w50hvws8355" path="res://Player/player.tscn" id="1_3mjr0"]
+[ext_resource type="Script" uid="uid://dgabfgmqwmi2h" path="res://Scenes/AreaHitbox.gd" id="1_6nocr"]
 [ext_resource type="Texture2D" uid="uid://0l3nt7ag0kmw" path="res://Sprites/Levels/Level1Sprites/Room.png" id="1_drtje"]
 [ext_resource type="Texture2D" uid="uid://vi78okteo04s" path="res://Sprites/Levels/Level1Sprites/Mnts.png" id="2_db740"]
 [ext_resource type="Texture2D" uid="uid://dtu8anls2lo2q" path="res://Sprites/Levels/Level1Sprites/Clouds.png" id="3_jrquj"]
@@ -38,6 +39,20 @@ distance = -72.0
 size = Vector2(172, 226)
 
 [node name="RoomOne" type="Node2D" unique_id=420696838]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1989205890]
+collision_layer = 3
+script = ExtResource("1_6nocr")
+
+[node name="HazardHitbox" type="CollisionPolygon2D" parent="Area2D" unique_id=1122360034]
+position = Vector2(-143.34326, 786.8635)
+polygon = PackedVector2Array(1.3432617, 0.13647461, 7.3432617, -15.863525, 13.343262, -47.863525, 21.343262, -54.863525, 34.34326, -48.863525, 30.343262, -85.863525, 40.34326, -106.863525, 70.34326, -110.863525, 81.34326, -101.863525, 97.34326, -70.863525, 102.34326, -86.863525, 130.34326, -100.863525, 148.34326, -148.86353, 155.34326, -154.86353, 178.34326, -159.86353, 217.34326, -134.86353, 242.34326, -146.86353, 261.34326, -199.86353, 287.34326, -205.86353, 299.34326, -198.86353, 324.34326, -180.86353, 342.34326, -158.86353, 361.34326, -168.86353, 371.34326, -167.86353, 373.34326, -19.863525)
+
+[node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_3mjr0")]
+z_index = 6
+position = Vector2(342, 378)
+collision_layer = 3
+move_speed = 400.0
 
 [node name="Parallax1" type="Parallax2D" parent="." unique_id=977234163]
 scale = Vector2(0.49, 0.49)
@@ -79,11 +94,6 @@ z_index = -9
 position = Vector2(133, -744.00024)
 scale = Vector2(1.2911655, 1.2911652)
 texture = ExtResource("6_jrquj")
-
-[node name="Player" parent="." unique_id=28099015 instance=ExtResource("1_3mjr0")]
-z_index = 6
-position = Vector2(296, 393)
-move_speed = 400.0
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1837396749]
 scale = Vector2(0.49, 0.49)
@@ -152,11 +162,6 @@ offset_top = -4997.959
 offset_right = 5771.4287
 offset_bottom = -1398.449
 color = Color(0, 0, 0, 1)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1122360034]
-position = Vector2(-292.53726, 1605.8439)
-scale = Vector2(2.0408163, 2.0408163)
-polygon = PackedVector2Array(1.3432617, 0.13647461, 7.3432617, -15.863525, 13.343262, -47.863525, 21.343262, -54.863525, 34.34326, -48.863525, 30.343262, -85.863525, 40.34326, -106.863525, 70.34326, -110.863525, 81.34326, -101.863525, 97.34326, -70.863525, 102.34326, -86.863525, 130.34326, -100.863525, 148.34326, -148.86353, 155.34326, -154.86353, 178.34326, -159.86353, 217.34326, -134.86353, 242.34326, -146.86353, 261.34326, -199.86353, 287.34326, -205.86353, 299.34326, -198.86353, 324.34326, -180.86353, 342.34326, -158.86353, 361.34326, -168.86353, 371.34326, -167.86353, 373.34326, -19.863525)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=213689497]
 

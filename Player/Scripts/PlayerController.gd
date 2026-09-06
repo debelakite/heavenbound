@@ -64,6 +64,8 @@ var respawn_position: Vector2
 @export var flash_interval: float = 0.1
 #endregion
 
+# Safe Position Tracking for spikes
+var last_safe_position: Vector2 = Vector2.ZERO
 #region /// Sound Variables
 @export var footstep_interval := 0.4  # tune to walk speed
 var footstep_timer := 0.0
@@ -72,7 +74,7 @@ var footstep_timer := 0.0
 
 # 	HEALTHBAR
 
-func take_damage(amount: int, source: Node = null) -> void:
+func take_damage(amount: int, source: Node = null, trigger_hurt_state: bool = true) -> void:
 	if is_dead or is_invincible:
 		return
 	health_stage = clamp(health_stage - amount, 0, max_health_stage)
@@ -81,7 +83,8 @@ func take_damage(amount: int, source: Node = null) -> void:
 	if health_stage == 0:
 		_die()
 		return
-	change_state(current_state.took_damage())
+	if trigger_hurt_state:
+		change_state(current_state.took_damage())
 	_start_invincibility()
 
 func _die() -> void:
@@ -185,11 +188,13 @@ func _physics_process( _delta: float) -> void:
 		velocity.y += gravity * _delta
 	if dash_cooldown_timer > 0.0:
 		dash_cooldown_timer -= _delta
-
 	change_state( current_state.physics_process( _delta ) )
 	move_and_slide()
 	
 
+
+	if is_on_floor():
+		last_safe_position = global_position
 
 
 #Gathers all player states in an array and initializes them
