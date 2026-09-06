@@ -11,17 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://jlt10vhfpjlo" path="res://Player/Sprites/up_attack_animation_spritesheet.png" id="4_hshwv"]
 [ext_resource type="Texture2D" uid="uid://b2iq4st1qsvd6" path="res://Player/Sprites/jump_animation_spritesheet.png" id="4_p5o4e"]
 [ext_resource type="Texture2D" uid="uid://dvw26awxtn4lb" path="res://Player/Sprites/hurt_animation_spritesheet.png" id="4_pisgm"]
+[ext_resource type="Texture2D" uid="uid://cqxkifxthypv8" path="res://Player/Sprites/dash_animation_spritesheet.png" id="5_8viyr"]
 [ext_resource type="Script" uid="uid://b0dvq87mtfxf2" path="res://Player/States/hurt.gd" id="7_5htga"]
 [ext_resource type="Script" uid="uid://bvsa37jwn72w" path="res://Player/States/idle.gd" id="8_p5o4e"]
 [ext_resource type="Script" uid="uid://c87l6ekrbcwi3" path="res://Player/States/run.gd" id="9_gu6f8"]
 [ext_resource type="Script" uid="uid://pgvksrps2vhp" path="res://Player/States/jump.gd" id="10_dkpta"]
 [ext_resource type="Script" uid="uid://cw4tjw0mqey0l" path="res://Player/States/dash.gd" id="11_dkpta"]
 [ext_resource type="Script" uid="uid://c2nkj2r85ow3v" path="res://Player/States/fall.gd" id="11_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://b0cwb6ka0lgxq" path="res://Player/Sprites/shoot_animation_spritesheet.png" id="12_76lrf"]
 [ext_resource type="Script" uid="uid://ce4xxsjh2id0a" path="res://Player/States/dead.gd" id="12_o28un"]
 [ext_resource type="Script" uid="uid://djotwvh3bbbme" path="res://Player/States/attack.gd" id="12_pisgm"]
+[ext_resource type="Texture2D" uid="uid://cjq2iefqto2l0" path="res://Player/Sprites/shoot_down_animation_spritesheet.png" id="13_efx54"]
 [ext_resource type="Script" uid="uid://crk44jlekhpqg" path="res://Player/States/heal.gd" id="14_hshwv"]
 [ext_resource type="Script" uid="uid://ud4ltvaxxejc" path="res://Player/Scripts/resource_meter.gd" id="16_lfmf2"]
 [ext_resource type="Script" uid="uid://du10xy57ypgk4" path="res://Player/Scripts/player_hurt_box.gd" id="18_b1ygp"]
+[ext_resource type="Script" uid="uid://b161vmtq07p51" path="res://Player/States/shooting.gd" id="20_gpjlu"]
 [ext_resource type="Script" uid="uid://chr48noio2d8n" path="res://Player/float.gd" id="20_hshwv"]
 [ext_resource type="Script" uid="uid://cb3luxorrjlpt" path="res://Resources/KeyItems/key_item_inventory.gd" id="22_gpjlu"]
 [ext_resource type="Script" uid="uid://dshy83fx66rf6" path="res://Resources/Boons/boon_manager.gd" id="23_8mwp6"]
@@ -80,6 +84,22 @@ region = Rect2(0, 1000, 1000, 1000)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvbyc"]
 atlas = ExtResource("4_hshwv")
 region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvnt1"]
+atlas = ExtResource("5_8viyr")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kmt7"]
+atlas = ExtResource("5_8viyr")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4i3b"]
+atlas = ExtResource("5_8viyr")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvbbp"]
+atlas = ExtResource("5_8viyr")
+region = Rect2(3000, 0, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs4pp"]
 atlas = ExtResource("3_n471f")
@@ -217,6 +237,42 @@ region = Rect2(0, 2000, 1000, 1000)
 atlas = ExtResource("3_k53q1")
 region = Rect2(1000, 2000, 1000, 1000)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v2uk"]
+atlas = ExtResource("12_76lrf")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6nl3"]
+atlas = ExtResource("12_76lrf")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hx1r"]
+atlas = ExtResource("12_76lrf")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qas3k"]
+atlas = ExtResource("12_76lrf")
+region = Rect2(3000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntwt4"]
+atlas = ExtResource("13_efx54")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdg72"]
+atlas = ExtResource("13_efx54")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpoj2"]
+atlas = ExtResource("13_efx54")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e3ym"]
+atlas = ExtResource("13_efx54")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxi5p"]
+atlas = ExtResource("13_efx54")
+region = Rect2(1000, 1000, 1000, 1000)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_scqu4"]
 animations = [{
 "frames": [{
@@ -275,6 +331,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gvnt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kmt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4i3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvbbp")
+}],
+"loop": 1,
+"name": &"Dash",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qs4pp")
 }, {
 "duration": 1.0,
@@ -306,7 +379,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Dead",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -355,9 +428,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jp1hh")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Hurt",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -424,6 +497,43 @@ animations = [{
 "loop": 1,
 "name": &"Run",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v2uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6nl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hx1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qas3k")
+}],
+"loop": 1,
+"name": &"Shoot",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntwt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdg72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpoj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e3ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxi5p")
+}],
+"loop": 1,
+"name": &"ShootDown",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
@@ -530,7 +640,11 @@ script = ExtResource("7_5htga")
 unique_name_in_owner = true
 script = ExtResource("12_pisgm")
 
-[node name="Float" type="Node2D" parent="States" unique_id=234155054]
+[node name="Shooting" type="Node" parent="States" unique_id=769575951]
+unique_name_in_owner = true
+script = ExtResource("20_gpjlu")
+
+[node name="Float" type="Node" parent="States" unique_id=2065219088]
 unique_name_in_owner = true
 script = ExtResource("20_hshwv")
 
