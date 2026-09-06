@@ -8,8 +8,6 @@ func change_scene(target_path: String, spawn_point_id: String = "") -> void:
 	anim_player.speed_scale = 1.0
 
 	get_tree().change_scene_to_file(target_path)
-
-	# Wait one frame so the new scene actually finishes loading in
 	await get_tree().process_frame
 
 	if not spawn_point_id.is_empty():
@@ -19,5 +17,17 @@ func change_scene(target_path: String, spawn_point_id: String = "") -> void:
 			player.global_position = spawn_marker.global_position
 		elif not spawn_marker:
 			print("WARNING: No spawn point found matching id: ", spawn_point_id)
+
+	anim_player.play("fade_in")
+
+
+func fade_and_execute(action: Callable) -> void:
+	anim_player.speed_scale = 3.0
+	anim_player.play_backwards("fade_in")
+	await anim_player.animation_finished
+	anim_player.speed_scale = 1.0
+
+	action.call()
+	await get_tree().process_frame
 
 	anim_player.play("fade_in")

@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dn2f7rapjljtw" path="res://Sprites/Levels/Cave_parallax/Stallag4.png" id="17_bsj62"]
 [ext_resource type="Texture2D" uid="uid://bjiwga7fuggvm" path="res://Sprites/Levels/Cave_parallax/Stallag6.png" id="18_dqfor"]
 [ext_resource type="Texture2D" uid="uid://s5u0pya2trq8" path="res://Sprites/Levels/Cave_parallax/Stallag5.png" id="19_o7wby"]
+[ext_resource type="Texture2D" uid="uid://dlallbwr0c62f" path="res://Sprites/Levels/CaveSprites/door_entry.png" id="20_dqfor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku7mn"]
 size = Vector2(327, 20)
@@ -27,7 +28,7 @@ size = Vector2(327, 20)
 size = Vector2(25.472168, 330.79156)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjoj4"]
-size = Vector2(362.61743, 82.413025)
+size = Vector2(362.61743, 336.79446)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1nt8"]
 size = Vector2(1610, 92)
@@ -124,7 +125,7 @@ texture = ExtResource("6_wu4kk")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1128187263]
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=532747026]
-position = Vector2(1368, 1561)
+position = Vector2(1368, 1443)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D6" unique_id=1666714653]
@@ -142,12 +143,12 @@ position = Vector2(1847.1719, 1193.5)
 shape = SubResource("RectangleShape2D_l8vq5")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=277300563]
-position = Vector2(1713.1719, 1073.5)
+position = Vector2(1710.0001, 948.25)
 scale = Vector2(0.91005063, 0.9100507)
 shape = SubResource("RectangleShape2D_fjoj4")
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1692857449]
-position = Vector2(1419.1719, 1928.5)
+position = Vector2(1424, 1805)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D7" unique_id=339569846]
@@ -157,7 +158,7 @@ scale = Vector2(0.106589146, 0.07998652)
 texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=724317749]
-position = Vector2(1387, 2263)
+position = Vector2(1215, 2161)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D8" unique_id=762366922]
@@ -167,7 +168,7 @@ scale = Vector2(0.106589146, 0.07998652)
 texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=511586580]
-position = Vector2(1100, 2451)
+position = Vector2(1395, 2378)
 polygon = PackedVector2Array(-41, 8, 120, 10, 152, 13, 137, 18, 127, 27, 114, 46, 75, 54, 14, 62, -43, 65, -107, 68, -160, 48, -165, 23, -195, 22, -192, 12)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D10" unique_id=563036630]
@@ -177,7 +178,7 @@ scale = Vector2(0.17102711, 0.07998652)
 texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=936924428]
-position = Vector2(1427.1719, 2627.5)
+position = Vector2(1005.6, 2602.6)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1120325669]
@@ -214,10 +215,10 @@ scale = Vector2(0.82221264, 0.82221276)
 shape = SubResource("RectangleShape2D_orjmt")
 
 [node name="Checkpoint" parent="StaticBody2D" unique_id=355130871 instance=ExtResource("2_u1xt1")]
-position = Vector2(726, 1366)
+position = Vector2(760, 1365)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=29569558]
-position = Vector2(1161.1719, 1737.5)
+position = Vector2(1085, 1625)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D15" unique_id=1700173487]
@@ -227,7 +228,7 @@ scale = Vector2(0.106589146, 0.07998652)
 texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=131915413]
-position = Vector2(1028, 2083)
+position = Vector2(945, 1966)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D9" unique_id=644016869]
@@ -237,7 +238,7 @@ scale = Vector2(0.106589146, 0.07998652)
 texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1903565113]
-position = Vector2(1427.1719, 2627.5)
+position = Vector2(1005.6, 2602.6)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D16" unique_id=1891956992]
@@ -247,7 +248,7 @@ scale = Vector2(0.106589146, 0.07998652)
 texture = ExtResource("3_ku7mn")
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1156339204]
-position = Vector2(1045, 2794)
+position = Vector2(1366, 2793)
 polygon = PackedVector2Array(-23, -2, 64, 2, 78, 5, 63, 13, 55, 37, 19, 52, -12, 53, -57, 60, -79, 59, -114, 39, -114, 21, -134, 13, -129, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D20" unique_id=1232716649]
@@ -297,7 +298,7 @@ script = ExtResource("4_u1xt1")
 target_scene = "uid://b1yg6yyybyc24"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LiftTransition" unique_id=1977805029]
-position = Vector2(122, 1186.5)
+position = Vector2(137, 1266)
 shape = SubResource("RectangleShape2D_fgo4y")
 
 [node name="LiftTransitionMarker" type="Marker2D" parent="LiftTransition" unique_id=644048655]
@@ -365,7 +366,7 @@ texture = ExtResource("9_x1nt8")
 
 [node name="CaveBackground" type="Sprite2D" parent="." unique_id=1741046521]
 z_index = -7
-position = Vector2(-869, 1875)
+position = Vector2(-867, 1545.0001)
 scale = Vector2(2.8354166, 2.8354166)
 texture = ExtResource("13_orjmt")
 
@@ -463,6 +464,13 @@ z_index = -4
 position = Vector2(-2037, 2147)
 scale = Vector2(1.3426967, 1.3426965)
 texture = ExtResource("19_o7wby")
+
+[node name="DoorEntry" type="Sprite2D" parent="." unique_id=747086391]
+z_index = -6
+position = Vector2(2408, 3316)
+rotation = 3.1415927
+scale = Vector2(1, 2.2463)
+texture = ExtResource("20_dqfor")
 
 [connection signal="body_entered" from="CaveTransition" to="CaveTransition" method="_on_body_entered"]
 [connection signal="body_entered" from="LiftTransition" to="LiftTransition" method="_on_body_entered"]
