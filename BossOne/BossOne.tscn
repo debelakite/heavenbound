@@ -282,7 +282,7 @@ attack_pools = Array[Array]([[null, ExtResource("2_r8cpd")], [ExtResource("2_r8c
 unique_name_in_owner = true
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_w1hta")
-animation = &"Attack"
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351564209]
 position = Vector2(-4, 28)
