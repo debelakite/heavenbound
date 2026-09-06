@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bvarsqckyqms"]
 
 [ext_resource type="Texture2D" uid="uid://b3fqev87m8i5t" path="res://Sprites/Levels/CaveSprites/MainWall2.png" id="2_fjoj4"]
-[ext_resource type="PackedScene" uid="uid://6hhit7xulyps" path="res://Scenes/Checkpoint.tscn" id="2_u1xt1"]
 [ext_resource type="Texture2D" uid="uid://bx3cn7q77125h" path="res://Sprites/Levels/dark platform.png" id="3_ku7mn"]
 [ext_resource type="Texture2D" uid="uid://daafyajkbj56" path="res://Sprites/Levels/Cave_parallax/Stallag3.png" id="4_3g0es"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="4_u1xt1"]
@@ -20,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://bjiwga7fuggvm" path="res://Sprites/Levels/Cave_parallax/Stallag6.png" id="18_dqfor"]
 [ext_resource type="Texture2D" uid="uid://s5u0pya2trq8" path="res://Sprites/Levels/Cave_parallax/Stallag5.png" id="19_o7wby"]
 [ext_resource type="Texture2D" uid="uid://dlallbwr0c62f" path="res://Sprites/Levels/CaveSprites/door_entry.png" id="20_dqfor"]
+[ext_resource type="Texture2D" uid="uid://chir6q625tlel" path="res://Sprites/Tutorial/text2.png" id="20_o7wby"]
+[ext_resource type="PackedScene" uid="uid://nymvs2ktf11j" path="res://Scenes/Porcupain.tscn" id="21_o7wby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku7mn"]
 size = Vector2(327, 20)
@@ -213,9 +214,6 @@ polygon = PackedVector2Array(-13, -15, -23, -53, -17.234863, 20.79004, 168, 111,
 position = Vector2(1851.0001, 3557)
 scale = Vector2(0.82221264, 0.82221276)
 shape = SubResource("RectangleShape2D_orjmt")
-
-[node name="Checkpoint" parent="StaticBody2D" unique_id=355130871 instance=ExtResource("2_u1xt1")]
-position = Vector2(760, 1365)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=29569558]
 position = Vector2(1085, 1625)
@@ -471,6 +469,20 @@ position = Vector2(2408, 3316)
 rotation = 3.1415927
 scale = Vector2(1, 2.2463)
 texture = ExtResource("20_dqfor")
+
+[node name="Text2" type="Sprite2D" parent="." unique_id=1457120129]
+position = Vector2(-2489.455, 1802)
+scale = Vector2(1.510001, 1.5100006)
+texture = ExtResource("20_o7wby")
+
+[node name="Porcupain" parent="." unique_id=725079683 instance=ExtResource("21_o7wby")]
+position = Vector2(2098, 3500)
+
+[node name="Porcupain2" parent="." unique_id=1936871884 instance=ExtResource("21_o7wby")]
+position = Vector2(-2607, 2016)
+
+[node name="Porcupain3" parent="." unique_id=1662014894 instance=ExtResource("21_o7wby")]
+position = Vector2(129, 1406)
 
 [connection signal="body_entered" from="CaveTransition" to="CaveTransition" method="_on_body_entered"]
 [connection signal="body_entered" from="LiftTransition" to="LiftTransition" method="_on_body_entered"]

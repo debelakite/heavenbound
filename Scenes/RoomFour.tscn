@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bn2wywlvymbf7" path="res://Sprites/Levels/CaveSprites/Roof2.png" id="11_pa4px"]
 [ext_resource type="Texture2D" uid="uid://cbfol3hgti3mw" path="res://Sprites/Levels/CaveSprites/Lever.png" id="12_a0x8a"]
 [ext_resource type="Texture2D" uid="uid://dlallbwr0c62f" path="res://Sprites/Levels/CaveSprites/door_entry.png" id="13_pa4px"]
+[ext_resource type="Texture2D" uid="uid://b6rrjxl2ms2gb" path="res://Sprites/Tutorial/text4.png" id="14_unngw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhkb1"]
 size = Vector2(2742, 72.5)
@@ -197,6 +198,10 @@ position = Vector2(1778.6993, -1083.6877)
 rotation = 3.1415927
 scale = Vector2(1.7972026, 2.6168776)
 texture = ExtResource("13_pa4px")
+
+[node name="Text4" type="Sprite2D" parent="." unique_id=1037305466]
+position = Vector2(1407, -1087)
+texture = ExtResource("14_unngw")
 
 [connection signal="body_entered" from="LiftTransition" to="LiftTransition" method="_on_body_entered"]
 [connection signal="body_entered" from="LiftTransition2" to="LiftTransition2" method="_on_body_entered"]

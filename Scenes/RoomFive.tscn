@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfvmc461m0upe"]
 
-[ext_resource type="Script" uid="uid://dgabfgmqwmi2h" path="res://Scenes/AreaHitbox.gd" id="1_2oqd7"]
+[ext_resource type="Script" uid="uid://dgabfgmqwmi2h" path="res://Scripts/AreaHitbox.gd" id="1_2oqd7"]
 [ext_resource type="Script" uid="uid://iu2kiw4fhclw" path="res://Scripts/area_transition.gd" id="2_88578"]
 [ext_resource type="Texture2D" uid="uid://bx3cn7q77125h" path="res://Sprites/Levels/dark platform.png" id="3_6sfo6"]
 [ext_resource type="Texture2D" uid="uid://cpq7bwq0k7gk0" path="res://Sprites/Levels/CaveSprites/MainWall.png" id="3_50b1e"]
@@ -16,9 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://s5u0pya2trq8" path="res://Sprites/Levels/Cave_parallax/Stallag5.png" id="13_t3xhj"]
 [ext_resource type="PackedScene" uid="uid://6hhit7xulyps" path="res://Scenes/Checkpoint.tscn" id="14_k3d26"]
 [ext_resource type="Texture2D" uid="uid://dlallbwr0c62f" path="res://Sprites/Levels/CaveSprites/door_entry.png" id="15_y54ii"]
+[ext_resource type="Texture2D" uid="uid://cqg6nk2clia6n" path="res://Sprites/Tutorial/checkpoint_info.png" id="17_4dl5y"]
+[ext_resource type="PackedScene" uid="uid://c27tpkswc2e" path="res://Scenes/Enemy.tscn" id="18_wyg60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88578"]
-size = Vector2(36.443237, 753.7417)
+size = Vector2(36.443237, 750.66516)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3v5h"]
 size = Vector2(2373.2134, 33)
@@ -72,7 +74,7 @@ collision_layer = 3
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1178809715]
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=397955921]
-position = Vector2(4785, 2227.25)
+position = Vector2(4785, 2231)
 scale = Vector2(2.4378378, 2.4378378)
 shape = SubResource("RectangleShape2D_88578")
 
@@ -141,7 +143,7 @@ polygon = PackedVector2Array(10.959473, 2.649414, 11, -30, -16, -24, -58, 41, -5
 
 [node name="MainWall" type="Sprite2D" parent="StaticBody2D" unique_id=2057651962]
 z_index = -5
-position = Vector2(3416, 2294)
+position = Vector2(3418, 2294)
 scale = Vector2(0.7252023, 0.7252021)
 texture = ExtResource("3_50b1e")
 
@@ -272,7 +274,7 @@ texture = ExtResource("9_4twov")
 
 [node name="CaveBackground" type="Sprite2D" parent="." unique_id=1521121603]
 z_index = -8
-position = Vector2(3205, 924)
+position = Vector2(3213, 1643)
 scale = Vector2(2.8354166, 2.8354166)
 texture = ExtResource("12_rhjnu")
 
@@ -282,14 +284,25 @@ position = Vector2(718, 2056)
 scale = Vector2(2.795412, 2.7954116)
 texture = ExtResource("13_t3xhj")
 
-[node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("14_k3d26")]
-position = Vector2(4777, 1229)
-
 [node name="DoorEntry" type="Sprite2D" parent="." unique_id=15646728]
 z_index = -6
 position = Vector2(210.00002, 1556)
 scale = Vector2(1.296, 1.8750001)
 texture = ExtResource("15_y54ii")
+
+[node name="Checkpoint" parent="." unique_id=355130871 instance=ExtResource("14_k3d26")]
+position = Vector2(2604, 1297)
+
+[node name="CheckpointInfo" type="Sprite2D" parent="." unique_id=213183186]
+position = Vector2(2612, 1058)
+scale = Vector2(1.3350002, 1.335)
+texture = ExtResource("17_4dl5y")
+
+[node name="Enemy" parent="." unique_id=725079683 instance=ExtResource("18_wyg60")]
+position = Vector2(1193, 1685)
+
+[node name="Enemy2" parent="." unique_id=1145839112 instance=ExtResource("18_wyg60")]
+position = Vector2(2207, 1317)
 
 [connection signal="body_entered" from="LiftTransition2" to="LiftTransition2" method="_on_body_entered"]
 [connection signal="body_entered" from="LiftTransition3" to="LiftTransition3" method="_on_body_entered"]

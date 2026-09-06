@@ -141,12 +141,6 @@ z_index = -6
 position = Vector2(300, 705)
 texture = ExtResource("5_4grox")
 
-[node name="Enemy2" parent="." unique_id=725079683 instance=ExtResource("6_8kx8r")]
-position = Vector2(-1356, 1311)
-
-[node name="Enemy3" parent="." unique_id=1426613850 instance=ExtResource("6_8kx8r")]
-position = Vector2(-3305, 1262)
-
 [node name="Fade10" type="Sprite2D" parent="." unique_id=44646511]
 z_index = -2
 position = Vector2(-889, 1909.0002)
@@ -278,6 +272,12 @@ shape = SubResource("RectangleShape2D_80o7b")
 position = Vector2(-5093, 499.00003)
 scale = Vector2(1, 8.919999)
 texture = ExtResource("14_80o7b")
+
+[node name="Enemy2" parent="." unique_id=725079683 instance=ExtResource("6_8kx8r")]
+position = Vector2(-1168, 1311)
+
+[node name="Enemy3" parent="." unique_id=1426613850 instance=ExtResource("6_8kx8r")]
+position = Vector2(-2595, 1311)
 
 [connection signal="body_entered" from="LiftTransition3" to="LiftTransition3" method="_on_body_entered"]
 [connection signal="body_entered" from="LiftTransition2" to="LiftTransition2" method="_on_body_entered"]
