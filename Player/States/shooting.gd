@@ -23,6 +23,7 @@ func enter() -> void:
 		projectile_instance.direction = Vector2.DOWN
 		player.velocity.y = -500
 	elif player.looking_up:
+		player._animation_player.play("ShootUp")
 		projectile_instance.direction = Vector2.UP
 		player.velocity.y = 500
 	elif !player._animation_player.flip_h:
